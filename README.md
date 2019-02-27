@@ -13,13 +13,16 @@ The first version of this app will be created with the intention of being used o
 Application Features:
 
 Geolocation
+
 The web application would utilize geolocation in finding nearby colleges in the user’s current area. The user will be allowed to select their college from the list of universities in the area within a set radius. This feature allows for users to only see the feed of the institution that they attend.
 
 Post Categories (Tags)
+
 The Anonymous Chat web application would have an initial page that users are brought to where they have the option to filter the posts by specific categories. Once the categories have been selected, the page will display the relevant posts sorted by popularity. The post tag feature would allow for less cluttering of the user’s main feed, and the ability for users to discriminate which posts they would like to see at a given time.
 Possible tags: Sports, Events, News, General, Random, Clubs, Funny, etc.
 
 Moderating
+
 Posts expire after a week, or a time selected at post creation.
 Posts that have received a significant number of downvotes will be automatically removed from users timelines in order to decrease the chance of offensive/hateful content being shown. 
 Users that have had multiple posts removed will be subject to a temporary or permanent ban or from creating future posts. 
@@ -27,6 +30,7 @@ Posts that have been inactive for more than a week will be archived. Users can v
 Users that create a post are also given the option of “archiving” the thread before one week of inactivity. 
 
 Sort by Popularity and Time
+
 Users will have the option to sort messages by the most upvoted and also by the most recent. It is important to give the option to sort by most recent so that posts will have the chance to be upvoted. 
 API
 
