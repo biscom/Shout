@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Shout</title>
+  <link rel='stylesheet' href="./css/typicons.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bounce.css">
+  <link href="https://fonts.googleapis.com/css?family=Chewy|Raleway:700" rel="stylesheet">
+  
+
+</head>
+<body>
+  <nav>
+    <section class="logo-section">
+      <i id="volume" class="fas fa-bullhorn"></i>
+      <h1 id="app-title">shout</h1>
+    </section>
+    <section class="navbar-links">
+      <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">Our Community</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+      </ul>
+    </section>
+    <span class="typcn typcn-location"></span>
+    <span class="typcn typcn-user"></span>
+    <i class="fas fa-bell"></i>
+    <span class="typcn typcn-th-menu"></span>
+ </nav>
+ <section class="toolbar">
+  <i class="fas fa-comments"></i>
+  <span class="typcn typcn-th-small"></span>
+  <i class="fas fa-question"></i>
+</section>
+ 
+ <section class="dash-content">
+  <h1 id="dash-title">Dashboard</h1>
+
+  <h2 id="featured-title">rant to us!</h2>
+  <section class="featured">
+    <a class="rant-popover" data-toggle="popover" data-container="body"  title="What is Rant to Us?" data-placement="right" type="button" data-html="true" href="#" id="rant"><i class="fas fa-question-circle"></i></a>
+    <!-- <i class="fa fa-info-circle" data-toggle="popover" data-placement="top" id="rant" title="Tooltip on left"></i> -->
+
+    <div id="popover-content-rant" class="hide">
+      <p><i>Rant to Us</i> is a feature at Shout! where we provide a topic for you to shout about. Your Shout can be seen by other students in your region. The users with top three Shouts at the end of each day, are featured the next day.</p>
+    </div>
+  
+    
+    <p id="topic">Unassigned seats</p>
+    <textarea id="feature-submit" maxlength="200"></textarea>
+    <span id="rant-chars">200</span>
+    <div class="feature-btn"><button id="submit-entry" type="button">Speak your mind</button></div>
+    
+  </section>
+<!--   <h2 id="popular-title">Popular Tags</h2> -->
+  <!-- <section class="popular-tags">
+    <div class="tags">
+      <p></p>
+    </div>
+  </section> -->
+ 
+ </section>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script  src="./js/script.js"></script>
+  
+</body>
+</html>

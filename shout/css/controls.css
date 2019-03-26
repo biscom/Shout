@@ -1,0 +1,43 @@
+
+#controls {
+  float: right;
+  clear: right;
+  width: 200px;
+}
+
+#controls * {
+  display: block;
+  margin: 0 0 0 10px;
+}
+
+#controls .row {
+  height: 40vh;
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+.boxLabel {
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Calibri;
+  color: #9a1750;
+}
+
+#tags * {
+  display: inline;
+}
+
+.tag {
+  padding: 0px 3px;
+  border: 2px solid #AAA;
+  border-radius: 3px;
+  background-color: #DDD;
+  font-family: Calibri;
+  font-weight: bold;
+  color: #999;
+}
+
+select {
+  border-radius: 3px;
+}

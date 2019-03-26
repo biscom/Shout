@@ -5,43 +5,118 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<title>Sports Dashboard</title>
 	<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/controls.css">
+	<link rel="stylesheet" href="./css/bounce.css">
 	<link rel="stylesheet" href="./css/animation.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
 <body>
 	<section class="msg">
-		<div id="msg1" class="row">
+		<div id="main-content" class="col">
+			<div id="msg1" class="row">
+				<section class="rating">
+					<i id="plus" class="fas fa-volume-up"></i>
+					<i id="minus" class="fas fa-volume-down"></i>
+					<p id="msg1-rating" class="rating-number">102<p>
+				<section>
+				<section class="msg-content">
+					<p class="msg-ctnt">to the window, to the wall, to my 8am i crawl</p>
+				</section>
+				<span class="user-post"></span>
+				<i id="star" class="fas fa-star"></i>
+				<i id="comments" class="fas fa-comment-alt">
+					<p class="comment-number">30</p>
+				</i>
+				<i id="flag" class="fas fa-flag"></i>
+				<i id="darrow" class="fas fa-angle-down"></i>
+		</div>
+
+		<div id="msg2" class="row">
+				<section class="rating">
+					<i id="plus" class="fas fa-plus"></i>
+					<i id="minus" class="fas fa-minus"></i>
+					<p id="msg2-rating" class="rating-number">76<p>
+				<section>
+					<section class="msg-content">
+					<p class="msg-ctnt">People say I'm condescending (that means I talk down to people).</p>
+				</section>
+				<span class="user-post"></span>
+				<i id="darrow" class="fas fa-angle-down"></i>
+		</div>
+
+		<div id="msg3" class="row">
 			<section class="rating">
 				<i id="plus" class="fas fa-plus"></i>
 				<i id="minus" class="fas fa-minus"></i>
-				<section>
-			
+				<p id="msg3-rating" class="rating-number">40<p>
+			<section>
+				<section class="msg-content">
+					<p class="msg-ctnt">Can't sleep because I can't figure out how waffles fries are made.</p>
+				</section>
+			<span class="user-post"></span>
 			<i id="darrow" class="fas fa-angle-down"></i>
 		</div>
-		<div id="msg2" class="row">
-			<i id="darrow" class="fas fa-angle-down"></i>
-		</div>
-		<div id="msg3" class="row">
-			<i id="darrow" class="fas fa-angle-down"></i>
-		</div>
+
 		<div id="msg4" class="row">
+			<section class="rating">
+				<i id="plus" class="fas fa-plus"></i>
+				<i id="minus" class="fas fa-minus"></i>
+				<p id="msg4-rating" class="rating-number">15<p>
+			<section>
+				<section class="msg-content">
+					<p class="msg-ctnt">I'm going to go as U2 for Halloweenand just show up everywhere uninvited</p>
+				</section>
+			<span class="user-post"></span>
 			<i id="darrow" class="fas fa-angle-down"></i>
 		</div>
+
 		<div id="msg5" class="row">
+			<section class="rating">
+				<i id="plus" class="fas fa-plus"></i>
+				<i id="minus" class="fas fa-minus"></i>
+				<p id="msg5-rating" class="rating-number">2<p> 
+			<section>
+				<section class="msg-content">
+					<p class="msg-ctnt">I left my professor a link to my mixtape at the bottom of my essay</p>
+				</section>
+			<span class="user-post"></span>
 			<i id="darrow" class="fas fa-angle-down"></i>
 		</div>
-		<div id="msg6" class="row">
-			<i id="darrow" class="fas fa-angle-down"></i>
+
 		</div>
-		<div id="msg7" class="row">
-			<i id="darrow" class="fas fa-angle-down"></i>
-		</div>
-		<div id="msg8" class="row">
-			<i id="darrow" class="fas fa-angle-down"></i>
-		</div>
+
+		<section id="controls">
+			<div class="row">
+				<p class="boxLabel">Tags:</p>
+				<div id="tags">
+					<span class="tag" id="tag1">Funny</span>
+					<span class="tag" id="tag2">News</span>
+				</div>
+				<p class="boxLabel">Timeframe:</p>
+				<select>
+					<option value="Last Hour">Last Hour</option>
+					<option value="Last 12 Hours">Last 12 Hours</option>
+					<option value="Last Day">Last Day</option>
+					<option value="Last Week">Last Week</option>
+					<option value="Last Month">Last Month</option>
+					<option value="Everything">Everything</option>
+				</select>
+				<p class="boxLabel">Sort by:</p>
+				<select>
+					<option value="Highest Score">Highest Score</option>
+					<option value="Lowest Score">Lowest Score</option>
+					<option value="Recent">Recent</option>
+					<option value="Most Replied">Most Replied</option>
+				</select>
+			</div>
+		</section>
+
+
+		
 	</section>
 	
+	</div>
 
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
