@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose')
 
 const uri = "mongodb+srv://testUser:ITWS4500@cluster0-tpsxu.mongodb.net/test?retryWrites=true";
 MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
@@ -9,7 +10,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 		 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
 	}
 	console.log('Connected...');
-	const collection = client.db("news-api").collection("articles");
+	const collection = client.db("ITWS-4500").collection("posts");
 	// perform actions on the collection object
 	client.close();
  });
