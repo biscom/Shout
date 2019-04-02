@@ -15,4 +15,8 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 	client.close();
  });
 
+app.get('/post', function(req, res){
+	
+});
+
 http.listen(3000,() => console.log("Running on port 3000"))
