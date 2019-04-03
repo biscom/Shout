@@ -109,15 +109,15 @@ $('.post').click(function(){
   	$('body').addClass('modal-active');
 
   	$('#save-changes').click(function() {
-  		$(".post-summary").hide("slide", { direction: "left" }, 10000);
-  // 		$('i.fas.fa-times').css("background-color", "#47C5C0");
-		// $('i.fas.fa-user-times').css("background-color", "#47C5C0");
-		// $('i.fas.fa-folder').css("background-color", "#47C5C0");
-		// $('i.fas.fa-plus').css("background-color", "#47C5C0");
-		// document.getElementById(generalId).remove();
+  		// $(".post-summary").hide("slide", { direction: "left" }, 10000);
+  		$('i.fas.fa-times').css("background-color", "#47C5C0");
+		$('i.fas.fa-user-times').css("background-color", "#47C5C0");
+		$('i.fas.fa-folder').css("background-color", "#47C5C0");
+		$('i.fas.fa-plus').css("background-color", "#47C5C0");
+		document.getElementById(generalId).remove();
 
-		// $('#modal-container').addClass('out');
-  // 		$('body').removeClass('modal-active');
+		$('#modal-container').addClass('out');
+  		$('body').removeClass('modal-active');
   		$('#save-changes').css("display", "none");
   	});
   }
