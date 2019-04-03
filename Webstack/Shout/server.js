@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var session = require('client-sessions');
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose')
 
@@ -14,5 +15,16 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 	// perform actions on the collection object
 	client.close();
  });
+
+app.post('/login', function(req, res){
+	
+});
+
+app.use(session({
+	cookieName: 'session',
+	secret: 'ITWS4500Shout',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000,
+}));
 
 http.listen(3000,() => console.log("Running on port 3000"))
