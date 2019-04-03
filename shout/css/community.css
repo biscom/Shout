@@ -1,0 +1,39 @@
+.guidelines {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	margin-top: 4.6%;
+}
+
+.be-respectful {
+	background-color: #fffffa;
+	border: 1px solid black;
+	width: 100%;
+	height: auto;
+	position: relative;
+	margin-top: 4.9%;
+	z-index: 1;
+
+}
+
+#respectful-img {
+	float: left;
+	max-width:30%;
+  	max-height:30%;
+  	padding-left: 5%;
+  	padding-top: 2%;
+  	padding-bottom: 3%;
+  	position: relative;
+}
+
+/*.no-personal {
+	background-color: #485977;
+	border-bottom: 2px solid black;
+	width: 100%;
+	height: auto;
+	position: relative;
+	margin-top: 4.5%;
+	z-index: -2;
+
+}*/

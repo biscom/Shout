@@ -13,6 +13,11 @@
   src: url(../font/brandon_blk.woff)
 }
 
+@font-face {
+  font-family: Gilroy;
+  src: url(../font/Gilroy-ExtraBold.woff)
+}
+
 /*body {
   background-color: #c00d5c;
 }*/

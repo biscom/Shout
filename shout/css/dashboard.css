@@ -2,29 +2,24 @@ body {
 	background-color: #EEF2F5;
 }
 
-a {
+/*a {
 	color: white !important;
 	text-decoration: none;
-}
+}*/
+
 .toolbar {
 	height: 30vh;
 	width: 11vh;
-	background-color: #32CD99;
-	z-index: -2;
-/*	border: 1px solid black;*/
+	background-color: #28cedc;
+	z-index: 2;
 	position: fixed;
-	margin-top: 30vh;
+	margin-top: 60vh;
 	box-shadow: 0 0px 1px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  /*	transition: all 0.9s cubic-bezier(.25,.8,.25,1);*/
   	border-radius: 10px;
   	margin-left: -1vh;
   	padding-left: 4vh;
-/*  	visibility: hidden;*/
+  	visibility: visible;
 }
-/*
-.toolbar:hover {
-  box-shadow: 10 10px 10px rgba(0,0,0,0.12), 10 10px 20px rgba(0,0,0,0.24);
-}*/
 
 .typcn-th-small {
 	color: white;
@@ -41,13 +36,13 @@ a {
 }
 
 .typcn-th-small:hover { 
-	color: black;
+	color: white;
   	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
 }
 
-.fa-comments {
+/*.fa-comments {
 	color: white;
 	font-size: 5vh;
 	margin-top: 12vh;
@@ -62,13 +57,13 @@ a {
 }
 
 .fa-comments:hover { 
-	color: black;
+	color: white;
 	cursor: pointer;
   	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
 }
-
+*/
 .fa-question {
 	color: white;
 	font-size: 5vh;
@@ -81,7 +76,6 @@ a {
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.8s ease-in-out 0.1s;
     cursor: pointer;
-
 }
 
 .fa-question:hover { 
@@ -94,219 +88,80 @@ a {
 
 .dash-content {
 	position: absolute;
-/*	border: 2px solid black;*/
 	height:100%;
 	width: 100%;
 	margin-top: 10vh;
-	overflow: hidden;
+	/*overflow: scroll;*/
 	z-index: -2;
 }
 
 #dash-title {
-	font-family: 'Raleway', sans-serif;
-	font-size: 3vh;
+	font-family: vag-rundschrift-d, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 5vh;
 	letter-spacing: 0.9vh;
 	margin-left: 17vh;
 	margin-top: 5vh;
 	color: #818890;
 	position: relative;
 	text-transform: uppercase;
-
 }
 
-#featured-title {
-	font-family: 'Chewy', cursive;
-	color: #FF4D80;
-	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
-	font-size: 9vh;
-	position: absolute;
-	margin-top: -0.5vh;
-	margin-left: 16vh;
-	z-index: 1;
-	letter-spacing: 0.4vh;
-
-}
-
-.featured {
-/*	border: 1px solid black;*/
-	width: 45%;
-	height: 40%;
-	position: absolute;
-	margin-top: 7vh;
-	margin-left: 15vh;
-	background-color: #242038;
-	border-radius: 10px;
-	box-shadow: 0 1px 0 0 #ccc, 0 1px 2px 0 #B3B3B3;
-	color: white;
-
-}
-
-.fa-question-circle {
-	position: relative;
+.search {
+	margin-right: 8vh;
+	margin-top: -vh;
 	float: right;
-	padding-top: 1vh;
-	padding-right: 1.2vh;
-	font-size: 3vh;
-	opacity: 0.7;
-	display: inline-block;
+	position: flex;
+	height: 6.5%;
+	width: 35%;
 }
 
-.fa-question-circle:hover, .fa-question-circle:focus, .fa-question-circle:active {
-	color: #32CD99;
-	opacity: 0.9;
-	cursor: pointer;
-	-webkit-animation: hover 1200ms linear 2 alternate;
-  	animation: hover 1200ms linear 2 alternate;
-  	text-decoration: none;
-
-}
-
-.rant-popover {
-	position: relative;
-	float: right;
-/*	visibility: hidden;*/
-
-}
-
-.popover-header {
-	text-align: center;
-	margin: 0 auto;
-	position: relative;
-}
-
-.popover {
-/*	margin-top: -4vh !important;*/
-	max-width: 20%;
-	max-height: 22%;
-
-}
-
-.arrow {
-	margin-top: 1vh;
-	margin-left: 2vh;
-	visibility: hidden;
-
-
-}
-
-
-#topic {
-	font-size: 4vh;
-	letter-spacing: 0.5vh;
-	color: #b4e9e2;
-	text-align: center;
-	position: relative;
-	font-family: 'Raleway', sans-serif;
-	margin-top: 6vh;
-	text-transform: uppercase;
-} 
-
-
-#feature-submit {
+#search-bar {
 	background-color: #FFFFFA;
 	position: relative;
-	height: 39%;
-	width: 69.1%;
-	border-radius: 5px;
+	height: 100%;
+	width: 100%;
+	border-radius: 25px;
 	display: block;
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: 2vh;
 	outline: none;
 	color: #32CD99;
-	font-size: 2vh;
+	float: right;
+	font-size: 3vh;
 	letter-spacing: 0.2vh;
 	overflow: auto;
 	resize: none;
-	word-wrap: break-word;
-	padding-left: 1.2vh;
+	/*word-wrap: break-word;*/
+	padding-left: 2.4vh;
 	padding-right: 0.8vh;
 	padding-top: 1vh;
-	padding-bottom: 0vh;
+	padding-bottom: 1vh;
 	border: none;
 	font-family: Airbnb Cereal;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
 }
 
-#feature-submit:focus {
-    outline: none !important;
-    border: 1px solid #FF4D80;
-    box-shadow: 0 0 4px #FF4D80;
-}
-
-#rant-chars {
-	font-family: Brandon Grotesque;
+.fa-search {
+	color: #818890;
 	font-size: 3vh;
-	margin-left: 77%;
+	float: right;
+	padding-right: 2.4vh;
 	position: relative;
-	margin-bottom: -1vh;
-	transition-property: all;
-	transition-duration: 5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-}
-
-.feature-btn {
-	text-align: center;
-	height: 100%;
-	width: 100%;
-	position: relative;
-
-}
-#submit-entry {
-	background-color: #2EC4B6;
-	position: relative;
-	height: 6.2vh;
-	width: 30vh;
-	border-radius: 35px;
-/*	margin: 0 auto;*/
-	margin-top: -2vh;
-	color: white;
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 0.4vh;
-	text-decoration: none;
-	border: none;
-    outline:none;
-    font-size: 1.7vh;
-    -moz-transition: all 0.5s ease-in-out 0.1s;
+	margin-top: -5vh;
+	opacity: 0.4;
+	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+	-moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
-    transition: all 0.5s ease-in-out 0.1s;
-
+    transition: all 0.8s ease-in-out 0.1s;
 }
 
-#submit-entry:hover { 
-	color: white;
-	background-color: #32CD99;
-	cursor: pointer;
-  	-webkit-animation: hover 1200ms linear 2 alternate;
-  	animation: hover 1200ms linear 2 alternate;
-  	text-decoration: none;
+.fa-search:hover {
+	opacity: 0.2;
 }
 
-#popular-title {
-	font-family: 'Raleway', sans-serif;
-	font-size: 6vh;
-	letter-spacing: 0.2vh;
-	position: absolute;
-	text-transform: lowercase;
-	z-index: 1;
-	margin-left: 60vh;
-	margin-top: -6vh;
-	text-shadow: 2px 3px 0px rgba(0,0,0,0.2);
-}
 
-.popular-tags {
-    display: table;
-    height: 30%;
-    position: absolute;
-    overflow: hidden;
-    width: 60%;
-    background-color: white;
-    margin-top: 2vh;
-    margin-left: 15vh;
-    border-radius: 20px;
-    box-shadow: 0 0 4px rgba(33,33,33,.2); 
-}
+
 /*.tags {
     #position: relative;
     #top: -50%;
@@ -337,8 +192,6 @@ a {
 	#submit-entry {
 		margin-top: 0.6vh;
 	}
-	
-
 }
 
 @media only screen and (max-width: 1280px) {
@@ -354,8 +207,12 @@ a {
 		height: 34%;
 		padding-bottom: 0vh;
 	}
-	
 
+	.search {
+    	margin-right: 2vh;
+    	height: 6.5%;
+    	width: 38%;
+	}
 }
 
 @media only screen and (max-width: 900px) {
@@ -375,8 +232,13 @@ a {
 	#rant-chars {
 		margin-left: 80%;
 	}
-	
 
+	.search {
+    	margin-right: 7vh;
+    	margin-top: -6.5vh;
+    	height: 6.5%;
+    	width: 50%;
+	}
 }
 
 @media only screen and (max-width: 800px) {
@@ -400,33 +262,68 @@ a {
 	#rant-chars {
 		margin-left: 80%;
 	}
-	
 
+	.search {
+    	margin-right: 3vh;
+    	margin-top: -6.5vh;
+    	height: 6.5%;
+    	width: 46%;
+	}
 }
 
 @media only screen and (max-height: 700px) {
+
+	#featured-title {
+		font-size: 16vh;
+		margin-top: -1.3%;
+		margin-left: 10.9%;
+	}
+
 	.featured {
-		width: 80%;
-		height: 32\4%;
+		width: 42%;
+		height: 54.5%;
 		padding-bottom: 1vh;
+	}
+
+	#tod {
+		font-size: 7vh;
+		margin-top: 4%;
+	}
+
+	#topic {
+		font-size: 4vh;
 	}
 
 	#feature-submit {
 		font-size: 1.7vh;
-		height: 31%;
+		height: 40%;
 		width: 75%;
 		margin-top: -1vh;
 		padding-bottom: 0vh;
 	}
 
 	#submit-entry {
-		padding-bottom: 1vh;
+		height: 7.8vh;
+		width: 38vh;
+		font-size: 2.5vh;
+		margin-top: -1%;
+	}
+
+	#view-entry {
+		height: 7.8vh;
+		width: 38vh;
+		font-size: 2.5vh;
+	}
+
+	#submit-topic {
+		height: 7.8vh;
+		width: 38vh;
+		font-size: 2.5vh;
 	}
 
 	#rant-chars {
-		margin-left: 80%;
+		margin-left: 82%;
 	}
-
 
 	#dash-title {
 		margin-top: 7vh;
@@ -443,6 +340,12 @@ a {
 		width: 80%;
 	}
 
+	.search {
+    	margin-right: 3vh;
+    	margin-top: -8vh;
+    	height: 6.5%;
+    	width: 45%;
+	}
 }
 
 @media only screen and (max-height: 500px) {
@@ -450,4 +353,10 @@ a {
 		padding-bottom: 2.5vh;
 	}
 
+	.search {
+    	margin-right: 2vh;
+    	margin-top: -3.6vh;
+    	height: 6.5%;
+    	width: 38%;
+	}
 }

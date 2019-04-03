@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Shout</title>
+  <link rel='stylesheet' href="./css/typicons.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/nav.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bounce.css">
+  <link rel="stylesheet" href="./css/regional.css">
+  <link href="https://fonts.googleapis.com/css?family=Chewy|Contrail+One|Fredoka+One|Miriam+Libre:700|Mouse+Memoirs|Palanquin:700|Paytone+One|Raleway:700|Reem+Kufi|Secular+One|Staatliches|Titan+One" rel="stylesheet">
+  
+
+</head>
+<body>
+  <nav>
+    <section class="logo-section">
+      <i id="volume" class="fas fa-bullhorn"></i>
+      <h1 id="app-title">shout</h1>
+    </section>
+    <section class="navbar-links">
+      <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">Our Community</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+      </ul>
+    </section>
+    <span class="typcn typcn-location"></span>
+    <span class="typcn typcn-user"></span>
+    <i class="fas fa-bell"></i>
+    <span class="typcn typcn-th-menu"></span>
+ </nav>
+ <section class="toolbar">
+  <i class="fas fa-comments"></i>
+  <span class="typcn typcn-th-small"></span>
+  <i class="fas fa-question"></i>
+</section>
+ 
+<section id="main-content">
+  <div id="regional-btns">
+    <button id="regional" type="button">Regional</button>
+    <button id="local" type="button">Local</button>
+  </div>
+  <section class="posts">
+    <div class="msg">
+      <section class="rating">
+          <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+          <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+          <p id="msg1-rating" class="rating-number">102<p>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+    </div>
+    <section id="comments-1" class="comments">hello</section>
+    <div class="msg">
+      <section class="rating">
+          <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+          <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+          <p id="msg1-rating" class="rating-number">96<p>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+    </div>
+  </section>
+  
+</section>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script  src="./js/script.js"></script>
+  
+</body>
+</html>

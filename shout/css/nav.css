@@ -2,38 +2,40 @@
 /* NAV BAR */
 
 nav {
-	background-color: #242038;
+	background-color: #47C5C0;
 	width: 100%;
-	height: 10%;
+	height: 8%;
 	position: fixed;
-	box-shadow: 0 30px 40px rgba(0,0,0,0.12), 0 3px 7px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 4px rgba(0,0,0,0.12), 0 -35px 20px rgba(0,0,0,0.24);
   	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  	z-index: -1;
+  	z-index: 2;
+
 }
 
 #app-title {
-	font-family: 'Chewy', cursive;
-	letter-spacing: 0.4vh;
-	color: white;
+	font-family: dinosaur, sans-serif;
+	font-weight: 900;
+	font-style: normal;
+	letter-spacing: -0.3vh;
+	color: #FFFFFA;
 	font-size: 6vh;
-	color: #fff;
 	z-index: 0;
 	position: fixed;
-	margin-left: 9.6vh;
-	margin-top: 1.4vh;
-    text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+	margin-left: 8vh;
+	margin-top: -0.1vh;
+/*	text-transform: uppercase;*/
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
 
 }
 
 #volume {
-	padding-top: 2.2vh;
+	padding-top: 2vh;
 	padding-left: 2.8vh;
 	position: fixed;
-	color: white;
-	font-size: 5vh;
+	font-size: 4vh;
 	display: inline;
-	color: #2EC4B6;
-	text-shadow: 2px 4px 0px rgba(0,0,0,0.2);
+	color: #FFC74F;
+	text-shadow: -1px 0px 0px rgba(0,0,0,0.2);
 }
 
 .logo-section:hover {
@@ -59,7 +61,7 @@ nav {
 
 
 a {
-	color: white;
+	color: #fd6884 !important;
 	text-decoration: none;
 }
 
@@ -84,18 +86,6 @@ li {
   	padding-bottom: 0.8vh;
 }
 
-.navbar-links {
-	padding-top: 3.4vh;
-	margin-left: 92vh;
-	position: fixed;
-	color: white;
-	font-family: 'Raleway', sans-serif;
-	font-size: 2vh;
-	letter-spacing: 0.2vh;
-	text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-	text-transform: uppercase;
-}
-
 li > a:before {
   content: "";
   position: absolute;
@@ -103,8 +93,8 @@ li > a:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  color: white;
-  background-color: #0AD860;
+  color: #fd6579;
+  background-color: #23daab;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -114,7 +104,7 @@ li > a:before {
 }
 
 li > a:hover:before {
-  color: white;
+  color: #fd6579;
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -124,9 +114,9 @@ li > a:hover:before {
 	position: fixed;
 	margin-left: 84%;
 	font-size: 4vh;
-	color: #FF4D80;
-	margin-top: 1.6vh;
-	text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+	color: #FFFFFA;
+	margin-top: 1vh;
+	text-shadow: 1px -0.4px 0px rgba(0,0,0,0.2);
 	-moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
@@ -137,18 +127,17 @@ li > a:hover:before {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
-  	color: #FF82AB;
-	opacity: 0.9;
+	opacity: 0.8;
 	cursor: pointer;
 }
 
 .typcn-user {
-	margin-top: 0.9vh;
+	margin-top: 0.4vh;
 	position: fixed;
 	margin-left: 89%;
 	font-size: 5vh;
-	color: #FF4D80;
-	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+	color: #FFFFFA;
+	text-shadow: 1px -1px 0px rgba(0,0,0,0.2);
 	-moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
@@ -159,18 +148,17 @@ li > a:hover:before {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
-  	color: #FF82AB;
-	opacity: 0.9;
+	opacity: 0.8;
 	cursor: pointer;
 }
 
 .fa-bell {
-	margin-top: 3.4vh;
+	margin-top: 3vh;
 	position: fixed;
 	margin-left: 95%;
 	font-size: 3.3vh;
-	color: #FF4D80;
-	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+	color: #FFFFFA;
+	text-shadow: 1px -1px 0px rgba(0,0,0,0.2);
 	-moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
@@ -182,8 +170,7 @@ li > a:hover:before {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
-  	color: #FF82AB;
-	opacity: 0.9;
+	opacity: 0.8;
 	cursor: pointer;
 }
 
@@ -247,7 +234,8 @@ li > a:hover:before {
 	}
 
 	.navbar-links {
-		margin-left: 86vh;
+		margin-left: 50%;
+		font-size: 2.4vh;
 	}
 
 

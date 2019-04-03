@@ -1,0 +1,342 @@
+
+#featured-title {
+	font-family: 'Fredoka One', cursive;
+	color: #FF4D80;
+	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+	font-size: 12vh;
+	position: absolute;
+	margin-top: -0.1%;
+	margin-left: 14%;
+	z-index: 1;
+	letter-spacing: -0.2vh;
+
+}
+
+.featured {
+/*	border: 1px solid black;*/
+	width: 45%;
+	height: 47%;
+	position: absolute;
+	margin-top: 10vh;
+	margin-left: 15vh;
+	background-color: #242038;
+	border-radius: 10px;
+	color: white;
+	-webkit-box-shadow: 0 7px 4px #777;
+	-moz-box-shadow: 0 7px 4px #777;
+	box-shadow: -1px 2px 4px #777;
+}
+
+.fa-question-circle {
+	position: relative;
+	float: right;
+	padding-top: 1vh;
+	padding-right: 1.2vh;
+	font-size: 3vh;
+	opacity: 0.7;
+	display: inline-block;
+}
+
+.fa-question-circle:hover, .fa-question-circle:focus, .fa-question-circle:active {
+	color: #32CD99;
+	opacity: 0.9;
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+  	animation: hover 1200ms linear 2 alternate;
+  	text-decoration: none;
+}
+
+.rant-popover {
+	position: relative;
+	float: right;
+}
+
+.popover-title {
+	text-align: center;
+	font-size: 3vh;
+	background-color: #2EC4B6;
+	font-family: Airbnb Cereal;
+	color: white;
+}
+
+.popover {
+	max-width: 20%;
+	max-height: 28%;
+}
+
+.popover-content {
+	text-align: justify;
+  	text-justify: inter-word;
+}
+
+.arrow {
+	margin-top: 1vh;
+	margin-left: 2vh;
+	visibility: hidden;
+}
+
+.submit-status {
+	display: none;
+	color: #32CD99;
+	font-size: 4vh;
+	font-family: Airbnb Cereal;
+	text-align: center;
+	position: relative;
+	margin-top: -2vh;
+}
+
+.circle-loader {
+  margin-top: 3.5vh;
+  margin-bottom: 5vh;
+  margin-left: 42%;
+  background-color: rgba(238,242,245,0.11);
+  border: 6px solid rgba(238,242,245,0.51);
+  border-left-color: #32CD99;
+  animation: loader-spin 1.2s infinite linear;
+  position: relative;
+  vertical-align: top;
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  z-index: 2;
+  visibility: hidden;
+  display: none;
+}
+
+.load-complete {
+  -webkit-animation: none;
+  animation: none;
+  border-color: #32CD99;
+  transition: border 500ms ease-out;
+}
+
+.checkmark {
+  display: none;
+  z-index: 2;
+}
+
+.checkmark.draw:after {
+  animation-duration: 800ms;
+  animation-timing-function: ease;
+  animation-name: checkmark;
+  transform: scaleX(-1) rotate(135deg);
+  z-index: 2;
+}
+
+.checkmark:after {
+  opacity: 1;
+  height: 3.5em;
+  width: 1.75em;
+  transform-origin: left top;
+  border-right: 7px solid #32CD99;
+  border-top: 7px solid #32CD99;
+  content: '';
+  left: 1.3em;
+  top: 3.5em;
+  position: absolute;
+  z-index: 2;
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkmark {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  20% {
+    height: 0;
+    width: 1.75em;
+    opacity: 1;
+  }
+  40% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+  100% {
+    height: 3.5em;
+    width: 1.75em;
+    opacity: 1;
+  }
+}
+
+#tod {
+	font-family: Brandon Grotesque;
+	font-size: 5vh;
+	letter-spacing: 0.8vh;
+	text-align: center;
+	position: relative;
+	text-transform: uppercase;
+	margin-top: 6%;
+	color: #2EC4B6;
+}
+
+#topic {
+	font-size: 3vh;
+	letter-spacing: 0.8vh;
+	color: #ffc15e;
+	text-align: center;
+	position: relative;
+	font-family: 'Raleway', sans-serif;
+	margin-top: -2vh;
+	text-transform: uppercase;
+} 
+
+#feature-submit {
+	background-color: #FFFFFA;
+	position: relative;
+	height: 44%;
+	width: 83%;
+	border-radius: 5px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: -0.8vh;
+	outline: none;
+	color: #32CD99;
+	font-size: 2vh;
+	letter-spacing: 0.2vh;
+	overflow: auto;
+	resize: none;
+	word-wrap: break-word;
+	padding-left: 1.2vh;
+	padding-right: 0.8vh;
+	padding-top: 1vh;
+	padding-bottom: 0vh;
+	border: none;
+	font-family: Airbnb Cereal;
+}
+
+#feature-submit:focus {
+    outline: none !important;
+    border: 1px solid #FF4D80;
+    box-shadow: 0 0 4px #FF4D80;
+}
+
+#rant-chars {
+	font-family: Brandon Grotesque;
+	font-size: 3vh;
+	margin-left: 85%;
+	position: relative;
+	margin-bottom: -1vh;
+	transition-property: all;
+	transition-duration: 5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.feature-btn {
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+#submit-entry {
+	background-color: #2EC4B6;
+	position: relative;
+	height: 6.2vh;
+	width: 30vh;
+	border-radius: 35px;
+	margin-top: -2vh;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.4vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    font-size: 1.7vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#submit-entry:hover { 
+	color: white;
+	background-color: #32CD99;
+	cursor: pointer;
+  	-webkit-animation: hover 1200ms linear 2 alternate;
+  	animation: hover 1200ms linear 2 alternate;
+  	text-decoration: none;
+}
+
+.feature-btns {
+	margin-top: -2vh;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: none;
+}
+
+#view-entry {
+	background-color: #FF4D80;
+	position: relative;
+	height: 6.2vh;
+	width: 30vh;
+	border-radius: 35px;
+	margin-top: -2vh;
+	margin-right: 3vh;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.4vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    display: none;
+    font-size: 1.7vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#view-entry:hover { 
+	color: white;
+	background-color: #ffc15e;
+	cursor: pointer;
+  	-webkit-animation: hover 1200ms linear 2 alternate;
+  	animation: hover 1200ms linear 2 alternate;
+  	text-decoration: none;
+}
+
+#submit-topic {
+	background-color: #2EC4B6;
+	position: relative;
+	height: 6.2vh;
+	width: 30vh;
+	border-radius: 35px;
+	margin-top: -2vh;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.4vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    display: none;
+    font-size: 1.7vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#submit-topic:hover { 
+	color: white;
+	background-color: #ffc15e;
+	cursor: pointer;
+  	-webkit-animation: hover 1200ms linear 2 alternate;
+  	animation: hover 1200ms linear 2 alternate;
+  	text-decoration: none;
+}
