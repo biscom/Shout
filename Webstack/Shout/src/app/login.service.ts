@@ -9,8 +9,26 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   private url = "http://localhost:3000"
 
-  logIn(username, password){
-    let auth = this.http.get(this.url + "/login?username="+username+"&password="+password);
+  createAccount(username, password, nickname,univ_email, univid){
+    let accountInfo={
+      "username" : username,
+      "password" : password,
+      "nickname" : nickname,
+      "univ_email" : univ_email,
+      "univid" : univid
+    };
+    return this.http.post(this.url+"/createAccount", accountInfo);
+
 
   }
+
+  logIn(username, password){
+    let loginInfo = {
+      "username" : username,
+      "password" : password
+    };
+    return this.http.post(this.url + "/login",loginInfo);
+
+  }
+
 }
