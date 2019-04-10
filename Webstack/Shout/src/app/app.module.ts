@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ProfileComponent } from './profile/profile.component';
+import { TrendingComponent } from './trending/trending.component';
+import { UniversityComponent } from './university/university.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent
+    ProfileComponent,
+    TrendingComponent,
+    UniversityComponent
   ],
   imports: [
     HttpClientModule,
