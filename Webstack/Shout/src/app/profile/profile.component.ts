@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { UserDataService } from '../user-data.service';
 // import { Observable } from 'rxjs';
