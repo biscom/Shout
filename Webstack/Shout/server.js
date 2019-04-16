@@ -17,13 +17,25 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 	client.close();
  });
 
+app.get('/nearby', function(req,res){
+	lat=req.query.lat;
+	lon=req.query.lon;
+	//searchdatabase for 3 closest unis and send back in json
+
+});
+
 app.post('/createAccount', function(req, res){
 	//check database for existing user info 
-	bcrypt.hash(res.password, null, function(err, hash) {
+	username = req.username;
+	nickname = req.nickname;
+	univ_email=req.univ_email;
+	univid = req.univid;
+	bcrypt.hash(req.password, null, function(err, hash) {
 		// Store account in database
 	});
 });
 
+//starts client session or returns false with info about incorrect info
 app.post('/login', function(req,res){
 	username = res.username;
 	password = res.password;
@@ -34,16 +46,35 @@ app.post('/login', function(req,res){
 		console.log('Connected...');
 		const collection = client.db("ITWS-4500").collection("accounts");
 		// get account info 
+		//check if user exists
+
+		//check if password matches
 		bcrypt.compare(password, db_hash,function(error, result){
-			if(res){
-
+			if(result){
+				//start client session 
 			}else{
-
+				passworderr={
+					valid: false,
+					error: "Incorrect Password!"
+				};
+				res.send(passworderr);
 			}
 		});
 
 		client.close();
 	 });
+
+});
+
+//returns Top posts from everywhere
+app.get('/top', function(req,res){
+	
+});
+
+//returns posts with specific tag and univ id
+app.get('/posts', function(req,res){
+	tag = req.query.tag;
+	univid=req.query.univid;
 
 });
 
