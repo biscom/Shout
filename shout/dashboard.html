@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/rant.css">
   <link rel="stylesheet" href="./css/dashboard.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/bounce.css">
-  <link href="https://fonts.googleapis.com/css?family=Chewy|Raleway:700" rel="stylesheet">
+ <!--  <link rel="stylesheet" href="./css/p.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Chewy|Contrail+One|Fredoka+One|Miriam+Libre:700|Mouse+Memoirs|Palanquin:700|Paytone+One|Raleway:700|Reem+Kufi|Secular+One|Staatliches|Titan+One" rel="stylesheet">
   
 
 </head>
@@ -19,13 +21,6 @@
     <section class="logo-section">
       <i id="volume" class="fas fa-bullhorn"></i>
       <h1 id="app-title">shout</h1>
-    </section>
-    <section class="navbar-links">
-      <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">Our Community</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-      </ul>
     </section>
     <span class="typcn typcn-location"></span>
     <span class="typcn typcn-user"></span>
@@ -43,22 +38,56 @@
 
   <h2 id="featured-title">rant to us!</h2>
   <section class="featured">
+    <div class="circle-loader">
+      <div class="checkmark draw"></div>
+    </div>
+    <h2 class="submit-status">Adding your Shout ...</h2>
     <a class="rant-popover" data-toggle="popover" data-container="body"  title="What is Rant to Us?" data-placement="right" type="button" data-html="true" href="#" id="rant"><i class="fas fa-question-circle"></i></a>
     <!-- <i class="fa fa-info-circle" data-toggle="popover" data-placement="top" id="rant" title="Tooltip on left"></i> -->
 
     <div id="popover-content-rant" class="hide">
-      <p><i>Rant to Us</i> is a feature at Shout! where we provide a topic for you to shout about. Your Shout can be seen by other students in your region. The users with top three Shouts at the end of each day, are featured the next day.</p>
+      <p><i><b>Rant to Us</b></i> is a feature at Shout! where we provide a topic for you to shout about! <br/><br/> Your Shout can be seen by other students in your region. The users with top three Shouts at the end of each day, are featured the next day.</p>
     </div>
   
-    
+    <p id="tod">Topic of the day</p>
     <p id="topic">Unassigned seats</p>
     <textarea id="feature-submit" maxlength="200"></textarea>
     <span id="rant-chars">200</span>
+    <div class="feature-btns">
+      <button id="view-entry" type="button">View your Shout</button>
+      <button id="submit-topic" type="button">Submit a topic</button>
+    </div>
     <div class="feature-btn"><button id="submit-entry" type="button">Speak your mind</button></div>
     
   </section>
+  <section class="search">
+    <input type="text" id="search-bar" name="Shout's search bar"
+       aria-label="Search through site content" max-length="100">
+       <i class="fas fa-search"></i>
+  </section>
+<!--   <i id="shout" class="fas fa-bullhorn fa-flip-horizontal"></i>
+  <h2 id="featured-usrs-title">Shout Outs</h2>
+  <section class="featured-usrs">
+    <div id="shout-header"></div>
+    <div id="first-usr"> -->
+    <!--   <i class="fas fa-award"></i>
+      <div id="usr1" class="shout-usr"></div> -->
+     <!--  <p class="username">user1 username</p> -->
+<!--     </div>
+    <div id="second-usr"> -->
+    <!--   <i class="fas fa-award"></i>
+      <div id="usr2" class="shout-usr"></div>
+      <p class="username">user2 username</p> -->
+ <!--    </div>
+    <div id="third-usr"> -->
+     <!--  <i class="fas fa-award"></i>
+      <div id="usr3" class="shout-usr"></div>
+      <p class="username">user3 username</p> -->
+    <!-- </div>
+  </section> -->
+
 <!--   <h2 id="popular-title">Popular Tags</h2> -->
-  <!-- <section class="popular-tags">
+<!--   <section class="popular-tags">
     <div class="tags">
       <p></p>
     </div>

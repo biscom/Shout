@@ -1,0 +1,16 @@
+.posts::-webkit-scrollbar {
+  width: 10px;
+  overflow: auto;
+}
+.posts::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: auto;
+}
+.posts::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #485977, #95DBD2);
+  border-radius: 5px;
+  -webkit-box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+  overflow: auto;
+
+}

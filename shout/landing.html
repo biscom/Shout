@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Shout</title>
+  <link rel='stylesheet' href="./css/typicons.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://use.typekit.net/wmk4kgh.css">
+  <link rel="stylesheet" href="./css/nav.css">
+<!--   <link rel="stylesheet" href="./css/dashboard.css"> -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/bounce.css">
+  <link rel="stylesheet" href="./css/regional.css">
+  <link rel="stylesheet" href="./css/post-options.css">
+  <link rel="stylesheet" href="./css/report.css">
+  <link rel="stylesheet" href="./css/scrollbar.css">
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+  
+
+</head>
+<body>
+  <nav>
+    <section class="logo-section">
+      <i id="volume" class="fas fa-bullhorn"></i>
+      <h1 id="app-title">shout</h1>
+    </section>
+    <section class="navbar-links">
+    </section>
+    <span class="typcn typcn-location"></span>
+    <span class="typcn typcn-user"></span>
+    <i class="fas fa-bell"></i>
+    <span class="typcn typcn-th-menu"></span>
+ </nav>
+ <section class="toolbar">
+  <i class="fas fa-comments"></i>
+  <span class="typcn typcn-th-small"></span>
+  <i class="fas fa-question"></i>
+</section>
+ 
+<section id="main-content">
+  <div id="login-btns">
+    <button id="login" type="button">Login</button>
+    <button id="sign-up" type="button">Sign Up</button>
+  </div>
+  <i class="fas fa-pen-square"></i>
+  <section class="posts">
+    <div class="msg">
+      <section class="post-options" id="options-id"><i class="fas fa-ellipsis-v"></i></section>
+      <section id="msg-id">
+       <!--  <span class="typcn typcn-star-outline"></span>
+        <span class="typcn typcn-flag"></span> -->
+        <section class="rating">
+            <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+            <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+            <p id="msg1-rating" class="rating-number">102</p>
+            <section class="msg-content">Dammit Spotify... I have to listen to 30 minutes of music before listening to the next ad...</section>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+      </section>  
+    </div>
+    <div class="msg">
+      <section class="post-options" id="options-id"><i class="fas fa-ellipsis-v"></i></section>
+      <section id="msg-id">
+        <section class="rating">
+            <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+            <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+            <p id="msg1-rating" class="rating-number">102</p>
+            <section class="msg-content">Dammit Spotify... I have to listen to 30 minutes of music before listening to the next ad...</section>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+      </section>  
+    </div>
+    <div class="msg">
+      <section class="post-options" id="options-id"><i class="fas fa-ellipsis-v"></i></section>
+      <section id="msg-id">
+        <section class="rating">
+            <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+            <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+            <p id="msg1-rating" class="rating-number">102</p>
+            <section class="msg-content">Dammit Spotify... I have to listen to 30 minutes of music before listening to the next ad...</section>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+      </section>  
+    </div>
+    <div class="msg">
+      <section class="post-options" id="options-id"><i class="fas fa-ellipsis-v"></i></section>
+      <section id="msg-id">
+        <section class="rating">
+            <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+            <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+            <p id="msg1-rating" class="rating-number">102</p>
+            <div class="msg-content">Dammit Spotify... I have to listen to 30 minutes of music before listening to the next ad...</div>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+      </section>  
+    </div>
+    <div class="msg">
+      <section class="post-options" id="options-id"><i class="fas fa-ellipsis-v"></i></section>
+      <section id="msg-id">
+        <section class="rating">
+            <i id="plus" onclick="incrementValue()" class="fas fa-volume-up"></i>
+            <i id="minus" onclick="decrementValue()" class="fas fa-volume-down"></i>
+            <p id="msg1-rating" class="rating-number">102</p>
+            <section class="msg-content">Dammit Spotify... I have to listen to 30 minutes of music before listening to the next ad...</section>
+        </section>
+        <i id="darrow" class="fas fa-angle-down"></i>
+      </section>  
+    </div>
+  </section>
+  <section class="filter">
+    <div class="filter-content">
+      filters
+    </div>
+  </section>
+  
+</section>
+<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <div class="option-btns">
+        <button id="report-post" type="button"><i class="fas fa-flag" style="font-size: 2vh;"></i>&nbsp;Report post</button>
+        <button id="share-post" type="button"><i class="fas fa-share-square" style="font-size: 2vh;"></i>&nbsp;Share post</button>
+        </div>
+        <section class="choices">
+          <div class="inputGroup">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">This post is offensive and doesn't comply with community guidelines.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">This post is about me or another person.<br/>This post doxxes someone.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option3" name="option3" type="checkbox"/>
+            <label for="option3">Report this post as spam.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option4" name="option4" type="checkbox"/>
+            <label for="option4">Other</label>
+          </div>
+          <button id="submit-report" type="button"><i class="fas fa-microphone-slash" style="font-size: 2vh;"></i>&nbsp;Submit Report</button>
+        </section>
+        <section class="share">
+          <button id="copy-post" type="button"><i class="fas fa-clipboard"></i></button>
+          <button id="share-fb" type="button"><i class="fab fa-facebook-f"></i></button>
+          <button id="share-tw" type="button"><i class="fab fa-twitter"></i></button><br/>
+          <textarea id="copy-text"></textarea>
+        </section>    
+    </div>
+  </div>
+</div>
+<!-- <div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <div class="option-btns">
+        <button id="report-post" type="button"><i class="fas fa-flag" style="font-size: 2vh;"></i>&nbsp;Report post</button>
+        <button id="share-post" type="button"><i class="fas fa-share-square" style="font-size: 2vh;"></i>&nbsp;Share post</button>
+        </div>
+        <section class="choices">
+          <div class="inputGroup">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">This post is offensive and doesn't comply with community guidelines.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">This post is about me or another person.<br/>This post doxxes someone.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option3" name="option3" type="checkbox"/>
+            <label for="option3">Report this post as spam.</label>
+          </div>
+          <div class="inputGroup">
+            <input id="option4" name="option4" type="checkbox"/>
+            <label for="option4">Other</label>
+          </div>
+          <button id="submit-report" type="button"><i class="fas fa-microphone-slash" style="font-size: 2vh;"></i>&nbsp;Submit Report</button>
+        </section>
+        <section class="share">
+          <button id="copy-post" type="button"><i class="fas fa-clipboard"></i></button>
+          <button id="share-fb" type="button"><i class="fab fa-facebook-f"></i></button>
+          <button id="share-tw" type="button"><i class="fab fa-twitter"></i></button><br/>
+          <textarea id="copy-text"></textarea>
+        </section>    
+    </div>
+  </div>
+</div> -->
+
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script  src="./js/script.js"></script>
+  
+</body>
+</html>
