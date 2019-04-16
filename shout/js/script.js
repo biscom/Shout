@@ -108,6 +108,26 @@ $('.post-options').click(function(){
 	});
  });
 
+
+// $('.post-options').click(function(){
+// 	var buttonId = $(this).attr('id');
+// 	var postText = $(this).closest('div').find('.msg-content').text();
+// 	console.log(postText)
+// 	var id = buttonId.split("-")[0];
+// 	$('#modal-container').removeAttr('class').addClass(id);
+//   	$('body').addClass('modal-active');
+
+//   	$('#share-post').click(function() {
+//   		console.log("here")
+//   		$('.choices').hide('slide', {direction: 'left'}, 1000);
+//   		$('#copy-text').append(postText);
+//   		$('#copy-post').css('display', 'inline-block');
+//   		$('#share-fb').css('display', 'inline-block');
+//   		$('#share-tw').css('display', 'inline-block');
+//   		$('#copy-text').css('display', 'inline-block');
+// 	});
+//  });
+
 $('.post').click(function(){
   var buttonId = $(this).attr('id');
   generalId = buttonId;
