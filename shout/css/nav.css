@@ -127,7 +127,7 @@ li > a:hover:before {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
-	opacity: 0.8;
+	color: #FFC74F;
 	cursor: pointer;
 }
 
@@ -148,12 +148,12 @@ li > a:hover:before {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
   	text-decoration: none;
-	opacity: 0.8;
+	color: #FFC74F;
 	cursor: pointer;
 }
 
 .fa-bell {
-	margin-top: 3vh;
+	margin-top: 2.7vh;
 	position: fixed;
 	margin-left: 95%;
 	font-size: 3.3vh;
@@ -169,8 +169,7 @@ li > a:hover:before {
 .fa-bell:hover {
 	-webkit-animation: hover 1200ms linear 2 alternate;
   	animation: hover 1200ms linear 2 alternate;
-  	text-decoration: none;
-	opacity: 0.8;
+	color: #FFC74F;
 	cursor: pointer;
 }
 

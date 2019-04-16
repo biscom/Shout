@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./css/bounce.css">
   <link rel="stylesheet" href="./css/admin.css">
   <link rel="stylesheet" href="./css/tooltip.css">
-  <link href="https://fonts.googleapis.com/css?family=Chewy|Contrail+One|Fredoka+One|Miriam+Libre:700|Mouse+Memoirs|Palanquin:700|Paytone+One|Raleway:700|Reem+Kufi|Secular+One|Staatliches|Titan+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
   
 
 </head>
@@ -67,51 +67,63 @@
   </section> -->
 
  
- </section><div id="modal-container">
-      <div class="modal-background">
-        <div class="modal">
-          <section class="post-summary">
-         <section class="full-post">
-          <button id="view-shout" type="button"><i class="far fa-eye" style="font-size: 2vh;"></i>&nbsp;View Shout</button>
-          <div class="full-post-words"></div>
-          <div class="admin-options">
-            <i class="fas fa-plus"></i>
-            <i class="fas fa-folder"></i>
-            <i class="fas fa-times"></i>
-            <i class="fas fa-user-times"></i>
-          </div>
-         </section>
-         <section class="flag-details">
-           <h2 class="pd">Post Details</h2>
-           <div class="post-status">
-            <span class="typcn typcn-warning" id="new-post-status" style="color: white !important;"></span>
-            <h2 id="flag-status" class="new-post-status" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.3vh; font-size: 3vh; color: white; font-family: dinosaur, sans-serif; font-style: normal;">&nbsp;Removed</h2></div>
-           <div class="stats"><i class="fas fa-flag"><h3 class="stat">10</h3></i>
-           <i class="fas fa-volume-up"><h3 class="stat">15</h3></i>
-           <i class="fas fa-volume-down"><h3 class="stat">20</h3></i>
-           <i class="fas fa-comments"><h3 class="stat">67</h3></i>
-           <!-- <br/> --></div>
-           <div class="flagged-user">
-            <div class="flagged-user-stats">
-              <div class="flagged-user-name">ozinem@rpi.edu&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
-              <span class="typcn typcn-times"></span><h3 class="stat" id="strikes-stat" style="color: #fffffa; font-size: 4.2vh;">1</h3>
-               <span class="typcn typcn-volume"></span><h3 class="stat" id="reach-stat" style="color: #fffffa; font-size: 4.2vh;">1678</h3>
-               <br/><br/>
-                <button id="save-changes" type="button">Save Changes&nbsp;<i class="fas fa-check"></i></button>
-            </div>
-            <img src="https://media1.tenor.com/images/ae31334345183477cfc3762f33f8b6af/tenor.gif?itemid=11996781" class="circle"></div>
-           
-           
-         </section>
-       </section>
+ </section>
+ <div id="modal-container">
+    <div class="modal-background">
+      <div class="modal">
+        <section class="changes-summary">
+          <h3 id="fail-safe-title">Save the following changes?</h3>
+          <i class="fas fa-check-circle"></i><h3 id="mod-title"> Moderate these words:</h3><br/>
+          <div class="modified-words"></div>
+          <div id="strike" class="mod"><i class="fas fa-check-circle"></i><h3 id="mod-title">Add a strike</h3></div>
+          <div id="archive" class="mod"><i class="fas fa-check-circle"></i><h3 id="mod-title">Archive post</h3></div>
+          <div id="remove" class="mod"><i class="fas fa-check-circle"></i><h3 id="mod-title">Remove post</h3></div><br/>
+          <button id="save-all-changes" type="button">Save Changes&nbsp;<i class="fas fa-check"></i></button>
+          
+        </section>
+        <section class="post-summary">
+       <section class="full-post">
+        <button id="view-shout" type="button"><i class="far fa-eye" style="font-size: 2vh;"></i>&nbsp;View Shout</button>
+        <div class="full-post-words"></div>
+        <div class="admin-options">
+          <i class="fas fa-plus"></i>
+          <i class="fas fa-folder"></i>
+          <i class="fas fa-times"></i>
+          <i class="fas fa-user-times"></i>
         </div>
+       </section>
+       <section class="flag-details">
+         <h2 class="pd">Post Details</h2>
+         <div class="post-status">
+          <span class="typcn typcn-warning" id="new-post-status" style="color: white !important;"></span>
+          <h2 id="flag-status" class="new-post-status" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.3vh; font-size: 3vh; color: white; font-family: dinosaur, sans-serif; font-style: normal;">&nbsp;Removed</h2></div>
+         <div class="stats"><i class="fas fa-flag"><h3 class="stat">10</h3></i>
+         <i class="fas fa-volume-up"><h3 class="stat">15</h3></i>
+         <i class="fas fa-volume-down"><h3 class="stat">20</h3></i>
+         <i class="fas fa-comments"><h3 class="stat">67</h3></i>
+         <!-- <br/> --></div>
+         <div class="flagged-user">
+          <div class="flagged-user-stats">
+            <div class="flagged-user-name">ozinem@rpi.edu&nbsp;&nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+            <span class="typcn typcn-times"></span><h3 class="stat" id="strikes-stat" style="color: #fffffa; font-size: 4.2vh;">1</h3>
+             <span class="typcn typcn-volume"></span><h3 class="stat" id="reach-stat" style="color: #fffffa; font-size: 4.2vh;">1678</h3>
+             <br/><br/>
+              <button id="save-changes" type="button">Save Changes&nbsp;<i class="fas fa-check"></i></button>
+          </div>
+          <img src="https://media1.tenor.com/images/ae31334345183477cfc3762f33f8b6af/tenor.gif?itemid=11996781" class="circle"></div>
+         
+         
+       </section>
+     </section>
+      </div>
       </div>
   </div>
 
+
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
   <script  src="./js/script.js"></script>
   
 </body>

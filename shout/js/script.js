@@ -89,6 +89,25 @@ $( "#darrow" ).click(function(e) {
 
 generalId = "";
 
+$('.post-options').click(function(){
+	var buttonId = $(this).attr('id');
+	var postText = $(this).closest('div').find('.msg-content').text();
+	console.log(postText)
+	var id = buttonId.split("-")[0];
+	$('#modal-container').removeAttr('class').addClass(id);
+  	$('body').addClass('modal-active');
+
+  	$('#share-post').click(function() {
+  		console.log("here")
+  		$('.choices').hide('slide', {direction: 'left'}, 1000);
+  		$('#copy-text').append(postText);
+  		$('#copy-post').css('display', 'inline-block');
+  		$('#share-fb').css('display', 'inline-block');
+  		$('#share-tw').css('display', 'inline-block');
+  		$('#copy-text').css('display', 'inline-block');
+	});
+ });
+
 $('.post').click(function(){
   var buttonId = $(this).attr('id');
   generalId = buttonId;
@@ -101,6 +120,7 @@ $('.post').click(function(){
   $(".new-post-status").html(postStatus);
   $( ".full-post-words" ).empty();
   $( ".full-post-words" ).append(postText);
+  console.log(postText)
   var id = buttonId.split("-")[0];
   console.log(id);
   if (id === "flagged") {
@@ -108,7 +128,46 @@ $('.post').click(function(){
   	$('#modal-container').removeAttr('class').addClass(id);
   	$('body').addClass('modal-active');
 
-  	$('#save-changes').click(function() {
+	$('i.fas.fa-plus').click(function() {
+		$('#view-shout').css("margin-top", "-5vh");
+		$(this).css("background-color", "#fcb165");
+		console.log(postText);
+		$('.full-post-words').empty();
+		moderatedWords(postText);
+		$('#save-changes').css("display", "block");
+		$('div.word').click(function() {
+			$(this).css("background-color", "rgb(255, 199, 79)");
+			//rgb(255, 199, 79)
+
+			});
+	});
+
+
+  	// $('#save-changes').click(function() {
+  // 		// $(".post-summary").hide("slide", { direction: "left" }, 10000);
+  // 		$('i.fas.fa-times').css("background-color", "#47C5C0");
+		// $('i.fas.fa-user-times').css("background-color", "#47C5C0");
+		// $('i.fas.fa-folder').css("background-color", "#47C5C0");
+		// $('i.fas.fa-plus').css("background-color", "#47C5C0");
+		// document.getElementById(generalId).remove();
+
+		// $('#modal-container').addClass('out');
+  // 		$('body').removeClass('modal-active');
+  // 		$('#save-changes').css("display", "none");
+  	// });
+  }
+
+});
+
+$('#save-changes').click(function() {
+	console.log("here")
+	$('.post-summary').hide('slide', {direction: 'left'}, 1000);
+	console.log("safe");
+	getAllModified();
+	$('.modal').css('margin-top', '3%');
+	$('.changes-summary').css('display', 'block');
+	$('#fail-safe-title').css('display', 'block');
+	$('#save-all-changes').click(function() {
   		// $(".post-summary").hide("slide", { direction: "left" }, 10000);
   		$('i.fas.fa-times').css("background-color", "#47C5C0");
 		$('i.fas.fa-user-times').css("background-color", "#47C5C0");
@@ -120,8 +179,7 @@ $('.post').click(function(){
   		$('body').removeClass('modal-active');
   		$('#save-changes').css("display", "none");
   	});
-  }
-
+  
 });
 
 
@@ -147,6 +205,17 @@ function moderatedWords(text) {
 	
 }
 
+function getAllModified() {
+	words = []
+	$( ".word" ).each(function() {
+		if ($(this).css("background-color") == "rgb(255, 199, 79)") {
+			console.log($(this).text())
+			modWord = "<div class=\"mword\">" + $(this).text() + "</div>"
+			$( ".modified-words" ).append( modWord );
+		}
+	});
+}
+
 $('.post-status').click(function() {
 	bColor = $(this).css("background-color");
 	console.log(bColor);
@@ -166,23 +235,20 @@ $('.post-status').click(function() {
 		
 });
 
-$('i.fas.fa-plus').click(function() {
-	$('#view-shout').css("margin-top", "-5vh");
-	postText =  $( ".full-post-words" ).text();
-	$(this).css("background-color", "#fcb165");
-	console.log(postText);
-	$('.full-post-words').empty();
-	moderatedWords(postText);
-	$('#save-changes').css("display", "block");
-	$('div.word').click(function() {
-	 $(this).css("background-color", "rgb(255, 199, 79)");
-	 //rgb(255, 199, 79)
 
-	});
+$('.fas.fa-check-circle').click(function() {
+	color = $(this).css("color");
+	console.log(color);
+	if (color === "rgb(255, 255, 255)") {
+		$(this).css("color", "rgb(6, 214, 160)");
+	}
 
+	else if (color === "rgb(6, 214, 160)") {
+		$(this).css("color", "rgb(255, 255, 255)");
+
+	}
 
 });
-
 
 $('i.fas.fa-times').click(function() {
 	$(this).css("background-color", "#fcb165");
@@ -200,7 +266,7 @@ $('i.fas.fa-user-times').click(function() {
 });
 
 function addTags() {
-	colors = ["#fcb165", "#E75A7C", "#47C5C0", "#485977", "rgb(6, 214, 160)", "#FFC74F"];
+	colors = ["#fcb165", "#E75A7C", "#47C5C0", "#485977", "rgb(6, 214, 160)", "#FFC74F", "#95DBD2"];
   	hashtags = ["#hot", "#boy", "#follow", "#style", "#work", "#fit", 
   				"#fashion", "#igers", "#black", "#beach", "#food", "#music",
   				 "#healthy", "#nyc", "#picture", "#business", "#l4l", "#training", "#Family", 
@@ -212,7 +278,7 @@ function addTags() {
   		hashTag = "<div class=\"hashtag\" style=\"background-color:" + colors[c]  + ";\">" + hashtags[i] + "</div>"
   		$( ".pending-tags" ).append(hashTag);
   		c += 1;
-  		if (c > 6) {
+  		if (c == 7) {
   			c = 0;
   		}
   	}
