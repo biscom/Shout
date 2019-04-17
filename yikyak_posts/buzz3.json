@@ -1,13 +1,12 @@
+[
 {
-    "id": 2101,
     "user_id": 7,
     "msg_body": "I had no idea we were millionaires until I saw my roommate rip off 4 paper towels at once.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-12-07T07:29:54.003Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 1043,
-    "dislikes": 1,
-    "status": "active"
-}
+    "dislikes": 1
+}]
