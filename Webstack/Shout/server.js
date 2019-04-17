@@ -1,10 +1,17 @@
 var express = require('express');
-var app = express();
+var session = require('express-session');
 var http = require('http').Server(app);
-var session = require('client-sessions');
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
+var app = express();
+
+app.use(cors({origin: [
+	"http://localhost:4200"
+  ], credentials: true}));
+
+app.use(session({secret: "ITWS4500Shout"}));
 
 const uri = "mongodb+srv://testUser:ITWS4500@cluster0-tpsxu.mongodb.net/test?retryWrites=true";
 MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
@@ -78,11 +85,5 @@ app.get('/posts', function(req,res){
 
 });
 
-app.use(session({
-	cookieName: 'session',
-	secret: 'ITWS4500Shout',
-	duration: 30 * 60 * 1000,
-	activeDuration: 5 * 60 * 1000,
-}));
 
 http.listen(3000,() => console.log("Running on port 3000"))
