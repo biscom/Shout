@@ -2,7 +2,7 @@ var Chance = require('chance');
 var chance = new Chance();
 const fs = require('fs');
 
-file = 'tc.json'
+file = 'buzz2.json'
 
 let rawdata = fs.readFileSync(file);  
 let json = JSON.parse(rawdata);  
@@ -12,5 +12,5 @@ console.log(json);
 // 	json[i].timestamp = date;
 // }
 
-// fs.writeFileSync(file, JSON.stringify(json));
+fs.writeFileSync(file, JSON.stringify(json));
 
