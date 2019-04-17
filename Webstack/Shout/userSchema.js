@@ -27,7 +27,8 @@ var userSchema = mongoose.Schema({
         ref: University
     },
     flagged_num: {
-        type: Number
+        type: Number,
+        default: 0
     },
     created: {
         type: Date
@@ -35,6 +36,9 @@ var userSchema = mongoose.Schema({
     user_type: {
         type: String,
         default: 'Standard User'
+    },
+    email: {
+        type: String
     }
 })
 
