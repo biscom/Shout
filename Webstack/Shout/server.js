@@ -55,10 +55,13 @@ app.post('/login', function(req,res){
 		// get account info 
 		//check if user exists
 
+
 		//check if password matches
 		bcrypt.compare(password, db_hash,function(error, result){
 			if(result){
 				//start client session 
+				req.session.username = username;
+
 			}else{
 				passworderr={
 					valid: false,
@@ -81,7 +84,7 @@ app.get('/top', function(req,res){
 //returns posts with specific tag and univ id
 app.get('/posts', function(req,res){
 	tag = req.query.tag;
-	univid=req.query.univid;
+	univid=req.session.univid;
 
 });
 
