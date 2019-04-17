@@ -13,7 +13,7 @@ export class PostsService {
     return this.http.get(this.url + "/top");
   }
 
-  getTaggedPosts(tag, univid){
-    return this.http.get(this.url+"/posts?tag="+tag+"&univid="+univid)
+  getTaggedPosts(tag){
+    return this.http.get(this.url+"/posts?tag="+tag);
   }
 }
