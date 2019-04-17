@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+html {
+	font-family: Calibri;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	background-color: #FAFAFA;
+}
+
+header {
+	height: 40px;
+	padding: 10px 0;
+	width: 100%;
+
+	background-color: #F3F3F3;
+	border-bottom: 3px solid #EEE;
+
+	position: fixed;
+	top: 0;
+}
+
+#logo {
+	font-family: Fredoka One;
+	font-size: 35px;
+	color: #E32636;
+	font-style: italic;
+	margin-left: 15px;
+}
+
+.navButton {
+	display: inline-block;
+	color: #999;
+	font-size: 27px;
+	margin-left: 60px;
+}
+
+.navButton:hover {
+	cursor: pointer;
+}
+
+#userpanel {
+	float: right;
+	clear: right;
+	margin-right: 15px;
+}
+
+#user {
+	float: left;
+	clear: left;
+}
+
+#user span {
+	text-align: right;
+}
+
+#username {
+	display: block;
+
+	font-size: 18px;
+	font-weight: bold;
+	color: #999;
+}
+
+#logout {
+	display: block;
+
+	font-size: 11px;
+	color: #BBB;
+
+	cursor: pointer;
+}
+
+#logout:hover {
+	color: #00B2EE;
+	text-decoration: underline;
+}
+
+#userimage {
+	float: right;
+	clear: right;
+
+	height: 38px;
+	width: 38px;
+	margin-left: 17px;
+	border-radius: 100px;
+}
+
+#mainbox {
+	text-align: center;
+	margin: 65px auto 25px auto;
+	min-width: 500px !important;
+}
+
+#mainbox > div {
+	text-align: left;
+}
+
+#posts, #filterControls {
+	display: inline-block;
+}
+
+#posts {
+	width: 545px;
+}
+
+.postbox {
+	display: block;
+	margin-top: 15px;
+	width: 100%;
+	background-color: #FFF;
+	box-sizing: border-box;
+
+	min-height: 125px;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+.time {
+	color: #AAA;
+	font-size: 12px;
+	margin: 2px 0 0 5px;
+	display: block;
+}
+
+/* Vote Interface ------------------------------------------------*/
+/* ---------------------------------------------------------------*/
+.votes {
+	margin-left: 7px;
+	text-align: center;
+	width: 50px;
+	display: inline-block;
+}
+
+.votes * {
+	display: block;
+	font-size: 25px;
+	font-family: "Fredoka One";
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+.votes:after {
+	clear: both;
+}
+
+.up {
+	margin: 0;
+	cursor: pointer;
+}
+
+.score {
+	font-size: 20px;
+}
+
+.down {
+	margin: -8px 0 0 0;
+	cursor: pointer;
+}
+
+.content {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 0 0 20px;
+	width: 450px;
+	font-family: "Fredoka One";
+	color: #444;
+	word-break: break-word;
+}
+
+.post {
+	display: block;
+}
+
+.postControls {
+	display: block;
+	margin: 10px 25px;
+	font-family: "Fredoka One";
+	color: #999;
+}
+
+.postControls span:hover {
+	cursor: pointer;
+}
+
+.savePost {
+	margin-left: 30px;
+}
+
+.reportPost {
+	float: right;
+}
+
+.postBottom {
+	margin: 0;
+	padding: 0 0 23px 0;
+	display: none;
+}
+
+.comments {
+	box-sizing: border-box;
+	margin: 0 25px;
+	padding-top: 25px;
+	border-top: 2px solid #EEE;
+}
+
+.comments > * {
+	display: block;
+}
+
+.newComment {
+	width: 100%;
+}
+
+.submitComment {
+	float: right;
+	font-size: 25px;
+	color: #888;
+}
+
+.comment {
+	display: block;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+.commentText {
+	font-family: "Fredoka One";
+	color: #444;
+	padding: 0;
+	margin: 5px;
+}
+
+.commentControls {
+	font-family: "Fredoka One";
+	color: #999;
+	margin: 5px 8px 5px 5px;
+}
+
+.commentControls span:hover {
+	cursor: pointer;
+}
+
+.commentControls > * {
+	display: inline-block;
+}
+
+.commentUp, .commentDown {
+	font-size: 18px;
+}
+
+.saveComment {
+	margin-left: 30px;
+}
+
+.reportComment {
+	float: right;
+}
+
+#rightSidebar {
+	position: sticky;
+	top: 80px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#filterControls {
+	margin: 0 0 0 13px;
+	padding: 0;
+	background-color: #FFF;
+
+	width: 200px;
+	height: 250px;
+
+	border: 1px solid #EEE;
+	border-radius: 4px;
+
+	box-shadow: 0 0 8px -2px #DDD;
+}
