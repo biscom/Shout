@@ -1,328 +1,279 @@
+[
 {
-    "id": 2787,
     "user_id": 100,
     "msg_body": "Study tip: stand up. Stretch. Take a walk. Go to the airport. Get on a plane. Never return.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-08-31T04:49:56.656Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 123,
-    "dislikes": 16,
-    "status": "active"
+    "dislikes": 16
 },
 {
-    "id": 70,
     "user_id": 59,
     "msg_body": "Can't sleep because I can‘t figure out how waffle fries are made\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-02-09T23:25:22.144Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 20,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 861,
     "user_id": 71,
     "msg_body": "I just passed my drug test! My dealer has some explaining to do\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-02-02T16:32:18.839Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 58,
-    "dislikes": 5,
-    "status": "active"
+    "dislikes": 5
 },
 {
-    "id": 3373,
     "user_id": 98,
     "msg_body": "CVS Pharmacist: \"Why do you think you need Plan B?\"\n Me: \"Cause there's an egg hunt going on where it shouldn't be.\"\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-08-29T14:57:38.523Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 178,
-    "dislikes": 12,
-    "status": "active"
+    "dislikes": 12
 },
 {
-    "id": 791,
     "user_id": 92,
     "msg_body": "Makin my way downtown, walkin fast, haulin ass cause ITS COLD OUT. Da dadada dada — and I'm freezing. Da dadada dada - and snots leaking. Da dadada dada-and now I'm wondering if I should go get my degree... or stay in bed and watch tv.",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-06-22T19:14:32.855Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 144,
-    "dislikes": 9,
-    "status": "active"
+    "dislikes": 9
 },
 {
-    "id": 3086,
     "user_id": 26,
     "msg_body": "when u shittin and u rethink ur entire life mom I love u\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-04-25T21:20:54.272Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 3,
-    "dislikes": 0,
-    "status": "active"
+    "dislikes": 0
 },
 {
-    "id": 3253,
     "user_id": 52,
     "msg_body": "Everything I like is either expensive, illegal, or doesn't text back.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-02-01T16:13:37.305Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 45,
-    "dislikes": 7,
-    "status": "active"
+    "dislikes": 7
 },
 {
-    "id": 12,
     "user_id": 192,
     "msg_body": "Want a slutty costume? Dress up as my professors, they barley cover anything important\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-09-17T18:30:18.139Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 135,
-    "dislikes": 9,
-    "status": "active"
+    "dislikes": 9
 },
 {
-    "id": 1410,
     "user_id": 72,
     "msg_body": "I'm gonna go as U2 for Halloween and just show up everywhere uninvited\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-02-26T03:01:54.904Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 289,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 3131,
     "user_id": 99,
     "msg_body": "to the window, to the wall, to my 8am i crawl\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-02-04T21:46:34.583Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 55,
-    "dislikes": 1,
-    "status": "active"
+    "dislikes": 1
 },
 {
-    "id": 327,
     "user_id": 14,
     "msg_body": "Got so high last night we searched for my friend for half an hour while he helped us look\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-03-21T03:02:42.419Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 13,
-    "dislikes": 0,
-    "status": "active"
+    "dislikes": 0
 },
 {
-    "id": 2198,
     "user_id": 49,
     "msg_body": "I left my teacher a link to my mixtape on the bottom of my essay\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-05-11T18:06:37.712Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 64,
-    "dislikes": 9,
-    "status": "active"
+    "dislikes": 9
 },
 {
-    "id": 3036,
     "user_id": 15,
     "msg_body": "If you really think about it poop is like the sparknotes of everything you ate\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-09-02T10:35:01.434Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 21,
-    "dislikes": 7,
-    "status": "active"
+    "dislikes": 7
 },
 {
-    "id": 2688,
     "user_id": 12,
     "msg_body": "Someone nodded at me today and I think it‘s because I wore my trench coat\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-05-17T07:43:18.022Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 559,
-    "dislikes": 1,
-    "status": "active"
+    "dislikes": 1
 },
 {
-    "id": 2689,
     "user_id": 75,
     "msg_body": "Nodded at the dude wearing a trench coat and he nodded back. When he shoots up the place I'm safe now.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-04-16T19:10:43.663Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 209,
-    "dislikes": 3,
-    "status": "active"
+    "dislikes": 3
 },
 {
-    "id": 1344,
     "user_id": 32,
     "msg_body": "College: where condoms are free but printing is not.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-01-08T03:36:04.606Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 22,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 1515,
     "user_id": 47,
     "msg_body": "For every A I'll throw a peanut at my roommate\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-03-13T12:23:40.409Z",
+    "univid": 1,
     "comments": [
-        {
-            "user_id": 1,
-            "msg_body": "STOP FREAKING UPPING THE PEANUT POST",
-            "timestamp": "",
-            "likes": 16,
-            "dislikes": 3
-        },
-        {
-            "user_id": 5,
-            "msg_body": "I AM COVERED WITH THESE THINGS",
-            "timestamp": "",
-            "likes": 22,
-            "dislikes": 0
-        }
-
-    ],
+    {
+        "user_id": 1,
+        "msg_body": "STOP FREAKING UPPING THE PEANUT POST",
+        "timestamp": "",
+        "likes": 16,
+        "dislikes": 3
+    },
+    {
+        "user_id": 5,
+        "msg_body": "I AM COVERED WITH THESE THINGS",
+        "timestamp": "",
+        "likes": 22,
+        "dislikes": 0
+    }],
     "flagged": 0,
     "tags": [],
     "likes": 199,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 1375,
     "user_id": 5,
     "msg_body": "GPA is 10% luck, 20% skill, 70% a concentrated adderall pill\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-09-02T20:11:09.561Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 16,
-    "dislikes": 5,
-    "status": "active"
+    "dislikes": 5
 },
 {
-    "id": 2359,
     "user_id": 31,
     "msg_body": "To the guy cheating off my math test this morning... We failed man.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-09-19T21:36:49.386Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 84,
-    "dislikes": 3,
-    "status": "active"
+    "dislikes": 3
 },
 {
-    "id": 1578,
     "user_id": 11,
     "msg_body": "Woke up this morning with a cup of water and a note next my bed saying \"for hungover me\" I took a sip and it was vodka. Drunk me is such a douche.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-05-22T10:08:02.976Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 33,
-    "dislikes": 0,
-    "status": "active"
+    "dislikes": 0
 },
 {
-    "id": 1035,
     "user_id": 29,
     "msg_body": "Since sperms are in testicles, does that mean ball is really life?\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-11-11T15:56:54.940Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 182,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 1261,
     "user_id": 44,
     "msg_body": "My boyfriend is extremely against weed... but apparently not against cheating so guess who's getting pot brownies right before their drug test for work next week\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-04-20T03:11:12.663Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 40,
-    "dislikes": 1,
-    "status": "active"
+    "dislikes": 1
 },
 {
-    "id": 1383,
     "user_id": 33,
     "msg_body": "When I get married, I‘m inviting all my exes the the wedding. I want yall sitting in the front row so I can personally thank you for fucking up. Yall are the real MVPs\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-12-30T17:13:30.665Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 5,
-    "dislikes": 2,
-    "status": "active"
+    "dislikes": 2
 },
 {
-    "id": 3210,
     "user_id": 84,
     "msg_body": "After much research, consideration, and experimentation, I have decided that adulthood is not for me. Thank you for the opportunity.\n",
-    "timestamp": "",
-    "location": "",
+    "timestamp": "2019-01-16T16:09:13.804Z",
+    "univid": 1,
     "comments": [],
     "flagged": 0,
     "tags": [],
     "likes": 160,
-    "dislikes": 5,
-    "status": "active"
-}
+    "dislikes": 5
+}]
