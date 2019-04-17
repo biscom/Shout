@@ -9,7 +9,7 @@ export class PostsService {
   constructor(private http: HttpClient) { }
   private url = "http://localhost:3000"
 
-  getTopPosts(){
+  getTopPosts(tag, sortMethod){
     return this.http.get(this.url + "/top");
   }
 
