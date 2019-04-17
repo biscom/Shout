@@ -49,6 +49,11 @@ body{
     color: white;
     cursor: pointer;
 }
+
+#saveBtn {
+  display: none;
+}
+
 .proile-rating{
     font-size: 12px;
     color: #818182;
