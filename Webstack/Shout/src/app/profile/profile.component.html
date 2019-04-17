@@ -1,64 +1,101 @@
-<div class="overlay">
-  <div class="abs-center overlay-card">
-    <div class="close">X</div>
-    <div class="floated overlay-image">
-      <div class="abs-center post-image"></div>
-    </div>
-    <div class="floated overlay-desc">
-      <div class="rela-block desc-title"></div>
-      <div class="rela-block desc-author"></div>
-      <div class="rela-block desc-desc"></div>
-    </div>
-  </div>
-</div>
+<!-- reference: https://bootsnipp.com/snippets/K0ZmK -->
 
-<div class="rela-block container">
-  <div class="rela-block profile-card">
-    <div class="profile-pic" id="profile_pic">
-    </div>
-    <div class="rela-block profile-name-container">
-      <div class="rela-block user-name" id="user_name">User Name</div>
-      <!-- <div class="rela-block user-desc" id="user_description">User Description Here</div> -->
-    </div>
-    <div class="rela-block profile-card-stats">
-      <div class="floated profile-stat works" id="num_works">28<br></div>
-      <div class="floated profile-stat followers" id="num_followers">112<br></div>
-      <div class="floated profile-stat following" id="num_following">245<br></div>
-    </div>
-    <div class="rela-block profile-info">
-      <div class="card">
 
-        <!--Card content-->
-        <div class="card-body px-lg-5 pt-0">
+<div class="container emp-profile">
+  <form method="post">
+    <div class="row">
 
-            <!-- Form -->
-            <form class="text-center" style="color: #757575;">
-
-                <!-- E-mail -->
-                <div class="md-form mt-0">
-                    <input type="email" id="materialRegisterFormUsername" class="form-control">
-                    <label for="materialRegisterFormUsername">Username</label>
-                </div>
-
-                <!-- Password -->
-                <div class="md-form">
-                    <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock">
-                    <label for="materialRegisterFormPassword">Password</label>
-                    <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                        At least 8 characters and 1 digit
-                    </small>
-                </div>
-
-                <!-- Sign up button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4
-                waves-effect z-depth-0" type="submit">Save</button>
-
-            </form>
-
+      <div class="col-md-4">
+        <div class="profile-img">
+          <img src="https://newscenter.lbl.gov/wp-content/uploads/sites/2/face-mask.jpg" alt=""/>
+          <div class="file btn btn-lg btn-primary">
+            Change Photo
+            <input type="file" name="file"/>
+          </div>
         </div>
+      </div>
 
+      <div class="col-md-6">
+        <div class="profile-head">
+          <h5>hongyi huang</h5>
+          <h6>user of Shout</h6>
+
+          <p class="proile-rating">Score : <span>92.3</span></p>
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Saved posts</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <input type="submit" class="profile-edit-btn btn btn-info" name="btnAddMore" value="Edit Profile"/>
       </div>
     </div>
 
-  </div>
+    <div class="row">
+
+      <div class="col-md-4">
+        <div class="profile-work">
+          <!-- <p>WORK LINK</p>
+          <a href="">Website Link</a><br/>
+          <a href="">Bootsnipp Profile</a><br/>
+          <a href="">Bootply Profile</a>
+          <p>SKILLS</p>
+          <a href="">Web Designer</a><br/>
+          <a href="">Web Developer</a><br/>
+          <a href="">WordPress</a><br/>
+          <a href="">WooCommerce</a><br/>
+          <a href="">PHP, .Net</a><br/> -->
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div class="row">
+                <div class="col-md-6">
+                    <label>User Id</label>
+                </div>
+                <div class="col-md-6">
+                    <p>123456</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Username</label>
+                </div>
+                <div class="col-md-6">
+                    <p>00000abc</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Email</label>
+                </div>
+                <div class="col-md-6">
+                    <p>cacaca@gmail.com</p>
+                </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="row">
+              <div class="col-md-6">
+                  <label>Welcome to Shout</label>
+              </div>
+              <div class="col-md-6">
+                  <p>Shout is an anomynous discussion platfom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </form>
 </div>
