@@ -1,28 +1,26 @@
 var express = require('express');
 var session = require('express-session');
+var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-var app = express();
+
+
+
+app.use(session({
+	secret: 'ITWS 4500 Shout',
+	resave: false,
+	saveUninitialized: true,
+	cookie: { secure: true }
+}))
 
 app.use(cors({origin: [
 	"http://localhost:4200"
   ], credentials: true}));
 
-app.use(session({secret: "ITWS4500Shout"}));
-
 const uri = "mongodb+srv://testUser:ITWS4500@cluster0-tpsxu.mongodb.net/test?retryWrites=true";
-MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
-	if(err) {
-		 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
-	}
-	console.log('Connected...');
-	const collection = client.db("ITWS-4500").collection("posts");
-	// perform actions on the collection object
-	client.close();
- });
 
 app.get('/nearby', function(req,res){
 	lat=req.query.lat;
@@ -33,12 +31,13 @@ app.get('/nearby', function(req,res){
 
 app.post('/createAccount', function(req, res){
 	//check database for existing user info 
-	username = req.username;
-	nickname = req.nickname;
-	univ_email=req.univ_email;
-	univid = req.univid;
-	bcrypt.hash(req.password, null, function(err, hash) {
+	username = req.body.username;
+	nickname = req.body.nickname;
+	univ_email=req.body.univ_email;
+	univid = req.body.univid;
+	bcrypt.hash(req.body.password, null, function(err, hash) {
 		// Store account in database
+		
 	});
 });
 
@@ -78,7 +77,34 @@ app.post('/login', function(req,res){
 
 //returns Top posts from everywhere
 app.get('/top', function(req,res){
-	
+	MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+		if(err) {
+			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+		}
+		console.log('Connected...');
+		const collection = client.db("ITWS-4500").collection("Post");
+		// perform actions on the collection object
+		collection.find({}).toArray(function(err, result) {
+			if (err) throw err;
+			res.json(result);
+		});
+		client.close();
+	 });
+});
+
+app.get('/users', function(req,res){
+	MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+		if(err) {
+			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+		}
+		const collection = client.db("ITWS-4500").collection("User");
+		// perform actions on the collection object
+		collection.find({}).toArray(function(err, result) {
+			if (err) throw err;
+			res.json(result);
+		});
+		client.close();
+	 });
 });
 
 //returns posts with specific tag and univ id
