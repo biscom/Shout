@@ -11,21 +11,6 @@ body {
 	background-color: #FAFAFA;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 header {
 	height: 40px;
 	padding: 10px 0;
@@ -105,25 +90,6 @@ header {
 	border-radius: 100px;
 }
 
-
-
-
-
-
-
-
-
-
-/* HEADER ABOVE THIS */
-
-
-
-
-
-
-
-
-
 #mainbox {
 	text-align: center;
 	margin: 65px auto 25px auto;
@@ -160,7 +126,7 @@ header {
 	color: #AAA;
 	font-size: 12px;
 	margin: 2px 0 0 5px;
-	display: block;
+	display: inline-block;
 }
 
 /* Vote Interface ------------------------------------------------*/
@@ -203,7 +169,7 @@ header {
 	display: inline-block;
 	vertical-align: top;
 	margin: 10px 0 0 20px;
-	width: 450px;
+	width: 440px;
 	font-family: "Fredoka One";
 	color: #444;
 	word-break: break-word;
@@ -235,7 +201,7 @@ header {
 .postBottom {
 	margin: 0;
 	padding: 0 0 23px 0;
-	display: none;
+	/* display: none; */
 }
 
 .comments {
@@ -251,6 +217,19 @@ header {
 
 .newComment {
 	width: 100%;
+}
+
+.newCommentText {
+	display: inline-block;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+
+	box-shadow: 0 0 8px -2px #DDD;
+
+	font-family: "Fredoka One";
+	color: #666;
+	outline: none;
+	width: 200px;
 }
 
 .submitComment {
@@ -306,7 +285,7 @@ header {
 	vertical-align: top;
 }
 
-#filterControls {
+#infoPane {
 	margin: 0 0 0 13px;
 	padding: 0;
 	background-color: #FFF;
@@ -319,3 +298,113 @@ header {
 
 	box-shadow: 0 0 8px -2px #DDD;
 }
+
+.postInfo {
+	display: block;
+	overflow: auto;
+}
+
+.categoryLabel {
+	text-align: center;
+	font-family: Calibri;
+	font-size: 12px;
+	border-radius: 100px;
+	font-weight: bold;
+	
+	margin: 5px 5px 0 0;
+	padding: 1px 8px;
+	float: right;
+	color: #FFF;
+}
+
+.categoryInteract {
+	float: left;
+}
+
+.funny {
+	background-color: #0276FD;
+}
+
+.funny::after {
+	content: "Funny";
+}
+
+.academics {
+	background-color: #C48E48;
+}
+
+.academics::after {
+	content: "Academics";
+}
+
+.sports {
+	background-color: #8B8989;
+}
+
+.sports::after {
+	content: "Sports";
+}
+
+.events {
+	background-color: #FFC125;
+}
+
+.events::after {
+	content: "Events";
+}
+
+.campus {
+	background-color: #00AF33;
+}
+
+.campus::after {
+	content: "Campus";
+}
+
+.random {
+	background-color: #00BFFF;
+}
+
+.random::after {
+	content: "Random";
+}
+
+.clubs {
+	background-color: #FF7216;
+}
+
+.clubs::after {
+	content: "Clubs";
+}
+
+.greek {
+	background-color: #BF3EFF;
+}
+
+.greek::after {
+	content: "Greek";
+}
+
+.discussion {
+	background-color: #FF1493;
+}
+
+.discussion::after {
+	content: "Discussion";
+}
+
+.alert {
+	background-color: #EE0000;
+}
+
+.alert::after {
+	content: "Alert";
+}
+
+/* .test1 {
+	box-shadow: 0 0 8px -3px #20B2AA;
+}
+
+.test2 {
+	box-shadow: 0 0 8px -3px #FF1493;
+} */
