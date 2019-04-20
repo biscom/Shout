@@ -36,13 +36,11 @@ var postSchema = new mongoose.Schema({
         required: 0
     },
     likes: {
-        type: Number,
-        default: 0,
+        type: Array,
         required: true
     },
     dislikes: {
-        type: Number,
-        default: 0,
+        type: Array,
         required: true
     },
 })
