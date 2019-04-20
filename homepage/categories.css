@@ -10,11 +10,19 @@
 	color: #FFF;
 }
 
+.categoryLabel:hover {
+    cursor: pointer;
+}
+
 .postLabel {
     float: right;
 }
 
-.funny {
+.postLabel:hover {
+    cursor: initial;
+}
+
+.funny, .funny:hover {
 	background-color: #0276FD;
 }
 
@@ -22,7 +30,7 @@
 	content: "Funny";
 }
 
-.academics {
+.academics, .academics:hover {
 	background-color: #C48E48;
 }
 
@@ -30,7 +38,7 @@
 	content: "Academics";
 }
 
-.sports {
+.sports, .sports:hover {
 	background-color: #8B8989;
 }
 
@@ -38,7 +46,7 @@
 	content: "Sports";
 }
 
-.events {
+.events, .events:hover {
 	background-color: #FFC125;
 }
 
@@ -46,7 +54,7 @@
 	content: "Events";
 }
 
-.campus {
+.campus, .campus:hover {
 	background-color: #00AF33;
 }
 
@@ -54,7 +62,7 @@
 	content: "Campus";
 }
 
-.random {
+.random, .random:hover {
 	background-color: #00BFFF;
 }
 
@@ -62,7 +70,7 @@
 	content: "Random";
 }
 
-.clubs {
+.clubs, .clubs:hover {
 	background-color: #FF7216;
 }
 
@@ -70,7 +78,7 @@
 	content: "Clubs";
 }
 
-.greek {
+.greek, .greek:hover {
 	background-color: #BF3EFF;
 }
 
@@ -78,7 +86,7 @@
 	content: "Greek";
 }
 
-.discussion {
+.discussion, .discussion:hover {
 	background-color: #FF1493;
 }
 
@@ -86,7 +94,7 @@
 	content: "Discussion";
 }
 
-.alert {
+.alert, .alert:hover {
 	background-color: #EE0000;
 }
 
@@ -98,6 +106,3 @@
 	background-color: #DDD;
 }
 
-.notSelected:hover {
-    background-color: inherit;
-}

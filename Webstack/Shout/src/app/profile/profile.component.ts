@@ -18,10 +18,19 @@ export class ProfileComponent implements OnInit {
 
   users$: Object;
 
+  public show_edit : boolean = false;
+
   constructor(private user: UserDataService) { }
 
   ngOnInit() {
 
+<<<<<<< HEAD
+=======
+  }
+
+  edit_profile() {
+    this.show_edit = !this.show_edit;
+>>>>>>> 2fd41ce9a8c39a2c92587d507b071bd0e69ddd99
   }
 
 
