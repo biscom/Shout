@@ -3,7 +3,6 @@ var Int32 = require('mongoose-int32');
 const Schema = mongoose.Schema;
 
 var modSchema = new mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
    post_id: {
     type: Number,
     ref: Post
@@ -15,9 +14,8 @@ var modSchema = new mongoose.Schema({
     },
     msg_volume: {
         type: Number,
-        default: 0
+        default: 0,
         required: true
-    },
     },
     univid: {
         type: Int32,

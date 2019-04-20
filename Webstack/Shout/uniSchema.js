@@ -3,7 +3,6 @@ var Int32 = require('mongoose-int32');
 const Schema = mongoose.Schema;
 
 var uniSchema = new mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
    univid: {
     type: Int32,
     required: true
