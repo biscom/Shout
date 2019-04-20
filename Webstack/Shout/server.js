@@ -26,8 +26,33 @@ app.get('/nearby', function(req,res){
 	lat=req.query.lat;
 	lon=req.query.lon;
 	//searchdatabase for 3 closest unis and send back in json
+	MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+		if(err) {
+			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+		}
+		const collection = client.db("ITWS-4500").collection("University");
+		// perform actions on the collection object
+		collection.find({}).toArray(function(err, result) {
+			if (err) throw err;
+			result.sort(function(a,b){
+				alat = a.location.lat;
+				alon = a.location.lon;
+				blat = b.location.lat;
+				blon = b.location.lon;
+				abDist = function(c,d){
+					return Math.abs(c - d);
+				};
+				aDist= abDist(lat, alat) + abDist(lon, alon);
+				bDist = abDist(lat, blat)+ abDist(lon,blon);
+				return aDist - bDist
+			});
+			res.json(result.slice(0,5));
+		});
+		client.close();
+	 });
 
 });
+
 
 app.post('/createAccount', function(req, res){
 	//check database for existing user info 
@@ -37,7 +62,7 @@ app.post('/createAccount', function(req, res){
 	univid = req.body.univid;
 	bcrypt.hash(req.body.password, null, function(err, hash) {
 		// Store account in database
-		
+
 	});
 });
 
