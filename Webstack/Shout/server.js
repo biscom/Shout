@@ -3,7 +3,7 @@ var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 var User = require('./userSchema');
@@ -16,7 +16,7 @@ app.use(session({
 	resave: false,
 	saveUninitialized: true,
 	cookie: { secure: true }
-}))
+}));
 
 app.use(cors({origin: [
 	"http://localhost:4200"
@@ -127,30 +127,30 @@ app.post('/login', function(req,res){
             
             if (result == {}){
                 
-                //Username already exists, return error to user
-                console.log("USER EXISTS");
+                //Username doesn't, return error to user
+                console.log("USER DO NOT EXIST");
                 
             } else {
 
+                //check if password matches
+                bcrypt.compare(password, db_hash,function(error, result){
+                    if(result){
+                        //start client session 
+                        req.session.username = username;
 
-		//check if password matches
-		bcrypt.compare(password, db_hash,function(error, result){
-			if(result){
-				//start client session 
-				req.session.username = username;
-
-			}else{
-				passworderr={
-					valid: false,
-					error: "Incorrect Password!"
-				};
-				res.send(passworderr);
-			}
-		});
+                    }else{
+                        passworderr={
+                            valid: false,
+                            error: "Incorrect Password!"
+                        };
+                        res.send(passworderr);
+                    }
+                });
+            }
 
 		client.close();
 	 });
-
+    });
 });
 
 //returns Top posts from everywhere
@@ -216,4 +216,4 @@ app.get('/posts', function(req,res){
 });
 
 
-http.listen(3000,() => console.log("Running on port 3000"))
+http.listen(3000,() => console.log("Running on port 3000"));
