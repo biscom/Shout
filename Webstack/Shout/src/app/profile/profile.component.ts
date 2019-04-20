@@ -11,7 +11,7 @@ import { UserDataService } from '../user-data.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
+  styleUrls: ['./profile.component.css']
   // template: ``
 })
 export class ProfileComponent implements OnInit {
@@ -27,9 +27,11 @@ export class ProfileComponent implements OnInit {
   }
 
   edit_profile() {
-    this.show_edit = !this.show_edit;
+    this.show_edit = true;
   }
 
+  save_profile() {
 
+  }
 
 }
