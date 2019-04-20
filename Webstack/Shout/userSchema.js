@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-University = require('./uniSchema'); 
+var University = require('./uniSchema'); 
 
 var userSchema = mongoose.Schema({
    _id: mongoose.Schema.Types.ObjectId,
