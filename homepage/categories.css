@@ -1,21 +1,54 @@
 .categoryLabel {
-	text-align: center;
-	font-family: Calibri;
-	font-size: 12px;
-	border-radius: 100px;
-	font-weight: bold;
-	
-	margin: 5px 5px 0 0;
-	padding: 1px 8px;
-	color: #FFF;
+	color: #fff;
+	height: auto;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 3.5%;
+	padding-right: 3.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.4vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-left: 1.3%;
+}
+
+.categoryLabel:hover {
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
+
 }
 
 .postLabel {
+	color: #fff;
+	height: auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.5vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-top: 2%;
     float: right;
 }
 
 .funny {
-	background-color: #0276FD;
+	background-color: #F96574;
 }
 
 .funny::after {
@@ -23,7 +56,7 @@
 }
 
 .academics {
-	background-color: #C48E48;
+	background-color: #FFC74F;
 }
 
 .academics::after {
@@ -31,7 +64,7 @@
 }
 
 .sports {
-	background-color: #8B8989;
+	background-color: rgb(6, 214, 160);
 }
 
 .sports::after {
@@ -39,19 +72,11 @@
 }
 
 .events {
-	background-color: #FFC125;
+	background-color: #485977;
 }
 
 .events::after {
 	content: "Events";
-}
-
-.campus {
-	background-color: #00AF33;
-}
-
-.campus::after {
-	content: "Campus";
 }
 
 .random {
@@ -62,13 +87,6 @@
 	content: "Random";
 }
 
-.clubs {
-	background-color: #FF7216;
-}
-
-.clubs::after {
-	content: "Clubs";
-}
 
 .greek {
 	background-color: #BF3EFF;
