@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 html {
-	font-family: Calibri;
+	font-family: "Fredoka One";
 }
 
 body {
@@ -21,6 +21,7 @@ header {
 
 	position: fixed;
 	top: 0;
+	z-index: 1000;
 }
 
 #logo {
@@ -47,6 +48,7 @@ header {
 	float: right;
 	clear: right;
 	margin-right: 15px;
+	font-family: Calibri;
 }
 
 #user {
@@ -100,12 +102,18 @@ header {
 	text-align: left;
 }
 
-#posts, #filterControls {
+#posts, #rightSidebar {
 	display: inline-block;
 }
 
 #posts {
-	width: 545px;
+	width: 60%;
+	max-width: 700px;
+	min-width: 300px;
+}
+
+.newComment {
+	display: flex;
 }
 
 .postbox {
@@ -122,15 +130,76 @@ header {
 	box-shadow: 0 0 8px -2px #DDD;
 }
 
+#newPost {
+	padding: 10px;
+}
+
+#newPostBottom {
+	display: flex;
+}
+
+#categoryOptions {
+	display: inline-block;
+	overflow: auto;
+}
+
+.newPostLabel {
+	margin: 0;
+	padding: 0;
+}
+
+#newPostText {
+	box-sizing: border-box;
+	margin: 8px 0;
+	padding: 3px;
+	width: 100%;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+.newPostBottomSection {
+	display: inline-block;
+}
+
+.newPostBottomSection > * {
+	display: block;
+}
+
+#categoryOptions .categoryLabel {
+	float: left;
+}
+
+#selectCategory {
+	width: 50%;
+}
+
+#postAs {
+	margin-left: 10px;
+}
+
+#makePost {
+	display: block;
+	margin-top: 15px;
+}
+
+#checkAnon {
+	height: 20px;
+}
+
 .time {
 	color: #AAA;
 	font-size: 12px;
+	font-family: Calibri;
 	margin: 2px 0 0 5px;
 	display: inline-block;
 }
 
-/* Vote Interface ------------------------------------------------*/
-/* ---------------------------------------------------------------*/
+
+
+
+
+
 .votes {
 	margin-left: 7px;
 	text-align: center;
@@ -165,18 +234,23 @@ header {
 	cursor: pointer;
 }
 
+
+
+
+
+
 .content {
 	display: inline-block;
 	vertical-align: top;
-	margin: 10px 0 0 20px;
-	width: 440px;
+	margin: 10px 25px 0 20px;
+	width: auto;
 	font-family: "Fredoka One";
 	color: #444;
 	word-break: break-word;
 }
 
 .post {
-	display: block;
+	display: flex;
 }
 
 .postControls {
@@ -215,34 +289,40 @@ header {
 	display: block;
 }
 
-.newComment {
+/* .newComment {
 	width: 100%;
+	overflow: auto;
 }
 
 .newCommentText {
 	display: inline-block;
 	border: 1px solid #EEE;
 	border-radius: 4px;
+	padding: 5px;
+	overflow: hidden;
 
 	box-shadow: 0 0 8px -2px #DDD;
 
 	font-family: "Fredoka One";
 	color: #666;
 	outline: none;
-	width: 200px;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 
 .submitComment {
+	display: inline-block;
 	float: right;
 	font-size: 25px;
 	color: #888;
-}
+} */
 
 .comment {
 	display: block;
 	border: 1px solid #EEE;
 	border-radius: 4px;
 	box-shadow: 0 0 8px -2px #DDD;
+	margin-top: 5px;
 }
 
 .commentText {
@@ -280,18 +360,18 @@ header {
 
 #rightSidebar {
 	position: sticky;
-	top: 80px;
+	top: 80px !important;
 	display: inline-block;
 	vertical-align: top;
 }
 
-#infoPane {
+.sidebarBox {
 	margin: 0 0 0 13px;
-	padding: 0;
+	padding: 5px;
 	background-color: #FFF;
+	box-sizing: border-box;
 
 	width: 200px;
-	height: 250px;
 
 	border: 1px solid #EEE;
 	border-radius: 4px;
@@ -299,107 +379,20 @@ header {
 	box-shadow: 0 0 8px -2px #DDD;
 }
 
+#infoPane {
+	height: 250px;
+}
+
+#guidelines {
+	margin-top: 15px;
+	height: 400px;
+}
+
 .postInfo {
 	display: block;
 	overflow: auto;
 }
 
-.categoryLabel {
-	text-align: center;
-	font-family: Calibri;
-	font-size: 12px;
-	border-radius: 100px;
-	font-weight: bold;
-	
-	margin: 5px 5px 0 0;
-	padding: 1px 8px;
-	float: right;
-	color: #FFF;
-}
-
-.categoryInteract {
-	float: left;
-}
-
-.funny {
-	background-color: #0276FD;
-}
-
-.funny::after {
-	content: "Funny";
-}
-
-.academics {
-	background-color: #C48E48;
-}
-
-.academics::after {
-	content: "Academics";
-}
-
-.sports {
-	background-color: #8B8989;
-}
-
-.sports::after {
-	content: "Sports";
-}
-
-.events {
-	background-color: #FFC125;
-}
-
-.events::after {
-	content: "Events";
-}
-
-.campus {
-	background-color: #00AF33;
-}
-
-.campus::after {
-	content: "Campus";
-}
-
-.random {
-	background-color: #00BFFF;
-}
-
-.random::after {
-	content: "Random";
-}
-
-.clubs {
-	background-color: #FF7216;
-}
-
-.clubs::after {
-	content: "Clubs";
-}
-
-.greek {
-	background-color: #BF3EFF;
-}
-
-.greek::after {
-	content: "Greek";
-}
-
-.discussion {
-	background-color: #FF1493;
-}
-
-.discussion::after {
-	content: "Discussion";
-}
-
-.alert {
-	background-color: #EE0000;
-}
-
-.alert::after {
-	content: "Alert";
-}
 
 /* .test1 {
 	box-shadow: 0 0 8px -3px #20B2AA;

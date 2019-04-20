@@ -6,6 +6,7 @@
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="categories.css">
 	</head>
 
 	<body>
@@ -30,12 +31,38 @@
 		<div id="mainbox">
 			<div id="posts">
 
-
+				<div class="postbox" id="newPost">
+					<p class="newPostLabel">Shout something!</p>
+					<div contenteditable="true" id="newPostText">
+						s
+					</div>
+					<div id="newPostBottom">
+						<div class="newPostBottomSection" id="selectCategory">
+							<p class="newPostLabel">Category:</p>
+							<div id="categoryOptions">
+								<span class="categoryLabel funny notSelected"></span>
+								<span class="categoryLabel academics"></span>
+								<span class="categoryLabel sports"></span>
+								<span class="categoryLabel events"></span>
+								<span class="categoryLabel campus"></span>
+								<span class="categoryLabel random"></span>
+								<span class="categoryLabel clubs"></span>
+								<span class="categoryLabel greek"></span>
+								<span class="categoryLabel discussion"></span>
+								<span class="categoryLabel alert"></span>
+							</div>
+						</div>
+						<div class="newPostBottomSection" id="postAs">
+							<p class="newPostLabel">Anonymous: <input id="checkAnon" type="checkbox">
+							<button id="makePost">Post</button>
+						</div>
+					</div>
+				</div>
 
 				<div class="postbox">
 					<div class="postInfo">
 						<span class="time">Anonymous at 05:04:32 EST</span>
-						<span class="categoryLabel academics"></span>
+						<span class="categoryLabel postLabel academics"></span>
 					</div>
 					<div class="post">
 						<div class="votes">
@@ -74,7 +101,7 @@
 
 						<div class="comments">
 							<div class="newComment">
-								<div class="newCommentText" contenteditable="true"></div>
+								<div class="newCommentText" contenteditable="true">s</div>
 								<span class="submitComment fas fa-check-square"></span>
 							</div>
 							<div class="comment">
@@ -111,7 +138,7 @@
 				<div class="postbox">
 					<div class="postInfo">
 						<span class="time">Anonymous at 05:04:32 EST</span>
-						<span class="categoryLabel discussion"></span>
+						<span class="categoryLabel postLabel discussion"></span>
 					</div>
 					<div class="post">
 						<div class="votes">
@@ -135,8 +162,8 @@
 
 						<div class="comments">
 							<div class="newComment">
-								<textarea class="newCommentText" placeholder="Say something.."></textarea>
-								<span class="submitComment fas fa-check-square"></span>
+								<div class="newCommentText" contenteditable="true">s</div>
+								<div><span class="submitComment fas fa-check-square"></span></div>
 							</div>
 							<div class="comment">
 								<span class="time">yo waddup</span>
@@ -161,32 +188,26 @@
 			</div>
 
 			<div id="rightSidebar">
-				<div id="infoPane">
-					<!--
-					<div>
-						Location
-					</div>
-					-->
-
-					<div>
-						<span class="categoryLabel funny"></span>
+				<div class="sidebarBox" id="infoPane">
+					<span class="time">
+						<span class="fas fa-map-marker-alt" style="margin-right: 4px"></span> Rensselaer Polytechnic Institute
+					</span>
+					<div id="categoryIndicator">
+						<span class="newPostLabel">Category:</span>
 						<span class="categoryLabel academics"></span>
-						<span class="categoryLabel sports"></span>
-						<span class="categoryLabel events"></span>
-						<span class="categoryLabel campus"></span>
-						<span class="categoryLabel random"></span>
-						<span class="categoryLabel clubs"></span>
-						<span class="categoryLabel greek"></span>
-						<span class="categoryLabel discussion"></span>
-						<span class="categoryLabel alert"></span>
 					</div>
-					<!--
-					<select id="sort">
-						<option value="popularity">Popularity</option>
-						<option value="score">Score</option>
-						<option value="recent">Recent</option>
-					</select>
-					-->
+					
+					<div id="filterOptions">
+						<span class="newPostLabel">Sort by:</span>
+						<select id="sort">
+							<option value="popularity">Popularity</option>
+							<option value="score">Score</option>
+							<option value="recent">Recent</option>
+						</select>
+					</div>
+				</div>
+				<div class="sidebarBox" id="guidelines">
+					Be nice
 				</div>
 			</div>
 		</div>
