@@ -317,40 +317,41 @@ body {
 	display: block;
 }
 
-/* .newComment {
-	width: 100%;
+.newComment {
+	display: flex;
 	overflow: auto;
 }
 
 .newCommentText {
-	display: inline-block;
 	border: 1px solid #EEE;
 	border-radius: 4px;
 	padding: 5px;
-	overflow: hidden;
-
-	box-shadow: 0 0 8px -2px #DDD;
+	width: 100%;
 
 	font-family: "Fredoka One";
 	color: #666;
 	outline: none;
-	max-width: 100%;
 	box-sizing: border-box;
+
+	box-shadow: 0 0 8px -2px #DDD;
 }
 
 .submitComment {
-	display: inline-block;
+	margin-left: 15px;
 	float: right;
+}
+
+.submitComment span {
 	font-size: 25px;
 	color: #888;
-} */
+}
 
 .comment {
 	display: block;
 	border: 1px solid #EEE;
 	border-radius: 4px;
 	box-shadow: 0 0 8px -2px #DDD;
-	margin-top: 5px;
+	margin-top: 12px;
 }
 
 .commentText {
