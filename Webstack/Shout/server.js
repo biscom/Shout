@@ -3,12 +3,12 @@ var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-User = require('./userSchema');
-University = require('./uniSchema');
-Post = require('./postSchema');
+var User = require('./userSchema');
+var University = require('./uniSchema');
+var Post = require('./postSchema');
 
 
 app.use(session({
@@ -63,10 +63,6 @@ app.post('/createAccount', function(req, res){
 	univ_email=req.body.univ_email;
 	univid = req.body.univid;
 	bcrypt.hash(req.body.password, null, function(err, hash) {
-<<<<<<< Updated upstream
-		// Store account in databas
-
-=======
         if (err){
             console.log('Error occurred while hashing the user password...\n',err);
         }
@@ -109,7 +105,6 @@ app.post('/createAccount', function(req, res){
         client.close();
         
         });
->>>>>>> Stashed changes
 	});
 });
 
@@ -125,6 +120,17 @@ app.post('/login', function(req,res){
 		const collection = client.db("ITWS-4500").collection("user");
 		// get account info 
 		//check if user exists
+        collection.find(username).toArray(function(err, result) {
+			if (err){
+                throw err;
+            } 
+            
+            if (result == {}){
+                
+                //Username already exists, return error to user
+                console.log("USER EXISTS");
+                
+            } else {
 
 
 		//check if password matches
