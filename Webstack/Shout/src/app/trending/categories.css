@@ -1,60 +1,92 @@
 .categoryLabel {
-	text-align: center;
-	font-family: Calibri;
-	font-size: 12px;
-	border-radius: 100px;
-	font-weight: bold;
-	
-	margin: 5px 5px 0 0;
-	padding: 1px 8px;
-	color: #FFF;
+	color: #fff;
+	height: auto;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 3.5%;
+	padding-right: 3.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.4vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-left: 1.3%;
+}
+
+.categoryLabel:hover {
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
+
+}
+
+.categoryLabel:hover {
+    cursor: pointer;
 }
 
 .postLabel {
+	color: #fff;
+	height: auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.5vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-top: 2%;
     float: right;
 }
 
-.funny {
-	background-color: #0276FD;
+
+.funny, .funny:hover {
+	background-color: #F96574;
 }
 
 .funny::after {
 	content: "Funny";
 }
 
-.academics {
-	background-color: #C48E48;
+.academics, .academics:hover {
+	background-color: #FFC74F;
 }
 
 .academics::after {
 	content: "Academics";
 }
 
-.sports {
-	background-color: #8B8989;
+.sports, .sports:hover {
+	background-color: rgb(6, 214, 160);
+
 }
 
 .sports::after {
 	content: "Sports";
 }
 
-.events {
-	background-color: #FFC125;
+.events, .events:hover {
+	background-color: #485977;
+
 }
 
 .events::after {
 	content: "Events";
 }
 
-.campus {
-	background-color: #00AF33;
-}
-
-.campus::after {
-	content: "Campus";
-}
-
-.random {
+.random, .random:hover {
 	background-color: #00BFFF;
 }
 
@@ -62,15 +94,7 @@
 	content: "Random";
 }
 
-.clubs {
-	background-color: #FF7216;
-}
-
-.clubs::after {
-	content: "Clubs";
-}
-
-.greek {
+.greek, .greek:hover {
 	background-color: #BF3EFF;
 }
 
@@ -78,7 +102,7 @@
 	content: "Greek";
 }
 
-.discussion {
+.discussion, .discussion:hover {
 	background-color: #FF1493;
 }
 
@@ -86,7 +110,7 @@
 	content: "Discussion";
 }
 
-.alert {
+.alert, .alert:hover {
 	background-color: #EE0000;
 }
 
@@ -94,10 +118,16 @@
 	content: "Alert";
 }
 
-.notSelected {
-	background-color: #DDD;
+.everything, .everything:hover {
+    background-image: linear-gradient(60deg, #E3170D, #FF6600, #FFCC11, #00AF33, #0198E1, #A020F0);
 }
 
-.notSelected:hover {
-    background-color: inherit;
+.everything::after {
+    content: "All Posts";
 }
+
+.notSelected {
+    background-color: #DDD;
+    background-image: none;
+}
+

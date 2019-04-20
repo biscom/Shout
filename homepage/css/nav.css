@@ -114,10 +114,10 @@ li > a:hover:before {
 
 .typcn-location {
 	position: fixed;
-	margin-left: 96%;
+	margin-left: 46%;
 	font-size: 4vh;
 	color: #FFFFFA;
-	margin-top: 1.7vh;
+	margin-top: 1.2vh;
 	text-shadow: 1px -0.4px 0px rgba(0,0,0,0.2);
 	-moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
@@ -155,6 +155,7 @@ li > a:hover:before {
 		visibility: visible;
 
 	}
+
 }
 
 @media only screen and (max-width: 1400px) {
@@ -197,7 +198,7 @@ li > a:hover:before {
 
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 800px) {
 	li {
 		margin-right: 14vh;
 	}
@@ -205,6 +206,11 @@ li > a:hover:before {
 	.navbar-links {
 		margin-left: 50%;
 		font-size: 2.4vh;
+	}
+
+	.typcn-location {
+		margin-left: 53%;
+
 	}
 
 

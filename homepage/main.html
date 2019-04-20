@@ -26,13 +26,18 @@
 		 	<span class="typcn typcn-location"></span>
 		 	<!-- <span class="typcn typcn-user"></span>
 		 	<i class="fas fa-bell"></i> -->
+		 	<form action="post" class="ls">
+		 		<input type="text" id="search-bar" name="username" placeholder="Username" max-length="100">
+		 		<input type="password" id="search-bar" name="password" placeholder="Password" max-length="100">
+		 		<button id="login" type="button">Login</button>
+		 		<button id="sign-up" type="button">Sign Up</button>
+
+		 	</form>
+
 		 	<span class="typcn typcn-th-menu"></span>
 		 	
 		 </nav>
-		 <div id="login-btns">
-		 	<button id="login" type="button">Login</button>
-		 	<button id="sign-up" type="button">Sign Up</button>
-		 </div>
+		 
 		<!-- <header>
 			<span id="logo">SHOUT!</span>
 
@@ -56,13 +61,12 @@ y
 
 				<div class="postbox" id="newPost">
 					<p class="newPostLabel">Shout something!</p>
-					<div contenteditable="true" id="newPostText">
-						s
-					</div>
+					<input contenteditable="true" id="newPostText" placeholder="Enter a shout"/>
 					<div id="newPostBottom">
 						<div class="newPostBottomSection" id="selectCategory">
-							<p class="newPostLabel">Category:</p>
+							
 							<div id="categoryOptions">
+								<p class="catLabel">Category:</p>
 <!-- 
 								<span class="categoryLabel funny"></span>
 								<span class="categoryLabel academics"></span>
@@ -84,7 +88,7 @@ y
 							</div>
 						</div>
 						<div class="newPostBottomSection" id="postAs">
-							<p class="newPostLabel">Anonymous:</p><input id="checkAnon" type="checkbox">
+							<p class="anonLabel">Anonymous:</p><input id="checkAnon" type="checkbox">
 							<button id="makePost">Post</button>
 						</div>
 					</div>
@@ -227,15 +231,15 @@ y
 						<span class="newPostLabel">Category:</span>
 						<span class="categoryLabel everything"></span>
 						<div id="categoryViewSelect">
-							<span class="categoryLabel funny notSelected"></span>
-							<span class="categoryLabel academics notSelected"></span>
-							<span class="categoryLabel sports notSelected"></span>
-							<span class="categoryLabel events notSelected"></span>
-							<span class="categoryLabel random notSelected"></span>
-							<span class="categoryLabel greek notSelected"></span>
-							<span class="categoryLabel discussion notSelected"></span>
-							<span class="categoryLabel alert notSelected"></span>
-							<span class="categoryLabel everything notSelected"></span>
+							<span class="categoryLabel funny"></span>
+							<span class="categoryLabel academics"></span>
+							<span class="categoryLabel sports"></span>
+							<span class="categoryLabel events"></span>
+							<span class="categoryLabel random"></span>
+							<span class="categoryLabel greek"></span>
+							<span class="categoryLabel discussion"></span>
+							<span class="categoryLabel alert"></span>
+							<span class="categoryLabel everything"></span>
 						</div>
 					</div>
 					

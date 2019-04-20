@@ -9,40 +9,41 @@ body {
 	padding: 0;
 }
 
-#login-btns {
-	margin-top: 2vh;
+/*#login-btns {
+	margin-top: 11vh;
   	float: right;
   	position: fixed;
   	margin-left: 68%;
   	z-index: 1;
-}
+}*/
 
 #login {
 	display: inline-block;
-	background-color: #fff;
-	height: 6.2vh;
-	width: 25vh;
-	border-radius: 10px;
-	margin-right: 3vh;
+	background-color: #F96574;
+	height: 4.6vh;
+	width: 15vh;
+	border-radius: 35px;
+	margin-right: 1vh;
 	text-align: center;
-	color: #E75A7C;
+	color: #fff;
 	font-family: 'Raleway', sans-serif;
   	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.6vh;
+	letter-spacing: 0.5vh;
 	text-decoration: none;
 	border: none;
     outline:none;
-    font-size: 2.3vh;
+    font-size: 1.7vh;
     -moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
 }
 
 #login:hover, #sign-up:hover {
-	/*color: white;
-	background-color: #485977;*/
+	/*color: white;*/
+	background-color: #FFC74F;
 	cursor: pointer;
 	-webkit-animation: hover 1200ms linear 2 alternate;
 	animation: hover 1200ms linear 2 alternate;
@@ -51,25 +52,26 @@ body {
 
 #sign-up {
 	display: inline-block;
-	background-color: #E75A7C;
-	height: 6.2vh;
-	width: 25vh;
-	border-radius: 10px;
+	background-color: #F96574;
+	height: 4.6vh;
+	width: 17vh;
+	border-radius: 35px;
 	margin-right: 0vh;
 	text-align: center;
 	color: #fff;
 	font-family: 'Raleway', sans-serif;
   font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.6vh;
+	letter-spacing: 0.5vh;
 	text-decoration: none;
 	border: none;
     outline:none;
-    font-size: 2.3vh;
+    font-size: 1.7vh;
     -moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
 }
 
 /*#userimage {
@@ -145,17 +147,60 @@ body {
 	padding: 0;
 	font-family: vag-rundschrift-d, sans-serif;
 	/*text-transform: uppercase;*/
+	font-size: 5vh;
+	text-align: center;
+}
+
+.catLabel {
+	margin: 0;
+	margin-top: 2vh;
+	padding: 0;
+	font-family: vag-rundschrift-d, sans-serif;
+	/*text-transform: uppercase;*/
 	font-size: 3vh;
+	text-align: center;
+
+}
+
+.anonLabel {
+	margin: 0;
+	padding: 0;
+	font-family: vag-rundschrift-d, sans-serif;
+	/*text-transform: uppercase;*/
+	font-size: 4vh;
+	text-align: center;
 }
 
 #newPostText {
-	box-sizing: border-box;
-	margin: 8px 0;
-	padding: 3px;
-	width: 100%;
-	border: 1px solid #EEE;
-	border-radius: 4px;
-	box-shadow: 0 0 8px -2px #DDD;
+	background-color: #FAFAFA;
+	position: relative;
+	height: 30%;
+	width: 95%;
+	margin-right: 1%;
+	margin-top: 1.7vh;
+	border-radius: 5px;
+	display: inline-block;
+	outline: none;
+	color: #485977;
+	font-size: 2.2vh;
+	letter-spacing: 0.2vh;
+	overflow: auto;
+	resize: none;
+	/*word-wrap: break-word;*/
+	padding-left: 2.4vh;
+	padding-right: 0.8vh;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	border: none;
+	font-family: Raleway;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
+
+}
+
+#newPostText:focus {
+    outline: none !important;
+    border: 1px solid #FFC74F;
+    box-shadow: 0 0 4px #FFC74F;
 }
 
 .newPostBottomSection {
@@ -388,7 +433,7 @@ body {
 
 #rightSidebar {
 	position: fixed;
-	top: 160px !important;
+	margin-top: 1%;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -424,12 +469,3 @@ body {
 	display: block;
 	overflow: auto;
 }
-
-
-/* .test1 {
-	box-shadow: 0 0 8px -3px #20B2AA;
-}
-
-.test2 {
-	box-shadow: 0 0 8px -3px #FF1493;
-} */

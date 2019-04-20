@@ -52,38 +52,24 @@
 }
 
 
-.funny {
-	background-color: #F96574;
-}
-
 .funny, .funny:hover {
-	background-color: #0276FD;
+	background-color: #F96574;
 }
 
 .funny::after {
 	content: "Funny";
 }
 
-
-.academics {
-	background-color: #FFC74F;
-}
-
 .academics, .academics:hover {
-	background-color: #C48E48;
+	background-color: #FFC74F;
 }
 
 .academics::after {
 	content: "Academics";
 }
 
-
-.sports {
-	background-color: rgb(6, 214, 160);
-}
-
 .sports, .sports:hover {
-	background-color: #8B8989;
+	background-color: rgb(6, 214, 160);
 
 }
 
@@ -91,20 +77,13 @@
 	content: "Sports";
 }
 
-.events {
-	background-color: #485977;
-}
 .events, .events:hover {
-	background-color: #FFC125;
+	background-color: #485977;
 
 }
 
 .events::after {
 	content: "Events";
-}
-
-.random {
-	background-color: #00BFFF;
 }
 
 .random, .random:hover {
@@ -144,7 +123,7 @@
 }
 
 .everything::after {
-    content: "Everything";
+    content: "All Posts";
 }
 
 .notSelected {
