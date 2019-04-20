@@ -5,7 +5,7 @@ import {PostsService} from './../posts.service';
   selector: 'app-trending',
   templateUrl: './trending.component.html',
   styleUrls: ['./trending.component.css',
-              // './categories.css',
+              './categories.css',
               './font/typicons.min.css',
               './font/typicons.css',
               './css/nav.css',
