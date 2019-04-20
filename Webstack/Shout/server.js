@@ -51,7 +51,6 @@ app.get('/nearby', function(req,res){
 			});
 			res.json(result.slice(0,5));
 		});
-		client.close();
 	 });
 
 });
@@ -106,8 +105,6 @@ app.post('/createAccount', function(req, res){
                 
             }
 		  });
-            
-    
         
         });
 });
@@ -129,10 +126,13 @@ app.post('/login', function(req,res){
                 throw err;
             } 
             
-            if (result == {}){
+            if (result != {} ){
                 
-                //Username doesn't, return error to user
-                console.log("USER DO NOT EXIST");
+                //Username or password are incorrect, return error to user
+                res.json({
+					success: false,
+					reason: "Username does not exist!"
+				});
                 
             } else {
 
@@ -141,18 +141,19 @@ app.post('/login', function(req,res){
                     if(result){
                         //start client session 
                         req.session.username = username;
-
+                        res.json({
+                            success: true,
+                            reason: "User "+ username + " has logged in!"
+                        });
                     }else{
                         passworderr={
-                            valid: false,
-                            error: "Incorrect Password!"
+                            success: false,
+                            reason: "Incorrect Password!"
                         };
                         res.send(passworderr);
                     }
                 });
             }
-
-		client.close();
 	 });
     });
 });
@@ -193,7 +194,6 @@ app.get('/top', function(req,res){
 			
 			res.json(result);
 		});
-		client.close();
 	 });
 });
 
@@ -208,7 +208,6 @@ app.get('/users', function(req,res){
 			if (err) throw err;
 			res.json(result);
 		});
-		client.close();
 	 });
 });
 

@@ -37,6 +37,9 @@ var userSchema = mongoose.Schema({
     },
     email: {
         type: String
+    },
+    saved_posts: {
+        type: Array
     }
 })
 
