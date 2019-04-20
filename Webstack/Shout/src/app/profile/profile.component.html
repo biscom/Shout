@@ -5,9 +5,9 @@
   <form method="post">
     <div class="row">
 
+      <div class="col-md-3"></div>
 
-
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="profile-head">
           <h5>hongyi huang</h5>
           <h6>user of Shout</h6>
@@ -30,20 +30,19 @@
 
       <!-- Edit button and save button -->
       <div class="col-md-2">
-        <input *ngIf="!show_edit" (click)="edit_profile()" type="submit" class="profile-edit-btn btn btn-info"
+        <input *ngIf="!show_edit" (click)="edit_profile()"
+        class="profile-edit-btn btn btn-info"
         id="editBtn" name="btnAddMore" value="Edit Profile"/>
-        <input *ngIf="show_edit" type="submit" class="profile-edit-btn btn btn-warning"
+
+        <input *ngIf="show_edit" (click)="save_profile()"
+        class="profile-edit-btn btn btn-warning"
         id="saveBtn" name="btnSave" value="Save"/>
       </div>
     </div>
 
     <div class="row">
 
-      <!-- <div class="col-md-4">
-        <div class="profile-work">
-
-        </div>
-      </div> -->
+      <div class="col-md-3"></div>
 
       <div class="col-md-5">
         <div *ngIf="!show_edit" class="tab-content profile-tab" id="myTabContent">

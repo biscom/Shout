@@ -3,7 +3,7 @@ var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 
@@ -61,7 +61,7 @@ app.post('/createAccount', function(req, res){
 	univ_email=req.body.univ_email;
 	univid = req.body.univid;
 	bcrypt.hash(req.body.password, null, function(err, hash) {
-		// Store account in database
+		// Store account in databas
 
 	});
 });
@@ -102,6 +102,13 @@ app.post('/login', function(req,res){
 
 //returns Top posts from everywhere
 app.get('/top', function(req,res){
+	query = {};
+	if(req.query.tag != "all"){
+		query.tag = [req.query.tag];
+	}
+	sortMethod = req.query.sortMethod;
+	console.log(query);
+
 	MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 		if(err) {
 			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
@@ -109,8 +116,24 @@ app.get('/top', function(req,res){
 		console.log('Connected...');
 		const collection = client.db("ITWS-4500").collection("Post");
 		// perform actions on the collection object
-		collection.find({}).toArray(function(err, result) {
+			
+		collection.find(query).toArray(function(err, result) {
 			if (err) throw err;
+			if(sortMethod == "recent"){
+				result.sort(function(a,b){
+					return new Date(b.timestamp) - new Date(a.timestamp);
+				});
+				console.log(result);
+			}else if(sortMethod == "popularity"){
+				
+			}else if(sortMethod== "score"){
+				result.sort(function(a,b){
+					aKarma = length(a.likes) - length(a.dislikes);
+					bKarma = length(b.likes) - length(b.dislikes);
+					return aKarma - bkarma;
+				});
+			}
+			
 			res.json(result);
 		});
 		client.close();
