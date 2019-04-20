@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var archiveSchema = new mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
    user_id: {
     type: String,
     ref: User
@@ -41,12 +40,12 @@ var archiveSchema = new mongoose.Schema({
     },
     archived: {
         type: String,
-        default: false
+        default: false,
         required: true
     },
     flagged: {
         type: String,
-        default: false
+        default: false,
         required: true
     },
     msg_volume: {

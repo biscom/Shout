@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser')
 var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
@@ -10,7 +11,7 @@ var User = require('./userSchema');
 var University = require('./uniSchema');
 var Post = require('./postSchema');
 
-
+app.use(bodyParser.json());
 app.use(session({
 	secret: 'ITWS 4500 Shout',
 	resave: false,
@@ -62,10 +63,8 @@ app.post('/createAccount', function(req, res){
 	nickname = req.body.nickname;
 	univ_email=req.body.univ_email;
 	univid = req.body.univid;
-	bcrypt.hash(req.body.password, null, function(err, hash) {
-        if (err){
-            console.log('Error occurred while hashing the user password...\n',err);
-        }
+	hash = bcrypt.hashSync(req.body.password, null);
+        
         
 		// Store account in database
         MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
@@ -73,39 +72,44 @@ app.post('/createAccount', function(req, res){
 			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
 		}
 		console.log('Connected...');
-		const collection = client.db("ITWS-4500").collection("user");
+		const collection = client.db("ITWS-4500").collection("User");
             
         collection.find(username).toArray(function(err, result) {
 			if (err){
                 throw err;
             } 
             
-            if (result == {}){
+            if (result!= {} ){
                 
                 //Username already exists, return error to user
-                console.log("USER EXISTS");
+				res.json({
+					success: false,
+					reason: "User already exists"
+				});
                 
             } else {
                 
                 // a document instance
                 var new_user = new User({ username: username, password: hash, nickname: nickname, email: univ_email, univid: univid });
 
-                // save model to database
-                collection.save(function (err, new_user) {
-                    if (err) {
-                      return console.error(err);
-                    } else {
-                      console.log(new_user.username + " saved to user collection.");
-                    }
-                });
+				// save model to database
+				try{
+					collection.insertOne(new_user);
+				}catch(e){
+					console.log(e);
+				};
+
+				res.json({
+					success: true,
+					reason: "User "+ username + " has been created!"
+				});
                 
             }
 		  });
             
-        client.close();
+    
         
         });
-	});
 });
 
 //starts client session or returns false with info about incorrect info

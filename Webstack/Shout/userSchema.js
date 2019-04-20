@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 var University = require('./uniSchema'); 
 
 var userSchema = mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
+    _id: mongoose.Schema.Types.ObjectId,
    username: {
     type: String,
     unique: true,
@@ -30,7 +29,7 @@ var userSchema = mongoose.Schema({
         default: 0
     },
     created: {
-        type: Date.now
+        type: Date
     },
     user_type: {
         type: String,

@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
+var Int32 = require('mongoose-int32');
 const Schema = mongoose.Schema;
 var User = require('./userSchema');
 
 var postSchema = new mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
    user_id: {
     type: String,
     ref: User
@@ -23,8 +23,8 @@ var postSchema = new mongoose.Schema({
     },
     comment_of: {
         type: Array
-    }
     },
+    
     archived: {
         type: Boolean,
         default: false,
@@ -44,7 +44,7 @@ var postSchema = new mongoose.Schema({
         required: true
     },
 })
-})
+
 
 
 var Post = mongoose.model('Post', postSchema);
