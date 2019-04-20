@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+html {
+	font-family: "Fredoka One";
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#login-btns {
+	margin-top: 3vh;
+  	float: right;
+  	position: fixed;
+  	margin-left: 68%;
+  	z-index: 1;
+}
+
+#login {
+	display: inline-block;
+	background-color: #fff;
+	height: 6.2vh;
+	width: 25vh;
+	border-radius: 10px;
+	margin-right: 3vh;
+	text-align: center;
+	color: #E75A7C;
+	font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.6vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    font-size: 2.3vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+#login:hover, #sign-up:hover {
+	/*color: white;
+	background-color: #485977;*/
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
+}
+
+#sign-up {
+	display: inline-block;
+	background-color: #E75A7C;
+	height: 6.2vh;
+	width: 25vh;
+	border-radius: 10px;
+	margin-right: 0vh;
+	text-align: center;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.6vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    font-size: 2.3vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+}
+
+/*#userimage {
+	float: right;
+	clear: right;
+
+	height: 38px;
+	width: 38px;
+	margin-left: 17px;
+	border-radius: 100px;
+}*/
+
+#mainbox {
+	text-align: center;
+	margin: 65px auto 25px auto;
+/*	margin-right: 30px;*/
+	min-width: 500px !important;
+}
+
+#mainbox > div {
+	text-align: left;
+}
+
+#posts, #rightSidebar {
+	display: inline-block;
+}
+
+#posts {
+	width: 60%;
+	max-width: 700px;
+	min-width: 300px;
+}
+
+.newComment {
+	display: flex;
+}
+
+.postbox {
+	display: block;
+	margin-top: 15px;
+	width: 100%;
+	background-color: #FFF;
+	box-sizing: border-box;
+
+	min-height: 125px;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+#newPost {
+	padding: 10px;
+}
+
+#newPostBottom {
+	display: flex;
+}
+
+#categoryOptions {
+	display: inline-block;
+	overflow: auto;
+}
+
+.newPostLabel {
+	margin: 0;
+	padding: 0;
+}
+
+#newPostText {
+	box-sizing: border-box;
+	margin: 8px 0;
+	padding: 3px;
+	width: 100%;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+.newPostBottomSection {
+	display: inline-block;
+}
+
+.newPostBottomSection > * {
+	display: block;
+}
+
+#categoryOptions .categoryLabel {
+	float: left;
+}
+
+#selectCategory {
+	width: 50%;
+}
+
+#postAs {
+	margin-left: 10px;
+}
+
+#makePost {
+	display: block;
+	margin-top: 15px;
+}
+
+#checkAnon {
+	height: 20px;
+}
+
+.time {
+	color: #AAA;
+	font-size: 12px;
+	font-family: Calibri;
+	margin: 2px 0 0 5px;
+	display: inline-block;
+}
+
+
+
+
+
+
+.votes {
+	margin-left: 7px;
+	text-align: center;
+	width: 50px;
+	display: inline-block;
+}
+
+.votes * {
+	display: block;
+	font-size: 25px;
+	font-family: "Fredoka One";
+	margin: 0;
+	padding: 0;
+	color: #666;
+}
+
+.votes:after {
+	clear: both;
+}
+
+.up {
+	margin: 0;
+	cursor: pointer;
+}
+
+.score {
+	font-size: 20px;
+}
+
+.down {
+	margin: -8px 0 0 0;
+	cursor: pointer;
+}
+
+
+
+
+
+
+.content {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 25px 0 20px;
+	width: auto;
+	font-family: "Fredoka One";
+	color: #444;
+	word-break: break-word;
+}
+
+.post {
+	display: flex;
+}
+
+.postControls {
+	display: block;
+	margin: 10px 25px;
+	font-family: "Fredoka One";
+	color: #999;
+}
+
+.postControls span:hover {
+	cursor: pointer;
+}
+
+.savePost {
+	margin-left: 30px;
+}
+
+.reportPost {
+	float: right;
+}
+
+.postBottom {
+	margin: 0;
+	padding: 0 0 23px 0;
+	/* display: none; */
+}
+
+.comments {
+	box-sizing: border-box;
+	margin: 0 25px;
+	padding-top: 25px;
+	border-top: 2px solid #EEE;
+}
+
+.comments > * {
+	display: block;
+}
+
+/* .newComment {
+	width: 100%;
+	overflow: auto;
+}
+
+.newCommentText {
+	display: inline-block;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+	padding: 5px;
+	overflow: hidden;
+
+	box-shadow: 0 0 8px -2px #DDD;
+
+	font-family: "Fredoka One";
+	color: #666;
+	outline: none;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.submitComment {
+	display: inline-block;
+	float: right;
+	font-size: 25px;
+	color: #888;
+} */
+
+.comment {
+	display: block;
+	border: 1px solid #EEE;
+	border-radius: 4px;
+	box-shadow: 0 0 8px -2px #DDD;
+	margin-top: 5px;
+}
+
+.commentText {
+	font-family: "Fredoka One";
+	color: #444;
+	padding: 0;
+	margin: 5px;
+}
+
+.commentControls {
+	font-family: "Fredoka One";
+	color: #999;
+	margin: 5px 8px 5px 5px;
+}
+
+.commentControls span:hover {
+	cursor: pointer;
+}
+
+.commentControls > * {
+	display: inline-block;
+}
+
+.commentUp, .commentDown {
+	font-size: 18px;
+}
+
+.saveComment {
+	margin-left: 30px;
+}
+
+.reportComment {
+	float: right;
+}
+
+#rightSidebar {
+	position: sticky;
+	top: 100px !important;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.sidebarBox {
+	margin: 0 0 0 13px;
+	padding: 5px;
+	background-color: #FFF;
+	box-sizing: border-box;
+	width: 200px;
+
+	border: 1px solid #EEE;
+	border-radius: 4px;
+
+	box-shadow: 0 0 8px -2px #DDD;
+}
+
+#infoPane {
+	height: 250px;
+}
+
+#guidelines {
+	margin-top: 15px;
+	height: 400px;
+}
+
+.postInfo {
+	display: block;
+	overflow: auto;
+}
+
+
+/* .test1 {
+	box-shadow: 0 0 8px -3px #20B2AA;
+}
+
+.test2 {
+	box-shadow: 0 0 8px -3px #FF1493;
+} */

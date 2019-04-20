@@ -1,0 +1,315 @@
+@font-face {
+  font-family: Airbnb Cereal;
+  src: url(../font/airbnbcerealbold.woff)
+}
+
+@font-face {
+  font-family: 'typicons';
+  src: url("../font/typicons/typicons.woff") 
+}
+
+@font-face {
+  font-family: Brandon Grotesque;
+  src: url(../font/brandon_blk.woff)
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url(../font/Gilroy-ExtraBold.woff)
+}
+
+/*body {
+  background-color: #c00d5c;
+}*/
+
+/*.msg {
+  margin-top: 10%;
+  margin-left: 3%;
+  width: 90%;
+  height: 90%;
+  border: 1px solid black;
+
+}
+
+#main-content {
+  border: 1px solid red;
+  width: 70%;
+  height: auto;
+  float: left;
+}
+
+#controls {
+  height: 30% ;
+  width: 20%;
+  background-color: white;
+  border-radius: 25px;
+  float: right;
+/*  border: 1px solid white;*/
+/*  margin-left: 5%;
+}*/
+/*
+.row {
+  background-color: #fff;
+  height: 17vh;
+  width: 90%;
+  margin-left: 8vh;
+  margin-bottom: 4vh;
+  border-radius: 25px;
+  z-index: 0;
+  position: relative;
+}
+
+#darrow {
+  margin-top: 9.8%;
+  margin-left: 50%;
+  z-index: 1;
+  font-size: 2em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#darrow:hover {
+  color: #e3afbc;
+}
+
+.rating-number {
+  font-family: Brandon Grotesque;
+  font-size: 3em;
+  color: #ee4c7c;
+  margin-top: 3%;
+  margin-left: 10%;
+  position: absolute;
+}
+
+#plus {
+  margin-top: 3%;
+  margin-left: 5%;
+  font-size: 1.5em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#plus:hover {
+  color: #e3afbc;
+}
+#minus {
+  margin-top: 8%;
+  margin-left: 5%;
+  font-size: 1.5em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#minus:hover {
+  color: #e3afbc;
+}
+
+.user-post {
+  height: 100px;
+  width: 100px;
+  background-color: #e3afbc;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  margin-top: -0.5%;
+  margin-left: 100vh;
+}*/
+
+/*.user-post:hover {
+  opacity: 0.8;
+}*/
+
+/* Hover state animation applied here */
+/*.row:hover { 
+  -webkit-animation: hover 7200ms linear 2 alternate;
+  animation: hover 7200ms linear 2 alternate;
+  text-decoration: none;
+}*/
+
+/* Active state animation applied here */
+/*.row:active {
+  -webkit-animation: active 7200ms ease 1 alternate;
+  animation: active 7200ms ease 1 alternate; 
+  background: white;
+  text-decoration: none;
+}
+
+.msg-content {
+  font-family: Visby;
+  font-size: 1.2em;
+  color: #252331;
+  margin-left: 18%;
+  margin-top: 1%;
+  height: 68%;
+  width: 68%;
+  position: absolute;
+}
+
+#comments{
+  margin-top: 9%;
+  margin-left: 65%;
+  font-size: 1.6em;
+  color: #9a1750;
+  position: absolute;
+}
+
+.comment-number {
+  font-size: 1.2em;
+  font-family: Brandon Grotesque;
+  color: #ee4c7c;
+  position: absolute;
+  margin-top: -3.5vh;
+  margin-left: 4vh;
+}
+
+#flag {
+  margin-top: 9%;
+  margin-left: 75%;
+  font-size: 1.6em;
+  color: #9a1750;
+  position: absolute;
+
+}
+
+#star {
+  margin-top: 8.8%;
+  margin-left: 57.5%;
+  font-size: 1.6em;
+  color: #e3afbc;
+  opacity: 0.6;
+  position: absolute;
+
+}
+.row {
+  background-color: #fff;
+  height: 17vh;
+  width: 90%;
+  margin-left: 1vh;
+  margin-bottom: 4vh;
+  border-radius: 25px;
+  z-index: 0;
+  position: relative;
+}
+
+#darrow {
+  margin-top: 9.8%;
+  margin-left: 50%;
+  z-index: 1;
+  font-size: 2em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#darrow:hover {
+  color: #e3afbc;
+}
+
+.rating-number {
+  font-family: Brandon Grotesque;
+  font-size: 3em;
+  color: #ee4c7c;
+  margin-top: 3%;
+  margin-left: 10%;
+  position: absolute;
+}
+
+#plus {
+  margin-top: 3%;
+  margin-left: 5%;
+  font-size: 1.5em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#plus:hover {
+  color: #e3afbc;
+}
+#minus {
+  margin-top: 8%;
+  margin-left: 5%;
+  font-size: 1.5em;
+  color: #9a1750;
+  position: absolute;
+}
+
+#minus:hover {
+  color: #e3afbc;
+}
+
+.user-post {
+  height: 100px;
+  width: 100px;
+  background-color: #e3afbc;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  margin-top: -0.5%;
+  margin-left: 100vh;
+}
+
+.user-post:hover {
+  opacity: 0.8;
+}*/
+
+/* Hover state animation applied here */
+/*.row:hover { 
+  -webkit-animation: hover 7200ms linear 2 alternate;
+  animation: hover 7200ms linear 2 alternate;
+  text-decoration: none;
+}*/
+
+/* Active state animation applied here */
+/*.row:active {
+  -webkit-animation: active 7200ms ease 1 alternate;
+  animation: active 7200ms ease 1 alternate; 
+  background: white;
+  text-decoration: none;
+}
+
+.msg-content {
+  font-family: Visby;
+  font-size: 1.2em;
+  color: #252331;
+  margin-left: 20%;
+  margin-top: 1%;
+  height: 68%;
+  width: 68%;
+  position: absolute;
+}
+
+#comments{
+  margin-top: 9%;
+  margin-left: 65%;
+  font-size: 1.6em;
+  color: #9a1750;
+  position: absolute;
+}
+
+.comment-number {
+  font-size: 1.2em;
+  font-family: Brandon Grotesque;
+  color: #ee4c7c;
+  position: absolute;
+  margin-top: -3.5vh;
+  margin-left: 4vh;
+}
+
+#flag {
+  margin-top: 9%;
+  margin-left: 75%;
+  font-size: 1.6em;
+  color: #9a1750;
+  position: absolute;
+
+}
+
+#star {
+  margin-top: 8.8%;
+  margin-left: 57.5%;
+  font-size: 1.6em;
+  color: #e3afbc;
+  opacity: 0.6;
+  position: absolute;
+
+}
+*/
