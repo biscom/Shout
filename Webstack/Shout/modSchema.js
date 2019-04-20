@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 var modSchema = new mongoose.Schema({
    _id: mongoose.Schema.Types.ObjectId,
    post_id: {
-    type: String,
+    type: Number,
     ref: Post
    },
     user_class: {
@@ -18,28 +18,6 @@ var modSchema = new mongoose.Schema({
         default: 0
         required: true
     },
-    location: {
-        
-        lat: {
-            type: Schema.Types.Mixed,
-            required: true
-        },
-        lon: {
-            type: Schema.Types.Mixed,
-            required: true
-        },                        
-        city: {
-            type: String,
-            required: true
-        }, 
-        state: {
-            type: String,
-            required: true
-        }, 
-        zip: {
-            type: String,
-            required: true
-        }, 
     },
     univid: {
         type: Int32,
@@ -47,10 +25,16 @@ var modSchema = new mongoose.Schema({
         required: true
     },
     flagged: {
-        type: String,
-        default: false
+        type: Number,
         required: true
+    },
+    email: {
+                                    
+    },
+    user_id: {
+                                    
     }
+                                    
 })
 
 

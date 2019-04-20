@@ -1,32 +1,11 @@
-<div style="text-align:center">
-  <h2>
-    Welcome to {{ title }}!
-  </h2>
-</div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 <nav class="navbar navbar-dark bg-dark">
-  <div class="navbar-header">
-    <a class="navbar-brand" routerLink="/">Shout</a>
-    <a routerLink="/profile">Profile</a>
+  <span id="logo" routerLink="/">SHOUT!</span>
 
-  </div>
-  <a routerLink="/">Login</a>
+  <i class="navButton fas fa-map-marker-alt"></i>
+  <i class="navButton fas fa-chart-line"></i>
+  <a routerLink="/profile">Profile</a>
 </nav>
-
-<!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Shout</a>
-    </div>
-
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a routerLink="/profile">Profile</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav> -->
 
 <router-outlet></router-outlet>

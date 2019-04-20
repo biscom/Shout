@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 
+	min-width: 570px;
 	background-color: #FAFAFA;
 }
 
@@ -143,6 +144,10 @@ header {
 	overflow: auto;
 }
 
+#categoryViewSelect {
+	overflow: auto;
+}
+
 .newPostLabel {
 	margin: 0;
 	padding: 0;
@@ -166,7 +171,7 @@ header {
 	display: block;
 }
 
-#categoryOptions .categoryLabel {
+#categoryOptions .categoryLabel, #categoryViewSelect .categoryLabel {
 	float: left;
 }
 
@@ -194,7 +199,6 @@ header {
 	margin: 2px 0 0 5px;
 	display: inline-block;
 }
-
 
 
 
@@ -380,7 +384,11 @@ header {
 }
 
 #infoPane {
-	height: 250px;
+	padding-bottom: 8px;
+}
+
+#infoPane > div {
+	margin: 10px 0 0 4px;
 }
 
 #guidelines {

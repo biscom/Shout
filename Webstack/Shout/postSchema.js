@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+User = require('./userSchema')
 
 var postSchema = new mongoose.Schema({
    _id: mongoose.Schema.Types.ObjectId,
@@ -16,44 +17,35 @@ var postSchema = new mongoose.Schema({
         default: Date.now,
         required: true
     },
-    location: {
-        
-        lat: {
-            type: Schema.Types.Mixed,
-            required: true
-        },
-        lon: {
-            type: Schema.Types.Mixed,
-            required: true
-        },                        
-        city: {
-            type: String,
-            required: true
-        }, 
-        state: {
-            type: String,
-            required: true
-        }, 
-        zip: {
-            type: String,
-            required: true
-        }, 
+    univid: {
+        type: Int32,
+        ref: User
+    },
+    comment_of: {
+        type: Array
+    }
     },
     archived: {
-        type: String,
-        default: false
+        type: Boolean,
+        default: false,
         required: true
     },
     flagged: {
-        type: String,
-        default: false
-        required: true
-    },
-    msg_volume: {
         type: Number,
-        default: 0
+        default: false,
+        required: 0
+    },
+    likes: {
+        type: Number,
+        default: 0,
         required: true
     },
+    dislikes: {
+        type: Number,
+        default: 0,
+        required: true
+    },
+})
 })
 
 
