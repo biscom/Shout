@@ -10,7 +10,7 @@ export class PostsService {
   private url = "http://localhost:3000"
 
   getTopPosts(tag, sortMethod){
-    return this.http.get(this.url + "/top");
+    return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
   }
 
   getTaggedPosts(tag){
