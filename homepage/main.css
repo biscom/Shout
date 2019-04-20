@@ -7,6 +7,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
+<<<<<<< HEAD
 
 	min-width: 570px;
 	background-color: #FAFAFA;
@@ -50,40 +51,74 @@ header {
 	clear: right;
 	margin-right: 15px;
 	font-family: Calibri;
+=======
+>>>>>>> 2fd41ce9a8c39a2c92587d507b071bd0e69ddd99
 }
 
-#user {
-	float: left;
-	clear: left;
+#login-btns {
+	margin-top: 3vh;
+  	float: right;
+  	position: fixed;
+  	margin-left: 68%;
+  	z-index: 1;
 }
 
-#user span {
-	text-align: right;
+#login {
+	display: inline-block;
+	background-color: #fff;
+	height: 6.2vh;
+	width: 25vh;
+	border-radius: 10px;
+	margin-right: 3vh;
+	text-align: center;
+	color: #E75A7C;
+	font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.6vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    font-size: 2.3vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
 }
 
-#username {
-	display: block;
-
-	font-size: 18px;
-	font-weight: bold;
-	color: #999;
-}
-
-#logout {
-	display: block;
-
-	font-size: 11px;
-	color: #BBB;
-
+#login:hover, #sign-up:hover {
+	/*color: white;
+	background-color: #485977;*/
 	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
 }
 
-#logout:hover {
-	color: #00B2EE;
-	text-decoration: underline;
+#sign-up {
+	display: inline-block;
+	background-color: #E75A7C;
+	height: 6.2vh;
+	width: 25vh;
+	border-radius: 10px;
+	margin-right: 0vh;
+	text-align: center;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.6vh;
+	text-decoration: none;
+	border: none;
+    outline:none;
+    font-size: 2.3vh;
+    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
 }
 
-#userimage {
+/*#userimage {
 	float: right;
 	clear: right;
 
@@ -91,11 +126,12 @@ header {
 	width: 38px;
 	margin-left: 17px;
 	border-radius: 100px;
-}
+}*/
 
 #mainbox {
 	text-align: center;
 	margin: 65px auto 25px auto;
+/*	margin-right: 30px;*/
 	min-width: 500px !important;
 }
 
@@ -364,7 +400,7 @@ header {
 
 #rightSidebar {
 	position: sticky;
-	top: 80px !important;
+	top: 120px !important;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -374,7 +410,6 @@ header {
 	padding: 5px;
 	background-color: #FFF;
 	box-sizing: border-box;
-
 	width: 200px;
 
 	border: 1px solid #EEE;
