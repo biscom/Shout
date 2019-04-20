@@ -30,7 +30,7 @@ var userSchema = mongoose.Schema({
         default: 0
     },
     created: {
-        type: Date.
+        type: Date.now
     },
     user_type: {
         type: String,
