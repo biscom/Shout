@@ -3,13 +3,13 @@ import { RouterModule, Routes }  from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-// import { TrendingComponent } from './trending/trending.component';
+import { TrendingComponent } from './trending/trending.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: TrendingComponent
-  // },
+  {
+    path: '',
+    component: TrendingComponent
+  },
   {
     path: 'profile',
     component: ProfileComponent
