@@ -1,13 +1,29 @@
 .categoryLabel {
-	text-align: center;
-	font-family: Calibri;
-	font-size: 12px;
-	border-radius: 100px;
-	font-weight: bold;
-	
-	margin: 5px 5px 0 0;
-	padding: 1px 8px;
-	color: #FFF;
+	color: #fff;
+	height: auto;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+	padding-left: 3.5%;
+	padding-right: 3.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.4vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-left: 1.3%;
+}
+
+.categoryLabel:hover {
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
+
 }
 
 .categoryLabel:hover {
@@ -15,11 +31,29 @@
 }
 
 .postLabel {
+	color: #fff;
+	height: auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	border-radius: 20px;
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	letter-spacing: 0.1vh;
+	font-size: 1.5vh;
+	display: inline-block;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+	margin-top: 2%;
     float: right;
 }
 
-.postLabel:hover {
-    cursor: initial;
+
+.funny {
+	background-color: #F96574;
 }
 
 .funny, .funny:hover {
@@ -30,6 +64,11 @@
 	content: "Funny";
 }
 
+
+.academics {
+	background-color: #FFC74F;
+}
+
 .academics, .academics:hover {
 	background-color: #C48E48;
 }
@@ -38,28 +77,34 @@
 	content: "Academics";
 }
 
+
+.sports {
+	background-color: rgb(6, 214, 160);
+}
+
 .sports, .sports:hover {
 	background-color: #8B8989;
+
 }
 
 .sports::after {
 	content: "Sports";
 }
 
+.events {
+	background-color: #485977;
+}
 .events, .events:hover {
 	background-color: #FFC125;
+
 }
 
 .events::after {
 	content: "Events";
 }
 
-.campus, .campus:hover {
-	background-color: #00AF33;
-}
-
-.campus::after {
-	content: "Campus";
+.random {
+	background-color: #00BFFF;
 }
 
 .random, .random:hover {
@@ -68,14 +113,6 @@
 
 .random::after {
 	content: "Random";
-}
-
-.clubs, .clubs:hover {
-	background-color: #FF7216;
-}
-
-.clubs::after {
-	content: "Clubs";
 }
 
 .greek, .greek:hover {
