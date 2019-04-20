@@ -7,6 +7,52 @@ html {
 body {
 	margin: 0;
 	padding: 0;
+<<<<<<< HEAD
+
+	min-width: 570px;
+	background-color: #FAFAFA;
+}
+
+header {
+	height: 40px;
+	padding: 10px 0;
+	width: 100%;
+
+	background-color: #F3F3F3;
+	border-bottom: 3px solid #EEE;
+
+	position: fixed;
+	top: 0;
+	z-index: 1000;
+}
+
+#logo {
+	font-family: Fredoka One;
+	font-size: 35px;
+	color: #E32636;
+	font-style: italic;
+	margin-left: 15px;
+}
+
+#nearbyButton {
+	color: #999;
+	font-size: 27px;
+	margin-left: 60px;
+	float: right;
+	margin: 8px 30px 0 0;
+}
+
+#nearbyButton:hover {
+	cursor: pointer;
+}
+
+#userpanel {
+	float: right;
+	clear: right;
+	margin-right: 15px;
+	font-family: Calibri;
+=======
+>>>>>>> 2fd41ce9a8c39a2c92587d507b071bd0e69ddd99
 }
 
 #login-btns {
@@ -134,6 +180,10 @@ body {
 	overflow: auto;
 }
 
+#categoryViewSelect {
+	overflow: auto;
+}
+
 .newPostLabel {
 	margin: 0;
 	padding: 0;
@@ -157,7 +207,7 @@ body {
 	display: block;
 }
 
-#categoryOptions .categoryLabel {
+#categoryOptions .categoryLabel, #categoryViewSelect .categoryLabel {
 	float: left;
 }
 
@@ -185,7 +235,6 @@ body {
 	margin: 2px 0 0 5px;
 	display: inline-block;
 }
-
 
 
 
@@ -370,7 +419,11 @@ body {
 }
 
 #infoPane {
-	height: 250px;
+	padding-bottom: 8px;
+}
+
+#infoPane > div {
+	margin: 10px 0 0 4px;
 }
 
 #guidelines {

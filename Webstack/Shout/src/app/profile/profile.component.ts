@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
   }
 
   edit_profile() {
-    this.show_edit = true;
+    this.show_edit = !this.show_edit;
   }
 
   save_profile() {
