@@ -3,10 +3,12 @@ var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
-
+User = require('./userSchema');
+University = require('./uniSchema');
+Post = require('./postSchema');
 
 
 app.use(session({
@@ -61,8 +63,53 @@ app.post('/createAccount', function(req, res){
 	univ_email=req.body.univ_email;
 	univid = req.body.univid;
 	bcrypt.hash(req.body.password, null, function(err, hash) {
-		// Store account in database
+<<<<<<< Updated upstream
+		// Store account in databas
 
+=======
+        if (err){
+            console.log('Error occurred while hashing the user password...\n',err);
+        }
+        
+		// Store account in database
+        MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+		if(err) {
+			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+		}
+		console.log('Connected...');
+		const collection = client.db("ITWS-4500").collection("user");
+            
+        collection.find(username).toArray(function(err, result) {
+			if (err){
+                throw err;
+            } 
+            
+            if (result == {}){
+                
+                //Username already exists, return error to user
+                console.log("USER EXISTS");
+                
+            } else {
+                
+                // a document instance
+                var new_user = new User({ username: username, password: hash, nickname: nickname, email: univ_email, univid: univid });
+
+                // save model to database
+                collection.save(function (err, new_user) {
+                    if (err) {
+                      return console.error(err);
+                    } else {
+                      console.log(new_user.username + " saved to user collection.");
+                    }
+                });
+                
+            }
+		  });
+            
+        client.close();
+        
+        });
+>>>>>>> Stashed changes
 	});
 });
 
@@ -75,7 +122,7 @@ app.post('/login', function(req,res){
 			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
 		}
 		console.log('Connected...');
-		const collection = client.db("ITWS-4500").collection("accounts");
+		const collection = client.db("ITWS-4500").collection("user");
 		// get account info 
 		//check if user exists
 
@@ -102,6 +149,13 @@ app.post('/login', function(req,res){
 
 //returns Top posts from everywhere
 app.get('/top', function(req,res){
+	query = {};
+	if(req.query.tag != "all"){
+		query.tag = [req.query.tag];
+	}
+	sortMethod = req.query.sortMethod;
+	console.log(query);
+
 	MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 		if(err) {
 			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
@@ -109,8 +163,24 @@ app.get('/top', function(req,res){
 		console.log('Connected...');
 		const collection = client.db("ITWS-4500").collection("Post");
 		// perform actions on the collection object
-		collection.find({}).toArray(function(err, result) {
+			
+		collection.find(query).toArray(function(err, result) {
 			if (err) throw err;
+			if(sortMethod == "recent"){
+				result.sort(function(a,b){
+					return new Date(b.timestamp) - new Date(a.timestamp);
+				});
+				console.log(result);
+			}else if(sortMethod == "popularity"){
+				
+			}else if(sortMethod== "score"){
+				result.sort(function(a,b){
+					aKarma = length(a.likes) - length(a.dislikes);
+					bKarma = length(b.likes) - length(b.dislikes);
+					return aKarma - bkarma;
+				});
+			}
+			
 			res.json(result);
 		});
 		client.close();

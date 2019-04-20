@@ -136,6 +136,10 @@ body {
 	overflow: auto;
 }
 
+#categoryViewSelect {
+	overflow: auto;
+}
+
 .newPostLabel {
 	margin: 0;
 	padding: 0;
@@ -162,7 +166,7 @@ body {
 	display: block;
 }
 
-#categoryOptions .categoryLabel {
+#categoryOptions .categoryLabel, #categoryViewSelect .categoryLabel {
 	float: left;
 }
 
@@ -219,7 +223,6 @@ body {
 	margin: 2px 0 0 5px;
 	display: inline-block;
 }
-
 
 
 
@@ -404,7 +407,11 @@ body {
 }
 
 #infoPane {
-	height: 250px;
+	padding-bottom: 8px;
+}
+
+#infoPane > div {
+	margin: 10px 0 0 4px;
 }
 
 #guidelines {
