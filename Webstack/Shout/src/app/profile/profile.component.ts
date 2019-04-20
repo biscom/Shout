@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit {
   }
 
   save_profile() {
+    this.show_edit = !this.show_edit;
 
   }
 
