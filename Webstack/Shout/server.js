@@ -25,6 +25,27 @@ app.use(cors({origin: [
 
 const uri = "mongodb+srv://testUser:ITWS4500@cluster0-tpsxu.mongodb.net/test?retryWrites=true";
 
+app.get('/currentUser', function(req,res){
+	var sessionInfo = {};
+	if(req.session.username){
+		sessionInfo.username = req.session.username;
+		MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+			if(err) {
+				 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+			}
+			const collection = client.db("ITWS-4500").collection("University");
+			// perform actions on the collection object
+			collection.find({univid : req.session.univid}).toArray(function(err, result) {
+				sessionInfo.univid = result;
+			});
+		 });
+		 
+	}else{
+		sessionInfo.username = "Default";
+	}
+	res.json(sessionInfo);
+});
+
 app.get('/nearby', function(req,res){
 	lat=req.query.lat;
 	lon=req.query.lon;
@@ -135,12 +156,13 @@ app.post('/login', function(req,res){
 				});
                 
             } else {
-
+				user = result[0];
                 //check if password matches
-                bcrypt.compare(password, db_hash,function(error, result){
+                bcrypt.compare(password, user.password,function(error, result){
                     if(result){
                         //start client session 
-                        req.session.username = username;
+						req.session.username = username;
+						req.session.univid = user.univid;
                         res.json({
                             success: true,
                             reason: "User "+ username + " has logged in!"
@@ -181,7 +203,6 @@ app.get('/top', function(req,res){
 				result.sort(function(a,b){
 					return new Date(b.timestamp) - new Date(a.timestamp);
 				});
-				console.log(result);
 			}else if(sortMethod == "popularity"){
 				
 			}else if(sortMethod== "score"){
