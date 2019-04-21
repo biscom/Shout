@@ -76,6 +76,45 @@ app.get('/nearby', function(req,res){
 
 });
 
+app.post('/addpost', function(req, res){
+	//check database for existing user info 
+	user_id = req.body.user_id;
+	msg_body = req.body.msg_body;
+	univid = req.body.univid;
+        
+		// Store account in database
+        MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+		if(err) {
+			 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+		}
+		console.log('Connected...');
+		const collection = client.db("ITWS-4500").collection("Post");
+            
+        
+        // a document instance
+        var new_post = new Post({ user_id: user_id, msg_body: msg_body, univid: univid });
+
+        // save model to database
+        try{
+            collection.insertOne(new_user);
+        }catch(e){
+            console.log(e);
+            res.json({
+                success: true,
+                reason: "Error: " + e
+            });
+        };
+
+        res.json({
+            success: true,
+            reason: "Post has been created!"
+        });
+
+            }
+		  });
+        
+        });
+});
 
 app.post('/createAccount', function(req, res){
 	//check database for existing user info 
@@ -117,6 +156,10 @@ app.post('/createAccount', function(req, res){
 					collection.insertOne(new_user);
 				}catch(e){
 					console.log(e);
+                    res.json({
+                        success: true,
+                        reason: "Error: " + e
+                    });
 				};
 
 				res.json({
