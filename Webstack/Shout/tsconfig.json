@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -11,6 +13,10 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
+    "types": [
+      "webpack-env",
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],

@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #EEF2F5;
+}
+
+form {
+	display: inline-block;
+}
+
+input[type="text"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="password"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
