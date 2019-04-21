@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #EEF2F5;
+}
+
+form {
+	display: inline-block;
+}
+
+input[type="text"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="password"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type=checkbox]{
+	height: auto;
+	width: auto;
+	visibility: hidden;
+	margin: 0 auto;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 75px;
+	height: 31px;
+	background: grey;
+	display: inline-block;
+	border-radius: 80px;
+	position: relative;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 25px;
+	height: 25px;
+	background: #fff;
+	border-radius: 80px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #fcb165;
+}
+
+input:checked + label:after {
+	left: calc(100% - 3px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 60px;
+}

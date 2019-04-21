@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
-html {
-	font-family: "Fredoka One";
+@font-face {
+  font-family: Brandon Grotesque;
+  src: url("css/font/brandon_blk.woff")
 }
 
-body {
-	margin: 0;
-	padding: 0;
+html {
+	font-family: "Fredoka One";
 }
 
 /*#login-btns {
@@ -23,7 +23,7 @@ body {
 	height: 4.6vh;
 	width: 15vh;
 	border-radius: 35px;
-	margin-right: 1vh;
+	margin-right: 1.5vh;
 	text-align: center;
 	color: #fff;
 	font-family: 'Raleway', sans-serif;
@@ -127,6 +127,9 @@ body {
 
 #newPost {
 	padding: 10px;
+	height: auto;
+	background-color: #263549;
+	box-shadow: 1 2px 0px rgba(0, 0, 0, 0.2);	
 }
 
 #newPostBottom { 
@@ -136,6 +139,7 @@ body {
 #categoryOptions {
 	display: inline-block;
 	overflow: auto;
+	margin: 0 auto;
 }
 
 #categoryViewSelect {
@@ -145,10 +149,15 @@ body {
 .newPostLabel {
 	margin: 0;
 	padding: 0;
+	color: #F96574;
 	font-family: vag-rundschrift-d, sans-serif;
+	font-weight: 900;
 	/*text-transform: uppercase;*/
 	font-size: 5vh;
 	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.4vh;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
 .catLabel {
@@ -157,18 +166,30 @@ body {
 	padding: 0;
 	font-family: vag-rundschrift-d, sans-serif;
 	/*text-transform: uppercase;*/
-	font-size: 3vh;
-	text-align: center;
+	font-size: 5vh;
+	color: #fffffa;
+	letter-spacing: 0.7vh;
+	margin-left: 20%;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 
 }
 
-.anonLabel {
-	margin: 0;
-	padding: 0;
-	font-family: vag-rundschrift-d, sans-serif;
-	/*text-transform: uppercase;*/
-	font-size: 4vh;
+#anon-label {
+	/*margin-right: 1vh;*/
+	font-family: Raleway, sans-serif;
+	font-size: 3vh;
+	color: #fffffa;
+/*	display: inline-block;*/
+	text-align:center;
+	margin-bottom: 1% !important;
+	text-shadow: 1px 2px 0px rgba(0,0,0,0.2);
+}
+
+.switch {
 	text-align: center;
+	margin: 0 auto;
+	display: block;
 }
 
 #newPostText {
@@ -176,8 +197,9 @@ body {
 	position: relative;
 	height: 30%;
 	width: 95%;
-	margin-right: 1%;
+	margin-left: 2%;
 	margin-top: 1.7vh;
+/*	margin: 0 auto;*/
 	border-radius: 5px;
 	display: inline-block;
 	outline: none;
@@ -199,55 +221,98 @@ body {
 
 #newPostText:focus {
     outline: none !important;
-    border: 1px solid #FFC74F;
-    box-shadow: 0 0 4px #FFC74F;
+    border: 3px solid #FFC74F;
+/*    box-shadow: 0px 0px 5px #FFC74F;*/
 }
 
 .newPostBottomSection {
-	display: inline-block;
+	border: 1px solid grey;
+	position: relative;
 }
 
 .newPostBottomSection > * {
 	display: block;
 }
 
-#categoryOptions .categoryLabel, #categoryViewSelect .categoryLabel {
-	float: left;
-}
-
 #selectCategory {
-	width: 50%;
+	width: 60%;
 }
 
 #postAs {
-	margin-left: 10px;
-	height: 50%;
-	float: right;
+	margin-top: 3vh;
+	padding-left: 1vh;
+	margin-left: 1px;
+	width: 40%;
+	float: left;
+}
+
+/* ADDING TAGS */
+#tags {
+  float: left;
+/*  border: 1px solid #ccc;*/
+  padding-left: 4px;
+  font-family: Raleway;
+  width: 100%;
+}
+
+.tag {
+  cursor:pointer;
+  display: inline-block;
+  border-radius: 20px;
+  float:left;
+  color:#555;
+  background:#add;
+  padding:5px 10px;
+  padding-right: 30px;
+  margin-right: 2vh;
+}
+
+#tags span.tag:hover {
+  opacity: 0.9;
+}
+
+#tags span.tag:after {
+ position: absolute;
+ content: "×";
+ font-size: 4vh;
+/* border: 1px solid;*/
+ border-radius: 10px;
+ padding: 1px 5px;
+ margin: -15px 0px 0px 0px;
+/* font-size: 15px;*/
+}
+
+#tags input {
+  background: #eee;
+  border: 0;
+  margin: 4px;
+  padding: 7px;
+  width: auto;
 }
 
 #makePost {
 	display: block;
-	float: right;
-	display: inline-block;
-	background-color: #000;
-	height: 4.2vh;
-	width: 15vh;
-	border-radius: 5px;
-	margin-left: 3vh;
+	background-color: #95DBD2;
+	height: 5.2vh;
+	width: 30vh;
+	border-radius: 7px;
+	margin: 0 auto;
+	margin-top: 4vh;
 	text-align: center;
-	color: #E75A7C;
+	color: #fff;
 	font-family: 'Raleway', sans-serif;
   	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.6vh;
+	letter-spacing: 0.4vh;
 	text-decoration: none;
 	border: none;
     outline:none;
-    font-size: 2.3vh;
+    font-size: 2.2vh;
     -moz-transition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
 }
 
 #makePost:hover {
@@ -263,27 +328,25 @@ body {
 
 .time {
 	color: #AAA;
-	font-size: 12px;
-	font-family: Calibri;
-	margin: 2px 0 0 5px;
+	font-size: 2.2vh;
+	font-family: Raleway;
+	margin: 5px 0 0 10px;
 	display: inline-block;
 }
 
-
-
-
-
 .votes {
-	margin-left: 7px;
+	margin-left: 20px;
 	text-align: center;
+	padding-top: 2vh;
+	line-height: 0.5em;
 	width: 50px;
-	display: inline-block;
+	display: block;
 }
 
 .votes * {
 	display: block;
-	font-size: 25px;
-	font-family: "Fredoka One";
+	font-size: 4vh;
+	font-family: Brandon Grotesque;
 	margin: 0;
 	padding: 0;
 	color: #666;
@@ -293,31 +356,44 @@ body {
 	clear: both;
 }
 
-.up {
-	margin: 0;
-	cursor: pointer;
-}
-
 .score {
 	font-size: 20px;
 }
 
-.down {
-	margin: -8px 0 0 0;
-	cursor: pointer;
+span.typcn.typcn-plus {
+	padding: 0;
+	margin: 0;
+	line-height: 0em;
+	text-shadow: 1px -0.4px 0px rgba(0,0,0,0.2);
+	-moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.8s ease-in-out 0.1s;
 }
 
-
-
+span.typcn.typcn-minus {
+	margin-top: 3vh;
+	padding: 0;
+/*	margin: 0;*/
+	text-shadow: 1px -0.4px 0px rgba(0,0,0,0.2);
+	-moz-transition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.8s ease-in-out 0.1s;
+}
 
 
 
 .content {
 	display: inline-block;
 	vertical-align: top;
-	margin: 10px 25px 0 20px;
+	margin: 20px 25px 0 35px;
 	width: auto;
-	font-family: "Fredoka One";
+	font-family: navigo, sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.1vh;
+	font-style: normal;
+	font-size: 3vh;
 	color: #444;
 	word-break: break-word;
 }
@@ -362,6 +438,13 @@ body {
 	display: block;
 }
 
+.school p {
+	text-align: center;
+	position: relative;
+	margin: 0 auto !important;
+	width: 100%;
+}
+
 /* .newComment {
 	width: 100%;
 	overflow: auto;
@@ -399,14 +482,20 @@ body {
 }
 
 .commentText {
-	font-family: "Fredoka One";
+	font-family: navigo, sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.1vh;
+	font-style: normal;
+	font-size: 2vh;
 	color: #444;
 	padding: 0;
 	margin: 5px;
+	margin-left: 2vh;
 }
 
 .commentControls {
-	font-family: "Fredoka One";
+	font-family: Brandon Grotesque;
+	font-size: 3vh;
 	color: #999;
 	margin: 5px 8px 5px 5px;
 }
@@ -419,9 +508,9 @@ body {
 	display: inline-block;
 }
 
-.commentUp, .commentDown {
+/*.commentUp, .commentDown {
 	font-size: 18px;
-}
+}*/
 
 .saveComment {
 	margin-left: 30px;
