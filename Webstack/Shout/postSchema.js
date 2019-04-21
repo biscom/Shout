@@ -5,7 +5,7 @@ var User = require('./userSchema');
 
 var postSchema = new mongoose.Schema({
    user_id: {
-    type: String,
+    type: Number,
     ref: User
    },
     msg_body: {
@@ -21,7 +21,7 @@ var postSchema = new mongoose.Schema({
         type: Int32,
         ref: User
     },
-    comment_of: {
+    comments: {
         type: Array
     },
     
@@ -36,12 +36,18 @@ var postSchema = new mongoose.Schema({
         required: 0
     },
     likes: {
-        type: Array,
-        required: true
+        type: Number,
+        default: 0
     },
     dislikes: {
-        type: Array,
-        required: true
+        type: Number,
+        default: 0
+    },
+    likes_by_user: {
+        type: Array
+    },
+    dislikes_by_user: {
+        type: Array
     },
 })
 
