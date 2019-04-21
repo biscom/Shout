@@ -10,6 +10,8 @@ import * as $ from 'jquery';
               './css/font/typicons.min.css',
               './css/font/typicons.css',
               './css/nav.css',
+              './css/report.css',
+              './css/post-options.css',
               './css/dashboard.css',
               './css/bounce.css']
 })
@@ -51,16 +53,16 @@ export class TrendingComponent implements OnInit {
     // Anonymous sldier
 
     $('input[type=checkbox]').change(function() {
-      counter = 0;
-      clicked = $(this).data('index');
+      var counter = 0;
+      var clicked = $(this).data('index');
       $('input[type=checkbox]').each(function() {
-        if($(this)[0].checked) {
+        if(this[0].checked) {
           counter++;
         } 
       });
 
       if(counter == 3) {    
-        toDisable = clicked;
+        var toDisable = clicked;
         while(toDisable == clicked) {
           toDisable = Math.round(Math.random()*2);
         }
@@ -76,10 +78,14 @@ export class TrendingComponent implements OnInit {
     $(function() {
       $('#tags input').on('focusout', function(){    
         var txt = this.value.replace(/[^a-zA-Z0-9\+\-\.\#]/g,''); // allowed characters list
-        if(txt) $(this).before('<span class="tag">'+ txt +'</span>');
+        if(txt) {
+          $(this).before('<span class="tag">'+ txt +'</span>');
 
-        this.value = "";
-        this.focus();
+          // this.alltags = '<span class="tag">'+ txt +'</span>';
+        }
+
+        $(this).value = "";
+        $(this).focus();
       }).on('keyup',function( e ){
 
         // comma|enter (add more keyCodes delimited with | pipe)
@@ -91,6 +97,31 @@ export class TrendingComponent implements OnInit {
         if( confirm("Really delete this tag?") ) $(this).remove(); 
       });
     });
+    //var postText = $(this).closest('div').find('.msg-content').text();
+  // console.log(postText)
+    $('#btn-sign-up').click(function(){
+      var buttonId = $(this).attr('id');
+      var id = buttonId.split("-")[0];
+      console.log(id);
+      $('#modal-container').removeAttr('class').addClass(id);
+      $('body').addClass('modal-active');
+    });
+
+    $('#sign-up').click(function() {
+      $('#modal-container').addClass('out');
+      $('body').removeClass('modal-active');
+
+    });
+
+    $('.modal-background').click(function(ev) {
+      console.log(ev.target);
+      if(ev.target != this) return;
+      else {
+        $('#modal-container').addClass('out');
+        $('body').removeClass('modal-active');
+      }
+  
+});
 
   }
 

@@ -12,36 +12,20 @@
 		 		<input type="text" id="username" name="username" placeholder="Username" max-length="100">
 		 		<input type="password" id="password" name="password" placeholder="Password" max-length="100">
 		 		<button id="login" type="button">Login</button>
-		 		<button id="sign-up" type="button">Sign Up</button>
+		 		<button id="btn-sign-up" type="button">Sign Up</button>
 
 		 	</form>
 
 <!-- 		 	<span class="typcn typcn-th-menu"></span> -->
 
 		 </nav>
-		<!-- <header>
-			<span id="logo">SHOUT!</span>
-
-			<div id="userpanel">
-
-				<div id="user">
-					<span id="username">user</span>
-					<span id="logout">Sign Out</span>
-				</div>
-
-				<img src="https://i.pinimg.com/originals/44/03/c0/4403c0b61671a3348009888bbe6e9730.jpg" id="userimage" />
-			</div>
-
-			<i id="nearbyButton" class="fas fa-map-marker-alt"></i>
-		</header> -->
-y
 
 
 		<div id="mainbox">
 			<div id="posts">
 
 				<div class="postbox" id="newPost">
-					<p class="newPostLabel">Create a Shout</p>
+					<p class="newPostLabel"><img src="http://u.cubeupload.com/ozinem/bullhorn.png" id="bullhorn" alt="chatting" width="60" height="45"/>Create a Shout</p>
 					<textarea contenteditable="true" id="newPostText" placeholder="Enter a shout"></textarea> 
 					<div id="newPostBottom" rows="5">
 						<div class="newPostBottomSection" id="selectCategory">
@@ -65,13 +49,14 @@ y
 								<span class="categoryLabel greek notSelected"></span>
 								<span class="categoryLabel discussion notSelected"></span>
 								<span class="categoryLabel alert notSelected"></span>
-								<div id="tags">
-									<span class="tag">Sample Hashtag</span>
-								</div>
+							</div>
+							<div id="tags">
+								<span class="tag">Sample Hashtag</span>
+								<div dynamic="tagspan">{{alltags}}</div>
+								<input class="enter-tag" type="text" value="" placeholder="Enter a tag" />
+							</div>
 						</div>
-						<div class="alltags" alltags>{{hello}}</div>
-									<input type="text" value="" placeholder="Enter a tag" />
-								</div>
+						
 						<div class="newPostBottomSection" id="postAs">
 							<p id="anon-label">Stay Anonymous?</p>
 							<div class="switch"><input id="switch" type="checkbox"/><label for="switch">Toggle</label></div>
@@ -145,9 +130,8 @@ y
 
 			<div id="rightSidebar">
 				<div class="sidebarBox" id="infoPane">
-					<span class="time">
-						<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 4px"></span> Rensselaer Polytechnic Institute</p>
-					</span>
+					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span> Rensselaer Polytechnic Institute</p>
+
 					<div id="categoryView">
 						<span class="newPostLabel">Category:</span>
 						<span class="categoryLabel everything"></span>
@@ -173,10 +157,29 @@ y
 						</select>
 					</div>
 				</div>
-
-
-				<div class="sidebarBox" id="guidelines">
-					Be nice
-				</div>
+				<button class="guidelines" type="button"><i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>Community Guidelines</button>
 			</div>
 		</div>
+		<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+    	<img src="http://u.cubeupload.com/ozinem/communication1.png" alt="chatting" width="200" height="185"/>
+    	<h3 class="joinLabel">Join Our Community!</h3>
+        <section>
+          <form action="post">
+          	<input type="text" id="email" name="password" placeholder="Email" max-length="100">
+          	<input type="text" id="username-sign-up" name="username" placeholder="Username" max-length="100">
+		 	<input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100">
+		 	<button id="sign-up" type="button">Create your account</button>
+		 </form>
+          
+        </section>
+        <section class="share">
+          <button id="copy-post" type="button"><i class="fas fa-clipboard"></i></button>
+          <button id="share-fb" type="button"><i class="fab fa-facebook-f"></i></button>
+          <button id="share-tw" type="button"><i class="fab fa-twitter"></i></button><br/>
+          <textarea id="copy-text"></textarea>
+        </section>    
+    </div>
+  </div>
+</div>
