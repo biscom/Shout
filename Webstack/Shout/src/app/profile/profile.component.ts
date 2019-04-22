@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 // import { RouterModule, Routes }  from '@angular/router';
 // import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { UserDataService } from '../user-data.service';
+import { UserDataService } from './../user-data.service';
 // import { Observable } from 'rxjs';
 // import { HttpModule } from '@angular/http';
 
@@ -20,10 +20,20 @@ export class ProfileComponent implements OnInit {
 
   public show_edit : boolean = false;
 
-  constructor(private user: UserDataService) { }
+  private username;
+  private email;
+  private password;
+
+  private savedPosts = [];
+
+  constructor(private userDataService: UserDataService) { }
 
   ngOnInit() {
+    this.getUserInfo();
+  }
 
+  getUserInfo() {
+    // this.userDataService.getUser();
   }
 
   edit_profile() {
