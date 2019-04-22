@@ -246,6 +246,41 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             res.json(result);
         });
     });
+    
+    //returns Top posts from everywhere
+    app.get('/topUniversity', function(req,res){
+        query = {};
+        if(req.query.tag != "all"){
+            query.tag = [req.query.tag];
+        }
+        
+        query.univid = req.session.univid;
+        
+        sortMethod = req.query.sortMethod;
+
+        const collection = db.collection("Post");
+        // perform actions on the collection object
+
+        collection.find(query).toArray(function(err, result) {
+            if (err) throw err;
+            if(sortMethod == "recent"){
+                result.sort(function(a,b){
+                    return new Date(b.timestamp) - new Date(a.timestamp);
+                });
+            }else if(sortMethod == "popularity"){
+
+            }else if(sortMethod== "score"){
+                result.sort(function(a,b){
+                    aKarma = length(a.likes) - length(a.dislikes);
+                    bKarma = length(b.likes) - length(b.dislikes);
+                    return aKarma - bkarma;
+                });
+            }
+
+            res.json(result);
+        });
+    });
+
 
     app.get('/users', function(req,res){
         const collection = db.collection("User");
@@ -342,6 +377,37 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             });
         });
     });
+    
+    app.post('/addcomment', function(req,res){
+        const collection = db.collection("Post");
+        
+        collection.find(req.session.username).toArray(function(err, result) {
+            if (err){
+                throw err;
+            } 
+
+            user = result[0];
+            bcrypt.compare(req.body.old_password, user.password,function(error, result){
+                if(result){
+                    //store new password session 
+                    hash = bcrypt.hashSync(req.body.new_password, null);
+                    collection.update({'username':req.session.username},{$set:{'password':hash}});
+                    res.json({
+                        success: true,
+                        reason: "Password successfully updated!"
+
+                    });
+                }else{
+                    passworderr={
+                        success: false,
+                        reason: "Incorrect Password!"
+                    };
+                    res.send(passworderr);
+                }
+            });
+        });
+    });
+    
 });
 
 http.listen(3000,() => console.log("Running on port 3000"));
