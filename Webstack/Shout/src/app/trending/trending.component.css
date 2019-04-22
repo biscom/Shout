@@ -257,6 +257,21 @@ label:active:after {
 	margin-bottom: 2vh;
 }
 
+.sortLabel {
+	margin: 0;
+	padding: 0;
+	color: rgb(6, 214, 160);
+	font-family: vag-rundschrift-d, sans-serif;
+	font-weight: 900;
+    letter-spacing: 0.2vh;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 5vh;
+	text-align: center;
+	text-shadow: 1px 0px 1px rgba(0,0,0,0.3);
+	display: block;
+}
+
 .joinLabel {
 	margin: 0;
 	padding: 0;
@@ -379,6 +394,7 @@ label:active:after {
   padding:5px 10px;
   padding-right: 30px;
   margin-right: 2vh;
+  font-family: Raleway;
 }
 
 #tags span.tag:hover {

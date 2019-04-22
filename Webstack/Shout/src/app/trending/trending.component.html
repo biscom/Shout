@@ -50,10 +50,10 @@
 								<span class="categoryLabel discussion notSelected"></span>
 								<span class="categoryLabel alert notSelected"></span>
 							</div>
-							<div id="tags">
+							<div id="tags" #alltags>
 								<span class="tag">Sample Hashtag</span>
-								<div dynamic="tagspan">{{alltags}}</div>
-								<input class="enter-tag" type="text" value="" placeholder="Enter a tag" />
+								<!-- <span class="tag" ng-repeat="tag in new_tags">{{ tag }}</span> -->
+								<input (keydown.enter)="addTags($event)" class="enter-tag" type="text" value="" placeholder="Enter a tag" />
 							</div>
 						</div>
 						
@@ -94,7 +94,7 @@
 					</div>
 
 					<div class="postControls">
-						<span class="showComments fas fa-chevron-down"></span>
+						<span id="showComments" class="fas fa-chevron-down"></span>
 						<span class="savePost fas fa-save"></span>
 						<span class="reportPost fas fa-flag"></span>
 					</div>
@@ -117,8 +117,8 @@
 										<span class="commentScore"> &nbsp; 20 &nbsp; </span>
 										<span class="typcn typcn-minus"></span>
 									</div>
-									<span class="saveComment fas fa-save"></span>
-									<span class="reportComment fas fa-flag"></span>
+									<span class="saveComment fas fa-save" style="font-size: 2vh;"></span>
+									<span class="reportComment fas fa-flag" style="font-size: 2vh;"></span>
 								</div>
 							</div>
 						</div>
@@ -131,6 +131,7 @@
 			<div id="rightSidebar">
 				<div class="sidebarBox" id="infoPane">
 					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span> Rensselaer Polytechnic Institute</p>
+					<span class="sortLabel">Post Filters</span>
 
 					<div id="categoryView">
 						<span class="newPostLabel">Category:</span>
@@ -149,12 +150,15 @@
 					</div>
 
 					<div id="filterOptions">
-						<span class="newPostLabel">Sort by:</span>
-						<select id="sort">
+						
+						<div class="filter-drop">
+						<select>
+							<option value="" data-display-text="Filter by">Filter by</option>
 							<option value="popularity">Popularity</option>
 							<option value="score">Score</option>
 							<option value="recent">Recent</option>
 						</select>
+					</div>
 					</div>
 				</div>
 				<button class="guidelines" type="button"><i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>Community Guidelines</button>
@@ -169,6 +173,7 @@
           <form action="post">
           	<input type="text" id="email" name="password" placeholder="Email" max-length="100">
           	<input type="text" id="username-sign-up" name="username" placeholder="Username" max-length="100">
+          	<input type="text" id="nickname" name="nickname" placeholder="Nickname" max-length="100">
 		 	<input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100">
 		 	<button id="sign-up" type="button">Create your account</button>
 		 </form>

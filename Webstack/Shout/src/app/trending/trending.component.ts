@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import {PostsService} from './../posts.service';
 import * as $ from 'jquery';
 
@@ -15,9 +15,13 @@ import * as $ from 'jquery';
               './css/dashboard.css',
               './css/bounce.css']
 })
+
 export class TrendingComponent implements OnInit {
 
-  constructor(private postService: PostsService) { }
+   @ViewChild('alltags') 
+   private alltags: ElementRef;
+
+  constructor(private postService: PostsService, private renderer: Renderer2) { }
 
   private Posts = []
 
@@ -26,7 +30,8 @@ export class TrendingComponent implements OnInit {
 
     // Toggle chevron icon for comment dropdown button
 
-    $(".showComments").click(function() {
+    $("#showComments").click(function() {
+      console.log("here");
       $(this).parent().siblings(".postBottom").slideToggle();
       $(this).toggleClass("fa-chevron-down fa-chevron-up");
     });
@@ -56,7 +61,7 @@ export class TrendingComponent implements OnInit {
       var counter = 0;
       var clicked = $(this).data('index');
       $('input[type=checkbox]').each(function() {
-        if(this[0].checked) {
+        if((<any>$(this)).checked) {
           counter++;
         } 
       });
@@ -67,36 +72,15 @@ export class TrendingComponent implements OnInit {
           toDisable = Math.round(Math.random()*2);
         }
 
-        $("input:eq("+ toDisable +")")[0].checked = false;
+        (<any>$("input:eq("+ toDisable +")"))[0].checked = false;
       }
 
     });
 
-
-    // adding tags
-
-    $(function() {
-      $('#tags input').on('focusout', function(){    
-        var txt = this.value.replace(/[^a-zA-Z0-9\+\-\.\#]/g,''); // allowed characters list
-        if(txt) {
-          $(this).before('<span class="tag">'+ txt +'</span>');
-
-          // this.alltags = '<span class="tag">'+ txt +'</span>';
-        }
-
-        $(this).value = "";
-        $(this).focus();
-      }).on('keyup',function( e ){
-
-        // comma|enter (add more keyCodes delimited with | pipe)
-        if(/(188|13)/.test(e.which)) $(this).focusout();
-
-      });
-
-      $('#tags').on('click','.tag',function(){
-        if( confirm("Really delete this tag?") ) $(this).remove(); 
-      });
+    $('#tags').on('click','.tag',function(){
+       if( confirm("Really delete this tag?") ) $(this).remove(); 
     });
+
     //var postText = $(this).closest('div').find('.msg-content').text();
   // console.log(postText)
     $('#btn-sign-up').click(function(){
@@ -120,6 +104,8 @@ export class TrendingComponent implements OnInit {
         $('#modal-container').addClass('out');
         $('body').removeClass('modal-active');
       }
+
+
   
 });
 
@@ -132,14 +118,19 @@ export class TrendingComponent implements OnInit {
       }); 
   }
 
+  addTags(event: any){
+    const span = this.renderer.createElement('span');
+    console.log(event.target.value);
+    const text = this.renderer.createText(this.transform(event.target.value));
+    this.renderer.appendChild(span, text);
+    this.renderer.setAttribute(span, 'class', 'tag');
+    this.renderer.appendChild(this.alltags.nativeElement, span);
+  }
 
-  
-
-  
-  // $(".showComments").click(function() {
-  //   $(this).parent().siblings(".postBottom").slideToggle();
-  //   $(this).toggleClass("fa-chevron-down fa-chevron-up");
-  // });
+  transform(value: string): string {
+    let newVal = value.replace(/[^\w\s]/gi, '')
+    return newVal
+  }
 
 
 

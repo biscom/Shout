@@ -110,11 +110,11 @@ app.post('/addpost', function(req, res){
             reason: "Post has been created!"
         });
 
-            }
+            
 		  });
         
         });
-});
+
 
 app.post('/createAccount', function(req, res){
 	//check database for existing user info 
