@@ -9,8 +9,12 @@
 		 	<!-- <span class="typcn typcn-user"></span>
 		 	<i class="fas fa-bell"></i> -->
 		 	<form action="post" class="ls">
-		 		<input type="text" id="username" name="username" placeholder="Username" max-length="100">
-		 		<input type="password" id="password" name="password" placeholder="Password" max-length="100">
+		 		<input type="text" id="username" name="username" placeholder="Username"
+				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"
+				max-length="100">
+		 		<input type="password" id="password" name="password" placeholder="Password"
+				onfocus="this.placeholder=''" onblur="this.placeholder='Password'"
+				max-length="100">
 		 		<button id="login" type="button">Login</button>
 		 		<button id="btn-sign-up" type="button">Sign Up</button>
 
@@ -26,7 +30,10 @@
 
 				<div class="postbox" id="newPost">
 					<p class="newPostLabel"><img src="http://u.cubeupload.com/ozinem/bullhorn.png" id="bullhorn" alt="chatting" width="60" height="45"/>Create a Shout</p>
-					<textarea contenteditable="true" id="newPostText" placeholder="Enter a shout"></textarea> 
+					<textarea contenteditable="true" id="newPostText"
+					onfocus="this.placeholder=''" onblur="this.placeholder='Enter a Shout'"
+					placeholder="Enter a Shout"></textarea>
+
 					<div id="newPostBottom" rows="5">
 						<div class="newPostBottomSection" id="selectCategory">
 							<p class="catLabel">Add a tag</p>
@@ -53,15 +60,18 @@
 							<div id="tags" #alltags>
 								<span class="tag">Sample Hashtag</span>
 								<!-- <span class="tag" ng-repeat="tag in new_tags">{{ tag }}</span> -->
-								<input (keydown.enter)="addTags($event)" class="enter-tag" type="text" value="" placeholder="Enter a tag" />
+								<input (keydown.enter)="addTags($event)" class="enter-tag"
+								type="text" value="" onfocus="this.placeholder=''"
+								onblur="this.placeholder='Enter a Shout'"
+								placeholder="Enter a tag" />
 							</div>
 						</div>
-						
+
 						<div class="newPostBottomSection" id="postAs">
 							<p id="anon-label">Stay Anonymous?</p>
 							<div class="switch"><input id="switch" type="checkbox"/><label for="switch">Toggle</label></div>
-							
-							
+
+
 							<button id="makePost">Post</button>
 						</div>
 					</div>
@@ -71,7 +81,7 @@
   <div class="media-body">
     <h5 class="mt-0"><a href="{{article.url}}">{{article.title}}</a></h5>
     <h6>By:<i> {{article.author || article.source.name}}</i> </h6>
-    <b>{{article.publishedAt | date:'medium'}}:</b> 
+    <b>{{article.publishedAt | date:'medium'}}:</b>
     <p>{{article.content}}</p>
   </div>
   </li> -->
@@ -150,7 +160,7 @@
 					</div>
 
 					<div id="filterOptions">
-						
+
 						<div class="filter-drop">
 						<select>
 							<option value="" data-display-text="Filter by">Filter by</option>
@@ -177,14 +187,14 @@
 		 	<input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100">
 		 	<button id="sign-up" type="button">Create your account</button>
 		 </form>
-          
+
         </section>
         <section class="share">
           <button id="copy-post" type="button"><i class="fas fa-clipboard"></i></button>
           <button id="share-fb" type="button"><i class="fab fa-facebook-f"></i></button>
           <button id="share-tw" type="button"><i class="fab fa-twitter"></i></button><br/>
           <textarea id="copy-text"></textarea>
-        </section>    
+        </section>
     </div>
   </div>
 </div>
