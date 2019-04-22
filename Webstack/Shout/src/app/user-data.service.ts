@@ -9,8 +9,9 @@ export class UserDataService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(userID) {
+  getProfileInfo() {
     // finish next line with api url
     // return this.http.get('');
+    return this.http.get("localhost:3000/profileInfo");   
   }
 }
