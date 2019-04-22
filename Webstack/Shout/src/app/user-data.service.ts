@@ -12,6 +12,6 @@ export class UserDataService {
   getProfileInfo() {
     // finish next line with api url
     // return this.http.get('');
-    return this.http.get("localhost:3000/profileInfo");   
+    return this.http.get("http://localhost:3000/profileInfo");   
   }
 }
