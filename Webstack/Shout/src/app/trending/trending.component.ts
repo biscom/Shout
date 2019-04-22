@@ -2,7 +2,7 @@ import {Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/cor
 import {PostsService} from './../posts.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import * as $ from 'jquery';
-import 'jquery-ui-dist/jquery-ui';
+//import 'jquery-ui-dist/jquery-ui';
 
 @Component({
   selector: 'app-trending',

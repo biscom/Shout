@@ -377,6 +377,27 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             });
         });
     });
+
+    app.get('/checkStatus', function(req,res,){
+        var status = {};
+        if(req.session.username){
+            status.valid = true;
+            status.username = req.session.username;
+            status.username = req.session.user;
+            var collection = db.collection('university');
+            collection.find(req.session.univid).toArray(function(err, result) {
+                if (err){
+                    throw err;
+                } 
+                
+                status.uni_name = result[0].uni_name;
+                res.json(status);
+            });        
+        }else{
+            status.valid = false;
+            res.json(status);
+        }
+    });
     
     app.post('/addcomment', function(req,res){
         const collection = db.collection("Post");
