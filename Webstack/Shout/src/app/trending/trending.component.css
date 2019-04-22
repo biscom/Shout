@@ -94,6 +94,10 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
 }
 
+.inline-form {
+	display: inline-block;
+}
+
 .guidelines {
 	width: 90%;
 	background-color: #fcb165;
@@ -257,9 +261,31 @@ label:active:after {
 	margin-bottom: 2vh;
 }
 
+#sort-img {
+	display: inline-block;
+	margin-left: 5vh;
+	margin-top: 1vh;
+	margin-right: 2vh;
+	position: relative;
+	float: left;
+}
+
+#cat-img {
+	display: inline-block;
+	margin-left: 5vh;
+	margin-right: 1.2vh;
+	position: relative;
+	float: left;
+}
+
+
+
+#sort-img:hover, #bullhorn:hover {
+	opacity: 0.9;
+}
+
 .sortLabel {
-	margin: 0;
-	padding: 0;
+	padding-top: 1vh;
 	color: rgb(6, 214, 160);
 	font-family: vag-rundschrift-d, sans-serif;
 	font-weight: 900;
@@ -269,7 +295,8 @@ label:active:after {
     font-size: 5vh;
 	text-align: center;
 	text-shadow: 1px 0px 1px rgba(0,0,0,0.3);
-	display: block;
+	display: inline-block;
+/*	float: right;*/
 }
 
 .joinLabel {
@@ -298,6 +325,12 @@ label:active:after {
 	margin-left: 20%;
 	text-transform: uppercase;
 	text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+
+}
+
+#select-cat {
+	color: #fcb165;
+	font-size: 5vh;
 
 }
 
