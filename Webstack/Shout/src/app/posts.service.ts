@@ -24,6 +24,7 @@ export class PostsService {
       univid : univid
     };
     return this.http.post(this.url+"/addPost", postInfo);
+    }
   
   addComment(user_id,msg_body, likes, dislikes){
     let postInfo={
@@ -33,6 +34,7 @@ export class PostsService {
       dislikes: dislikes
     };
     return this.http.post(this.url+"/addComment", postInfo);
+    }
 
   getTaggedPosts(tag){
     return this.http.get(this.url+"/posts?tag="+tag);
