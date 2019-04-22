@@ -20,7 +20,7 @@ export class ProfileComponent implements OnInit {
 
   private username;
   private email;
-  private password;
+  private password = "";
 
   private savedPosts = [];
 
@@ -33,8 +33,9 @@ export class ProfileComponent implements OnInit {
   getUserInfo() {
     this.userDataService.getProfileInfo()
     .subscribe((res: any[]) =>{
-      this.username = res.username;
-      this.email = res.email;
+      var data = JSON.parse(JSON.stringify(res));
+      this.username = data.username;
+      this.email = data.email;
     });
   }
 
