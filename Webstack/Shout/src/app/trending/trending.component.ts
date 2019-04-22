@@ -1,6 +1,8 @@
 import {Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import {PostsService} from './../posts.service';
+import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import * as $ from 'jquery';
+import 'jquery-ui-dist/jquery-ui';
 
 @Component({
   selector: 'app-trending',
@@ -9,24 +11,35 @@ import * as $ from 'jquery';
               './categories.css',
               './css/font/typicons.min.css',
               './css/font/typicons.css',
-              './css/nav.css',
               './css/report.css',
               './css/post-options.css',
               './css/dashboard.css',
-              './css/bounce.css']
+              './css/bounce.css',
+              './css/filter.css']
 })
 
 export class TrendingComponent implements OnInit {
 
    @ViewChild('alltags') 
    private alltags: ElementRef;
+   private allfilters: ElementRef;
+   private register: FormGroup;
 
-  constructor(private postService: PostsService, private renderer: Renderer2) { }
+  constructor(private postService: PostsService,
+              private renderer: Renderer2,
+              private builder: FormBuilder) { }
 
   private Posts = []
 
   ngOnInit() {
     this.getPosts("all", "recent");
+    this.register = this.builder.group({
+          email:['', [Validators.required, Validators.email]],
+          username:['', Validators.required],
+          nickname:['', Validators.required],
+          password:['', [Validators.required, 
+                        Validators.minLength(8)]]
+    })
 
     // Toggle chevron icon for comment dropdown button
 
@@ -41,7 +54,7 @@ export class TrendingComponent implements OnInit {
     $("#categoryViewSelect").children().click(function() {
       var selectedClasses = $(this).attr('class');
       selectedClasses = selectedClasses.replace("notSelected", "");
-        $(this).parent().siblings(".categoryLabel").attr("class", selectedClasses);
+        $(this).parent().siblings(".tag-select").children('.categoryLabel').attr("class", selectedClasses);
     });
 
     // Category interface in new post
@@ -91,19 +104,21 @@ export class TrendingComponent implements OnInit {
       $('body').addClass('modal-active');
     });
 
-    $('#sign-up').click(function() {
-      $('#modal-container').addClass('out');
-      $('body').removeClass('modal-active');
+    // $('#sign-up').click(function() {
+    //   $('#modal-container').addClass('out');
+    //   $('body').removeClass('modal-active');
 
-    });
+    // });
 
     $('.modal-background').click(function(ev) {
-      console.log(ev.target);
       if(ev.target != this) return;
       else {
         $('#modal-container').addClass('out');
         $('body').removeClass('modal-active');
       }
+
+
+
   
 });
 
@@ -126,7 +141,7 @@ export class TrendingComponent implements OnInit {
   }
 
   transform(value: string): string {
-    let newVal = value.replace(/[^\w\s]/gi, '')
+    let newVal = value.replace(/[^\w\s]/gi, '').toLowerCase()
     return newVal
   }
 
@@ -154,14 +169,6 @@ export class TrendingComponent implements OnInit {
       $('.filter-container').find('ul').toggle();
     }
   }
-
-
-
-
-
-
-
-
 
 
 }

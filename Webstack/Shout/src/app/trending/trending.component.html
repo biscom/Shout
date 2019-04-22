@@ -1,6 +1,5 @@
 
 
-
 		<div id="mainbox">
 			<div id="posts">
 
@@ -52,6 +51,15 @@
 						</div>
 					</div>
 				</div>
+				<!-- <li class="media rounded shadow bg-light mb-3" *ngFor="let article of articles">
+  <img class="align-self-center mr-3 img-thumbnail w-25 height-auto" src="{{article.urlToImage}}" alt="Generic placeholder image">
+  <div class="media-body">
+    <h5 class="mt-0"><a href="{{article.url}}">{{article.title}}</a></h5>
+    <h6>By:<i> {{article.author || article.source.name}}</i> </h6>
+    <b>{{article.publishedAt | date:'medium'}}:</b>
+    <p>{{article.content}}</p>
+  </div>
+  </li> -->
 
 				<div class="postbox" *ngFor="let post of Posts">
 					<div class="postInfo">
@@ -107,8 +115,7 @@
 
 			<div id="rightSidebar">
 				<div class="sidebarBox" id="infoPane">
-					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span>Rensselaer Polytechnic Institute</p>
-					<span class="sortLabel">Post Filters</span>
+					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span> Rensselaer Polytechnic Institute</p>
 					<img id="sort-img" src="http://u.cubeupload.com/ozinem/sort.png" alt="chatting" width="40" height="38"/><p class="sortLabel">Post Filters</p>
 					<div class="filter-container">
 						<svg version="1.1" class="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" viewBox="0 0 42 42" enable-background="new 0 0 42 42" xml:space="preserve" (click)="toggleClass($event)">
@@ -123,8 +130,12 @@
 						</ul>
 					</div><br/>
 					<div id="categoryView">
-						<span class="newPostLabel">Category:</span>
-						<span class="categoryLabel everything"></span>
+						<img id="cat-img" src="http://u.cubeupload.com/ozinem/choice.png" alt="chatting" width="50" height="45"/>
+						<span class="sortLabel" id="select-cat">Filter by tag</span>
+						<div class="tag-select">
+							<p class="selectedTag">Selected Tag</p>
+							<span class="categoryLabel everything"></span>
+						</div>
 						<div id="categoryViewSelect">
 							<span class="categoryLabel funny"></span>
 							<span class="categoryLabel academics"></span>
@@ -137,18 +148,6 @@
 							<span class="categoryLabel everything"></span>
 						</div>
 					</div>
-
-					<div id="filterOptions">
-
-						<div class="filter-drop">
-						<select>
-							<option value="" data-display-text="Filter by">Filter by</option>
-							<option value="popularity">Popularity</option>
-							<option value="score">Score</option>
-							<option value="recent">Recent</option>
-						</select>
-					</div>
-					</div>
 				</div>
 				<button class="guidelines" type="button"><i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>Community Guidelines</button>
 			</div>
@@ -159,12 +158,12 @@
     	<img src="http://u.cubeupload.com/ozinem/communication1.png" alt="chatting" width="200" height="185"/>
     	<h3 class="joinLabel">Join Our Community!</h3>
         <section>
-          <form action="post">
-          	<input type="text" id="email" name="password" placeholder="Email" max-length="100">
-          	<input type="text" id="username-sign-up" name="username" placeholder="Username" max-length="100">
-          	<input type="text" id="nickname" name="nickname" placeholder="Nickname" max-length="100">
-		 	<input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100">
-		 	<button id="sign-up" type="button">Create your account</button>
+          <form [formGroup]="register" (submit)="saveUser()" class="inline-form">
+          	<input type="text" id="email" name="password" placeholder="Email" max-length="100" formControlName="email">
+          	<input type="text" id="username-sign-up" name="username" placeholder="Username" max-length="100" formControlName="username">
+          	<input type="text" id="nickname" name="nickname" placeholder="Nickname" max-length="100" formControlName="nickname">
+		 	<input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100" formControlName="password">
+		 	<button id="sign-up" type="submit" [disabled]="register.invalid">Create your account</button>
 		 </form>
 
         </section>
@@ -177,3 +176,4 @@
     </div>
   </div>
 </div>
+

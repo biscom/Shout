@@ -6,7 +6,7 @@ import {LoginService} from './login.service';
   templateUrl: './app.component.html',
   styleUrls: [
   				'./app.component.css',
-  				'./trending/css/dashbaord.css',
+  				'./trending/css/dashboard.css',
   				'./trending/css/nav.css',
   				'./trending/trending.component.css',
   			 ]

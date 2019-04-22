@@ -124,7 +124,7 @@ body {
 	width: 80%;
 	margin-right: -31%;
 	-webkit-margin-before: -0.3%;
-	-webkit-margin-end: -32%;
+	-webkit-margin-end: -35%;
 
 }
 
@@ -152,8 +152,10 @@ input::-webkit-input-placeholder{
 	padding-right: 0.8vh;
 	padding-top: 0.2vh;
 	padding-bottom: 0.2vh;*/
-	-webkit-padding-before: 0.4vh;
-	-webkit-padding-after: 0.4vh;
+	-webkit-padding-before: 2.5vh !important;
+	-webkit-padding-after: 2vh !important;
+	-webkit-padding-start: 0.4vh !important;
+	-webkit-padding-end: 0.4vh !important;
 /*	-webkit-margin-before: 0.8vh;*/
 	border: none;
 	font-family: Raleway;
