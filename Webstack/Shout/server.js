@@ -79,7 +79,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     });
 
-    app.post('/addpost', function(req, res){
+    app.post('/addPost', function(req, res){
         //check database for existing user info 
         user_id = req.body.user_id;
         msg_body = req.body.msg_body;
@@ -383,9 +383,8 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
         if(req.session.username){
             status.valid = true;
             status.username = req.session.username;
-            status.username = req.session.user;
-            var collection = db.collection('university');
-            collection.find(req.session.univid).toArray(function(err, result) {
+            var collection = db.collection('University');
+            collection.find({univid : 1}).toArray(function(err, result) {
                 if (err){
                     throw err;
                 } 
@@ -399,7 +398,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
         }
     });
     
-    app.post('/addcomment', function(req,res){
+    app.post('/addComment', function(req,res){
         const collection = db.collection("Post");
         
         collection.find(req.session.username).toArray(function(err, result) {
