@@ -16,8 +16,6 @@ import { UserDataService } from './../user-data.service';
 })
 export class ProfileComponent implements OnInit {
 
-  users$: Object;
-
   public show_edit : boolean = false;
 
   private username;
@@ -29,20 +27,23 @@ export class ProfileComponent implements OnInit {
   constructor(private userDataService: UserDataService) { }
 
   ngOnInit() {
-    this.getUserInfo();
+    getUserInfo();
   }
 
   getUserInfo() {
-    // this.userDataService.getUser();
+    this.userDataService.getProfileInfo()
+    .subscribe((res: any[]) =>{
+      this.username = res.username;
+      this.email = res.email;
+    });
   }
+
 
   edit_profile() {
     this.show_edit = !this.show_edit;
   }
-
   save_profile() {
     this.show_edit = !this.show_edit;
-
   }
 
 }
