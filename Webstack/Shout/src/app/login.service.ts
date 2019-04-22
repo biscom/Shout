@@ -40,4 +40,8 @@ export class LoginService {
 
   }
 
+  checkLoginStatus(){
+    return this.http.get(this.url + "/checkStatus");
+  }
+
 }

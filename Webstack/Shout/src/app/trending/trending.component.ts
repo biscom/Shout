@@ -11,7 +11,6 @@ import 'jquery-ui-dist/jquery-ui';
               './categories.css',
               './css/font/typicons.min.css',
               './css/font/typicons.css',
-              './css/nav.css',
               './css/report.css',
               './css/post-options.css',
               './css/dashboard.css',
@@ -55,7 +54,7 @@ export class TrendingComponent implements OnInit {
     $("#categoryViewSelect").children().click(function() {
       var selectedClasses = $(this).attr('class');
       selectedClasses = selectedClasses.replace("notSelected", "");
-        $(this).parent().siblings(".categoryLabel").attr("class", selectedClasses);
+        $(this).parent().siblings(".tag-select").children('.categoryLabel').attr("class", selectedClasses);
     });
 
     // Category interface in new post

@@ -263,7 +263,7 @@ label:active:after {
 
 #sort-img {
 	display: inline-block;
-	margin-left: 5vh;
+	margin-left: 7.8vh;
 	margin-top: 1vh;
 	margin-right: 2vh;
 	position: relative;
@@ -285,14 +285,14 @@ label:active:after {
 }
 
 .sortLabel {
-	padding-top: 1vh;
+	padding-top: 0.2vh;
 	color: rgb(6, 214, 160);
 	font-family: vag-rundschrift-d, sans-serif;
 	font-weight: 900;
     letter-spacing: 0.2vh;
     text-transform: uppercase;
     font-style: normal;
-    font-size: 5vh;
+    font-size: 4.4vh;
 	text-align: center;
 	text-shadow: 1px 0px 1px rgba(0,0,0,0.3);
 	display: inline-block;
@@ -330,7 +330,27 @@ label:active:after {
 
 #select-cat {
 	color: #fcb165;
-	font-size: 5vh;
+	font-size: 4.4vh;
+
+}
+
+.tag-select {
+	margin: 0 auto;
+	position: relative;
+	display: block;
+	text-align: center;
+}
+
+.selectedTag {
+	font-family: navigo, sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.1vh;
+	font-style: normal;
+	font-size: 3vh;
+	color: rgb(166, 171, 184);
+	display: inline-block;
+	margin-right: 1vh;
+	margin-left: 2vh;
 
 }
 

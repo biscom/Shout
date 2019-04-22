@@ -275,6 +275,31 @@ app.get('/users', function(req,res){
 	 });
 });
 
+app.get('/profileInfo', function(req,res){
+	info={};
+	if(req.session.username){
+		info.username = req.session.username;
+		MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
+			if(err) {
+				 console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
+			}
+			const collection = client.db("ITWS-4500").collection("User");
+			// perform actions on the collection object
+			collection.find({username: req.session.username}).toArray(function(err, result) {
+				if (err) throw err;
+				console.log(result[0]);
+				info.email = result[0].email;
+				res.json(info);			
+			});
+		});
+	}else{
+		info.username = "Not logged in";
+		info.email = "user@univ.edu";
+		res.json(info);
+	}
+	
+});
+
 //returns posts with specific tag and univ id
 app.get('/posts', function(req,res){
 	tag = req.query.tag;
