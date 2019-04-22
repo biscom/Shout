@@ -4,11 +4,7 @@ import {LoginService} from './login.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [
-  			'./app.component.css',
-  			'./trending/css/nav.css',
-  			'./trending/trending.component.css',
-  			'./trending/css/dashboard.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Shout';
