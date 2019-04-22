@@ -1,30 +1,3 @@
-
-		 <nav>
-		 	<section class="logo-section">
-		 		<i id="volume" class="fas fa-bullhorn"></i>
-		 		<h1 id="app-title">shout</h1>
-		 	</section>
-		 	<section class="navbar-links"></section>
-		 	<span class="typcn typcn-location"></span>
-		 	<!-- <span class="typcn typcn-user"></span>
-		 	<i class="fas fa-bell"></i> -->
-		 	<form action="post" class="ls">
-		 		<input type="text" id="username" name="username" placeholder="Username"
-				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"
-				max-length="100">
-		 		<input type="password" id="password" name="password" placeholder="Password"
-				onfocus="this.placeholder=''" onblur="this.placeholder='Password'"
-				max-length="100">
-		 		<button id="login" type="button">Login</button>
-		 		<button id="btn-sign-up" type="button">Sign Up</button>
-
-		 	</form>
-
-<!-- 		 	<span class="typcn typcn-th-menu"></span> -->
-
-		 </nav>
-
-
 		<div id="mainbox">
 			<div id="posts">
 
@@ -76,15 +49,6 @@
 						</div>
 					</div>
 				</div>
-				<!-- <li class="media rounded shadow bg-light mb-3" *ngFor="let article of articles">
-  <img class="align-self-center mr-3 img-thumbnail w-25 height-auto" src="{{article.urlToImage}}" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0"><a href="{{article.url}}">{{article.title}}</a></h5>
-    <h6>By:<i> {{article.author || article.source.name}}</i> </h6>
-    <b>{{article.publishedAt | date:'medium'}}:</b>
-    <p>{{article.content}}</p>
-  </div>
-  </li> -->
 
 				<div class="postbox" *ngFor="let post of Posts">
 					<div class="postInfo">
@@ -140,9 +104,21 @@
 
 			<div id="rightSidebar">
 				<div class="sidebarBox" id="infoPane">
-					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span> Rensselaer Polytechnic Institute</p>
+					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span>Rensselaer Polytechnic Institute</p>
 					<span class="sortLabel">Post Filters</span>
-
+					<img id="sort-img" src="http://u.cubeupload.com/ozinem/sort.png" alt="chatting" width="40" height="38"/><p class="sortLabel">Post Filters</p>
+					<div class="filter-container">
+						<svg version="1.1" class="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" viewBox="0 0 42 42" enable-background="new 0 0 42 42" xml:space="preserve" (click)="toggleClass($event)">
+							<path class="path one" fill="#cbcbcb" d="M42,21L42,21c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2v0c0-1.1,0.9-2,2-2H40C41.1,19,42,19.9,42,21z" cx="0" cy="0" transform="scale(0.9)"/>
+							<path class="path two" fill="#cbcbcb" d="M21,42L21,42c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h0c1.1,0,2,0.9,2,2V40C23,41.1,22.1,42,21,42z" cx="10" cy="10" transform="scale(0.9)"/>
+						</svg>
+						<span>Filter posts by</span>
+						<ul class="list">
+							<li><a href="#">Popularity</a></li>
+							<li><a href="#">Score</a></li>
+							<li><a href="#">Recent</a></li>
+						</ul>
+					</div><br/>
 					<div id="categoryView">
 						<span class="newPostLabel">Category:</span>
 						<span class="categoryLabel everything"></span>

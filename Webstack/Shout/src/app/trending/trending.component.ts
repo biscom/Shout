@@ -104,8 +104,6 @@ export class TrendingComponent implements OnInit {
         $('#modal-container').addClass('out');
         $('body').removeClass('modal-active');
       }
-
-
   
 });
 
@@ -132,6 +130,30 @@ export class TrendingComponent implements OnInit {
     return newVal
   }
 
+  saveUser() {
+    let email = this.register.get('email').value;
+    let user = this.register.get('username').value;
+    let nickname = this.register.get('nickname').value;
+    let pass = this.register.get('password').value;
+    console.log(email, user, nickname, pass);
+
+  }
+
+  toggleClass(event: any) {
+    let filter = (event.target as HTMLElement);
+    const hasClass = filter.classList.contains('active');
+    
+    if(hasClass) {
+      this.renderer.removeClass(event.target, 'active');
+      $('.filter-container').find('ul').toggle();
+      // this.renderer.addClass("close");
+    } 
+    else {
+      // this.renderer.removeClass(event.target, "close");
+      this.renderer.addClass(event.target, 'active');
+      $('.filter-container').find('ul').toggle();
+    }
+  }
 
 
 
