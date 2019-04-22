@@ -4,7 +4,6 @@ var session = require('express-session');
 var app = express();
 var http = require('http').Server(app);
 const MongoClient = require('mongodb').MongoClient;
-//const mongoose = require('mongoose');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 var User = require('./userSchema');
@@ -191,9 +190,19 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                         //start client session 
                         req.session.username = username;
                         req.session.univid = user.univid;
+                        
+                        uni_collecton = db.collection("University");
+                        collection.find(user.univid).toArray(function(err, result) {
+                            if (err){
+                                throw err;
+                            } 
+                            
+                            req.session.uni_name = result.uni_name;
+                        });
                         res.json({
                             success: true,
                             reason: "User "+ username + " has logged in!"
+        
                         });
                     }else{
                         passworderr={
@@ -271,6 +280,67 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
         tag = req.query.tag;
         univid=req.session.univid;
 
+    });
+    
+    app.post('/updateUsername', function(req,res){
+        
+        const collection = db.collection("User");
+        
+        collection.find(req.session.username).toArray(function(err, result) {
+            if (err){
+                throw err;
+            } 
+
+            user = result[0];
+            bcrypt.compare(req.body.password, user.password,function(error, result){
+                if(result){
+                    //store new password session 
+                    collection.update({'username':req.session.username},{$set:{'username':req.body.new_username}});
+                    res.json({
+                        success: true,
+                        reason: "Username successfully updated!"
+
+                    });
+                }else{
+                    passworderr={
+                        success: false,
+                        reason: "Incorrect Password!"
+                    };
+                    res.send(passworderr);
+                }
+            });
+        });
+
+    });
+    
+    app.post('/updatePassword', function(req,res){
+        const collection = db.collection("User");
+        
+        collection.find(req.session.username).toArray(function(err, result) {
+            if (err){
+                throw err;
+            } 
+
+            user = result[0];
+            bcrypt.compare(req.body.old_password, user.password,function(error, result){
+                if(result){
+                    //store new password session 
+                    hash = bcrypt.hashSync(req.body.new_password, null);
+                    collection.update({'username':req.session.username},{$set:{'password':hash}});
+                    res.json({
+                        success: true,
+                        reason: "Password successfully updated!"
+
+                    });
+                }else{
+                    passworderr={
+                        success: false,
+                        reason: "Incorrect Password!"
+                    };
+                    res.send(passworderr);
+                }
+            });
+        });
     });
 });
 
