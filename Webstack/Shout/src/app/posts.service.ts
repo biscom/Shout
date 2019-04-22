@@ -32,7 +32,7 @@ export class PostsService {
       likes: likes,
       dislikes: dislikes
     };
-    return this.http.post(this.url+"/addPost", postInfo);
+    return this.http.post(this.url+"/addComment", postInfo);
 
   getTaggedPosts(tag){
     return this.http.get(this.url+"/posts?tag="+tag);
