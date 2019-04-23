@@ -14,6 +14,9 @@ import {LoginService} from './login.service';
 export class AppComponent {
   title = 'Shout';
 
+  private logged_in : boolean = false;
+  private username_nav;
+
   constructor(private loginService : LoginService){}
 
   //getting 5 nearest universities of location for account creation
@@ -42,8 +45,11 @@ export class AppComponent {
   }
 
   checkLoginStatus(){
-    this.loginService.checkLoginStatus().subscribe((res :any[])=>{
-
-    });
+    this.loginService.checkLoginStatus()
+      .subscribe((res :any[]) => {
+        var data = JSON.parse(JSON.stringify(res));
+        this.logged_in = data.valid;
+        this.username_nav = data.username;
+      });
   }
 }
