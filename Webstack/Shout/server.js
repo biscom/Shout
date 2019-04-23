@@ -312,8 +312,8 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                 res.json(info);			
             });
         } else {
-            info.username = "Not logged in";
-            info.email = "user@univ.edu";
+            info.username = "deahln";
+            info.email = "deahln@rpi.edu";
             res.json(info);
         }
     });
