@@ -81,7 +81,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     app.post('/addPost', function(req, res){
         //check database for existing user info 
-        user_id = req.body.user_id;
+        user_id = req.session.user_id;
         msg_body = req.body.msg_body;
         univid = req.body.univid;
 
@@ -190,6 +190,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                         //start client session 
                         req.session.username = username;
                         req.session.univid = user.univid;
+                        req.session.userid = user._id;
                         
                         uni_collecton = db.collection("University");
                         collection.find(user.univid).toArray(function(err, result) {
@@ -234,12 +235,18 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                     return new Date(b.timestamp) - new Date(a.timestamp);
                 });
             }else if(sortMethod == "popularity"){
-
+                result.sort(function(a,b){
+                    aKarma = a.likes - a.dislikes;
+                    bKarma = b.likes - b.dislikes;
+                    aPop = 0.6 *length(a.comments) + 0.4* aKarma; 
+                    bPop = 0.6 *length(b.comments) + 0.4* bKarma;
+                    return bPop-aPop; 
+                });
             }else if(sortMethod== "score"){
                 result.sort(function(a,b){
-                    aKarma = length(a.likes) - length(a.dislikes);
-                    bKarma = length(b.likes) - length(b.dislikes);
-                    return aKarma - bkarma;
+                    aKarma = a.likes - a.dislikes;
+                    bKarma = b.likes - b.dislikes;
+                    return bKarma - akarma; 
                 });
             }
 
@@ -268,12 +275,18 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                     return new Date(b.timestamp) - new Date(a.timestamp);
                 });
             }else if(sortMethod == "popularity"){
-
+                result.sort(function(a,b){
+                    aKarma = a.likes - a.dislikes;
+                    bKarma = b.likes - b.dislikes;
+                    aPop = 0.6 *length(a.comments) + 0.4* aKarma; 
+                    bPop = 0.6 *length(b.comments) + 0.4* bKarma;
+                    return bPop-aPop; 
+                });
             }else if(sortMethod== "score"){
                 result.sort(function(a,b){
-                    aKarma = length(a.likes) - length(a.dislikes);
-                    bKarma = length(b.likes) - length(b.dislikes);
-                    return aKarma - bkarma;
+                    aKarma = a.likes - a.dislikes;
+                    bKarma = b.likes - b.dislikes;
+                    return bKarma - akarma;
                 });
             }
 
