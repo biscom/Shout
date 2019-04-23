@@ -41,7 +41,9 @@ export class LoginService {
   }
 
   checkLoginStatus(){
-    return this.http.get(this.url + "/checkStatus");
+    return this.http.get(this.url + "/checkStatus", {
+      withCredentials : true
+    });
   }
 
 }

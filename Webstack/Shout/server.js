@@ -88,13 +88,13 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
         // Store account in database
 
         const collection = db.collection("Post");
-
+        
         // a document instance
-        var new_post = new Post({ user_id: user_id, msg_body: msg_body, univid: univid });
+        var new_post = new Post({ user_id: req.session.user_id, msg_body: msg_body, univid: univid });
 
         // save model to database
         try{
-            collection.insertOne(new_user);
+            collection.insertOne(new_post);
         }catch(e){
             console.log(e);
             res.json({
@@ -391,7 +391,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             status.valid = true;
             status.username = req.session.username;
             var collection = db.collection('University');
-            collection.find({univid : 1}).toArray(function(err, result) {
+            collection.find({univid : req.session.univid}).toArray(function(err, result) {
                 if (err){
                     throw err;
                 } 
@@ -407,6 +407,10 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
     
     app.post('/addComment', function(req,res){
         const collection = db.collection("Post");
+        
+//        user_id : user_id,
+//        msg_body : msg_body,
+//        univid : univid
         
         collection.find(req.session.username).toArray(function(err, result) {
             if (err){

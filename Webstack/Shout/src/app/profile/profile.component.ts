@@ -22,7 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class ProfileComponent implements OnInit {
 
   public show_edit : boolean = false; // show or hide edit button
-  public at_edit : boolean = true; // at "About" section or not
+  public about_section : boolean = true; // at "About" section or not
 
   // regular profile info display
   private username;
@@ -75,12 +75,15 @@ export class ProfileComponent implements OnInit {
     });
   }
   save_profile() {
-    if (this.editForm.get('new_username').value != '') {
+    // change username
+    if (this.editForm.get('new_username').value != '' &&
+      this.editForm.get('new_username').value != this.username) {
       this.userDataService.changeUsername(
         this.editForm.get('new_username').value,
         this.editForm.get('old_password').value);
     }
 
+    // change password
     if (this.editForm.get('new_password1').value != '' ||
       this.editForm.get('new_password2').value != ''){
       // if ()
@@ -97,22 +100,22 @@ export class ProfileComponent implements OnInit {
         else {
           // no new username input, use old username
           this.userDataService.changePassword(this.username, this.editForm.get('old_password').value, this.editForm.get('new_password1').value);
+        }
+      }
     }
-}
-}
-    this.show_edit = !this.show_edit;
 
+    this.show_edit = !this.show_edit;
     window.location.reload();
   }
   cancel_edit() {
     this.show_edit = false;
   }
 
-  onEdit() {
-    this.at_edit = true;
+  onAbout() {
+    this.about_section = true;
   }
-  offEdit() {
-    this.at_edit = false;
+  onSaved() {
+    this.about_section = false;
     this.show_edit = false;
   }
 }
