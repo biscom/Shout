@@ -133,7 +133,7 @@ upVote(event: any) {
   console.log(score);
   console.log(score.innerText);
   let s = parseInt(score.innerText) + 1
-  upvote.nextElementSibling.innerHTML = s;
+  upvote.nextElementSibling.innerHTML = s.toString();
 
 
 }
@@ -144,7 +144,7 @@ downVote(event: any) {
   console.log(score);
   console.log(score.innerText);
   let s = parseInt(score.innerText) - 1
-  downvote.previousElementSibling.innerHTML = s;
+  downvote.previousElementSibling.innerHTML = s.toString();
 
 
 }
