@@ -100,7 +100,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
         }catch(e){
             console.log(e);
             res.json({
-                success: true,
+                success: false,
                 reason: "Error: " + e
             });
         };
