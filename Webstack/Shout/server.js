@@ -175,7 +175,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                 throw err;
             } 
 
-            if (result != {} ){
+            if (result == [] ){
 
                 //Username or password are incorrect, return error to user
                 res.json({
