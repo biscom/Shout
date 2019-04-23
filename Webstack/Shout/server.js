@@ -130,7 +130,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                 throw err;
             } 
 
-            if (result!= {} ){
+            if (result!= [] ){
 
                 //Username already exists, return error to user
                 res.json({
