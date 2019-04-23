@@ -21,8 +21,8 @@ import * as $ from 'jquery';
 export class AppComponent {
   title = 'Shout';
 
-  private logged_in : boolean = false;
-  private username_nav;
+  logged_in : boolean = false;
+  username_nav;
 
   private register: FormGroup;
   private login: FormGroup;
@@ -144,6 +144,13 @@ export class AppComponent {
   logIn(username: string, password: string){
     this.loginService.logIn(username, password).subscribe((res :any[])=>{
       console.log(res)
+      var check = JSON.parse(JSON.stringify(res));
+      if (check.success){
+        this.logged_in = true;
+        this.username_nav = username;
+        console.log(this.logged_in);
+        this.checkLoginStatus();
+      }
 
     });
   }

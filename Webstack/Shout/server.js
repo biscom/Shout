@@ -391,7 +391,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             status.valid = true;
             status.username = req.session.username;
             var collection = db.collection('University');
-            collection.find({univid : 1}).toArray(function(err, result) {
+            collection.find({univid : req.session.univid}).toArray(function(err, result) {
                 if (err){
                     throw err;
                 } 
