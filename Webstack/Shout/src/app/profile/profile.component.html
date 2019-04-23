@@ -9,18 +9,18 @@
 
       <div class="col-md-5">
         <div class="profile-head">
-          <h5>{{username}}</h5>
+          <h2>{{username}}</h2>
 
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="home-tab" data-toggle="tab"
               href="#home" role="tab" aria-controls="home"
-              aria-selected="true">About</a>
+              aria-selected="true" (click)="onEdit()">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="profile-tab" data-toggle="tab"
               href="#profile" role="tab" aria-controls="profile"
-              aria-selected="false">Saved posts</a>
+              aria-selected="false" (click)="offEdit()">Saved posts</a>
             </li>
           </ul>
         </div>
@@ -28,13 +28,17 @@
 
       <!-- Edit button and save button -->
       <div class="col-md-2">
-        <button type="button" *ngIf="!show_edit" (click)="edit_profile()"
+        <button type="button" *ngIf="at_edit && !show_edit" (click)="edit_profile()"
         class="profile-edit-btn btn btn-info" id="editBtn"
         name="btnAddMore">Edit Profile</button>
 
         <button type="button" *ngIf="show_edit" (click)="save_profile()"
         class="profile-edit-btn btn btn-warning"
         id="saveBtn" name="btnSave">Save</button>
+
+        <button type="button" *ngIf="show_edit" (click)="cancel_edit()"
+        class="profile-edit-btn btn btn-secondary"
+        id="cancelBtn" name="btnSave">Cancel</button>
       </div>
     </div>
 
@@ -42,29 +46,29 @@
 
       <div class="col-md-3"></div>
 
-      <div class="col-md-5">
+      <div class="col-md-6">
         <div class="tab-content profile-tab" id="myTabContent">
 
-          <!-- Regular Display -->
+          <!-- Profile Info Display -->
           <div *ngIf="!show_edit" class="tab-pane fade show active" id="home"
           role="tabpanel" aria-labelledby="home-tab">
 
             <!-- USERNAME -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label>Username</label>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <p>{{username}}</p>
                 </div>
             </div>
 
             <!-- EMAIL -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label>Email</label>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <p>{{email}}</p>
                 </div>
             </div>
@@ -75,23 +79,33 @@
           <div *ngIf="show_edit" class="tab-pane fade show active" id="home"
           role="tabpanel" aria-labelledby="home-tab">
 
-            <!-- USERNAME -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Username</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Username"
-              aria-label="Username" aria-describedby="basic-addon1">
-            </div>
+            <mat-form-field appearance="outline">
+              <mat-label>New Username</mat-label>
+              <input matInput placeholder="{{username}}"  type="text"
+              formControlName="new_username">
+              <mat-hint>Skip if you aren't changing username</mat-hint>
+            </mat-form-field>
 
-            <!-- PASSWORD -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Password</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Password"
-              aria-label="Password" aria-describedby="basic-addon1">
-            </div>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="" type="text"
+              formControlName="old_password" required>
+              <mat-hint>*</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>New Password</mat-label>
+              <input matInput placeholder="" type="text"
+              formControlName="new_password1">
+              <mat-hint>Enter if changing password</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Re-enter New Password</mat-label>
+              <input matInput placeholder="" type="text"
+              formControlName="new_password2">
+              <mat-hint></mat-hint>
+            </mat-form-field>
 
           </div>
 

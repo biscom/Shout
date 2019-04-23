@@ -8,7 +8,8 @@
 		 	<span class="typcn typcn-location"></span>
 		 	<!-- <span class="typcn typcn-user"></span>
 		 	<i class="fas fa-bell"></i> -->
-		 	<form action="post" class="ls" [formGroup]="login" (submit)="logUser()">
+
+		 	<form action="post" class="ls" [formGroup]="login" (submit)="logUser()" *ngIf="!logged_in">
 		 		<input type="text" id="username" name="username" placeholder="Username"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"
 				max-length="100" formControlName="username">
@@ -17,10 +18,12 @@
 				max-length="100" formControlName="password">
 		 		<div class="ls-btns">
 		 			<button id="login" type="button" type="submit">Login</button>
-		 			<button id="btn-sign-up" type="button">Sign Up</button>
+		 			<button id="btn-sign-up" type="button" (click)="openModal($event)">Sign Up</button>
 		 		</div>
-
 		 	</form>
+
+		<!-- 	<button *ngIf="logged_in" id="profile" type="button">{{username_nav}}</button>
+			<button *ngIf="logged_in" id="logout" type="button">Log Out</button> -->
 
 		 </nav>
 
@@ -53,8 +56,7 @@
     			<label *ngFor="let uni of Unis"><input type="radio" class="option-input radio" value="{{uni.univid}}" (click)="set_uid($event)"/>{{uni.uni_name}}</label>
     		</form>
     	</div>
-    	
-</div>
     </div>
-  </div>
+</div>
+</div>
 </div>

@@ -3,7 +3,6 @@ import {PostsService} from './../posts.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
-// import 'jquery-ui-dist/jquery-ui';
 
 @Component({
   selector: 'app-trending',
@@ -34,6 +33,8 @@ export class TrendingComponent implements OnInit {
    private random: ElementRef;
    private discussion: ElementRef;
    private alert: ElementRef;
+   private postText: ElementRef;
+   private anon: ElementRef;
    private sortMethod: string;
 
   constructor(private postService: PostsService,
@@ -42,17 +43,18 @@ export class TrendingComponent implements OnInit {
 
   private Posts = []
   private url = "http://localhost:3000"
+  private tags = [];
 
   ngOnInit() {
     this.getPosts("all", "recent");
 
     // Toggle chevron icon for comment dropdown button
 
-    $(".showComments").click(function() {
-      console.log("here");
-      $(this).parent().siblings(".postBottom").slideToggle();
-      $(this).toggleClass("fa-chevron-down fa-chevron-up");
-    });
+    // $(".showComments").click(function() {
+    //   console.log("here");
+    //   $(this).parent().siblings(".postBottom").slideToggle();
+    //   $(this).toggleClass("fa-chevron-down fa-chevron-up");
+    // });
 
     // Category interface in sidebar
 
@@ -123,6 +125,18 @@ export class TrendingComponent implements OnInit {
 
 }
 
+// addOne(event: any) {
+//   let upvote = (event.target as HTMLElement);
+//   console.log(upvote);
+//   let score = (upvote.nextElementSibling as HTMLElement);
+//   console.log(score);
+//   console.log(score.innerText);
+//   let s = parseInt(score.innerText) + 1
+//   upvote.nextElementSibling.innerText = s;
+
+
+// }
+
   getPosts(tag, sortMethod){
     this.postService.getTopPosts(tag, sortMethod)
       .subscribe((res: any[]) =>{
@@ -133,6 +147,7 @@ export class TrendingComponent implements OnInit {
   addTags(event: any){
     const span = this.renderer.createElement('span');
     console.log(event.target.value);
+    this.tags.push(event.target.value);
     const text = this.renderer.createText(this.transform(event.target.value));
     this.renderer.appendChild(span, text);
     this.renderer.setAttribute(span, 'class', 'tag');
@@ -167,11 +182,15 @@ export class TrendingComponent implements OnInit {
 
   }
 
-  /* SORTING POSTS */
-  getTaggedPosts(tag: string) {
-    console.log(this.http.get(this.url + "/posts?tag=" + tag));
-    return this.http.get(this.url + "/posts?tag=" + tag);
+   getTaggedPosts(tag){
+    return this.http.get(this.url+"/posts?tag="+tag);
   }
+
+  /* SORTING POSTS */
+  // getTaggedPosts(tag: string) {
+  //   console.log(this.http.get(this.url + "/posts?tag=" + tag));
+  //   return this.http.get(this.url + "/posts?tag=" + tag);
+  // }
 
   parseSort(event: any) {
     let filter = (event.target as HTMLElement);
@@ -185,9 +204,60 @@ export class TrendingComponent implements OnInit {
 
   }
 
+  toggleComments(event: any) {
+    let comment = (event.target as HTMLElement);
+    console.log(comment);
+    let parent = (comment.parentNode as HTMLElement)
+    let postBottom = (parent.nextElementSibling as HTMLElement);
+    console.log(postBottom);
+    console.log(postBottom.classList);
+    if (postBottom.classList.length == 1) {
+      this.renderer.addClass(postBottom, "hide");
+    }
+
+    else {
+      this.renderer.removeClass(postBottom, "hide");
+    }
+    
+  }
+
+  createPost() {
+    let anon = $('#switch').prop('checked');
+    console.log(anon);
+    let post = $('#newPostText').val();
+    console.log(post);
+    console.log(this.tags);
+    var uid = 1;
+    let user_id = 1;
+    this.addPost(user_id, post, uid);
+
+  }
+
   // getTopPosts(tag: string, sortMethod:string){
   //   return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
   // }
+ addPost(user_id, msg_body, univid){
+    let postInfo={
+      user_id : user_id,
+      msg_body : msg_body,
+      univid : univid
+    };
+    return this.http.post(this.url+"/addPost", postInfo);
+  }
+
+
+
+
+addComment(user_id, msg_body, likes, dislikes){
+    let postInfo={
+      user_id : user_id,
+      msg_body : msg_body,
+      likes: likes,
+      dislikes: dislikes
+    };
+    return this.http.post(this.url+"/addComment", postInfo);
+  }
+
 
 
 }

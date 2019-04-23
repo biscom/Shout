@@ -4,12 +4,13 @@
 			<div id="posts">
 
 				<div class="postbox" id="newPost">
-					<p class="newPostLabel"><img src="http://u.cubeupload.com/ozinem/bullhorn.png" id="bullhorn" alt="chatting" width="60" height="45"/>Create a Shout</p>
+					<p class="newPostLabel"><img src="http://u.cubeupload.com/ozinem/bullhorn.png"
+						id="bullhorn" alt="chatting" width="60" height="45"/>Create a Shout</p>
 					<textarea contenteditable="true" id="newPostText"
 					onfocus="this.placeholder=''" onblur="this.placeholder='Enter a Shout'"
 					placeholder="Enter a Shout"></textarea>
 
-					<div id="newPostBottom" rows="5">
+					<div id="newPostBottom" rows="5" #postText>
 						<div class="newPostBottomSection" id="selectCategory">
 							<p class="catLabel">Add a tag</p>
 							<div id="categoryOptions">
@@ -23,7 +24,7 @@
 								<span class="categoryLabel discussion"></span>
 								<span class="categoryLabel alert"></span> -->
 
-								<span class="categoryLabel funny notSelected"></span>
+								<span class="categoryLabel funny notSelected" ></span>
 								<span class="categoryLabel academics notSelected"></span>
 								<span class="categoryLabel sports notSelected"></span>
 								<span class="categoryLabel events notSelected"></span>
@@ -47,7 +48,7 @@
 							<div class="switch"><input id="switch" type="checkbox"/><label for="switch" class="switchLabel">Toggle</label></div>
 
 
-							<button id="makePost">Post</button>
+							<button id="makePost" (click)="createPost()">Post</button>
 						</div>
 					</div>
 				</div>
@@ -70,29 +71,29 @@
 					</div>
 
 					<div class="postControls" >
-						<span class="showComments" class="fas fa-chevron-down"></span>
+						<span class="showComments" class="fas fa-chevron-down" (click)="toggleComments($event)"></span>
 						<span class="savePost fas fa-save"></span>
 						<span class="reportPost fas fa-flag"></span>
 					</div>
 
-					<div class="postBottom">
+					<div class="postBottom hide">
 
 						<div class="comments">
 							<div class="newComment">
 								<div class="newCommentText" contenteditable="true">s</div>
 								<span class="submitComment fas fa-check-square"></span>
 							</div>
-							<div class="comment" *ngIf="(post.comments.length != 0)">
+							<div class="comment" *ngFor="let comments of post.comments">
 								<span class="time">yo waddup</span>
 								<p class="commentText">
-									Hello I like your dog can I have your dog plsss I really want your dog because I like it.
+									{{comments.msg_body}}
 								</p>
 								<div class="commentControls">
-									<div>
+						<!-- 			<div> -->
 										<span class="typcn typcn-plus"></span>
-										<span class="commentScore"> &nbsp; 20 &nbsp; </span>
+										<span class="commentScore"> &nbsp; {{ comments.likes - comments.dislikes}} &nbsp; </span>
 										<span class="typcn typcn-minus"></span>
-									</div>
+								<!-- 	</div> -->
 									<span class="saveComment fas fa-save" style="font-size: 2vh;"></span>
 									<span class="reportComment fas fa-flag" style="font-size: 2vh;"></span>
 								</div>
@@ -106,10 +107,19 @@
 
 			<div id="rightSidebar">
 				<div class="sidebarBox" id="infoPane">
-					<p class="school"><span class="fas fa-map-marker-alt" style="margin-right: 1vh; color: #FFC74F"></span> Rensselaer Polytechnic Institute</p>
-					<img id="sort-img" src="http://u.cubeupload.com/ozinem/sort.png" alt="chatting" width="40" height="38"/><p class="sortLabel">Post Filters</p>
+					<p class="school">
+						<span class="fas fa-map-marker-alt"
+						style="margin-right: 1vh; color: #FFC74F"></span>
+						Rensselaer Polytechnic Institute
+					</p>
+					<img id="sort-img" src="http://u.cubeupload.com/ozinem/sort.png"
+					alt="chatting" width="40" height="38"/>
+					<p class="sortLabel">Post Filters</p>
 					<div class="filter-container">
-						<svg version="1.1" class="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" viewBox="0 0 42 42" enable-background="new 0 0 42 42" xml:space="preserve" (click)="toggleClass($event)">
+						<svg version="1.1" class="close" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						width="32px" viewBox="0 0 42 42" enable-background="new 0 0 42 42"
+						xml:space="preserve" (click)="toggleClass($event)">
 							<path class="path one" fill="#cbcbcb" d="M42,21L42,21c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2v0c0-1.1,0.9-2,2-2H40C41.1,19,42,19.9,42,21z" cx="0" cy="0" transform="scale(0.9)"/>
 							<path class="path two" fill="#cbcbcb" d="M21,42L21,42c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2h0c1.1,0,2,0.9,2,2V40C23,41.1,22.1,42,21,42z" cx="10" cy="10" transform="scale(0.9)"/>
 						</svg>
@@ -121,7 +131,8 @@
 						</ul>
 					</div><br/>
 					<div id="categoryView">
-						<img id="cat-img" src="http://u.cubeupload.com/ozinem/choice.png" alt="chatting" width="50" height="45"/>
+						<img id="cat-img" src="http://u.cubeupload.com/ozinem/choice.png"
+						alt="chatting" width="50" height="45"/>
 						<span class="sortLabel" id="select-cat">Filter by tag</span>
 						<div class="tag-select">
 							<p class="selectedTag">Selected Tag</p>
@@ -140,8 +151,9 @@
 						</div>
 					</div>
 				</div>
-				<button class="guidelines" type="button"><i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>Community Guidelines</button>
+			<!-- 	<button class="guidelines" type="button">
+					<i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>
+					Community Guidelines
+				</button> -->
 			</div>
 		</div>
-		
-

@@ -11,6 +11,10 @@ import { UniversityComponent } from './university/university.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @NgModule({
   imports: [
     HttpClientModule,
@@ -20,7 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBIdqBvurPR4Jc_n9GNe4krQyzaCw5gj0I'
-    })
+    }),
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   declarations: [
     AppComponent,

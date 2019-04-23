@@ -1,6 +1,8 @@
+
 import { Component, Renderer2,} from '@angular/core';
 import {LoginService} from './login.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,7 @@ import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } 
 export class AppComponent {
   title = 'Shout';
 
+
   private register: FormGroup;
   private login: FormGroup;
   private latitude: number;
@@ -30,6 +33,9 @@ export class AppComponent {
   constructor(private loginService : LoginService,
               private builder: FormBuilder,
               private renderer: Renderer2){}
+
+  private logged_in : boolean = false;
+  private username_nav;
 
   ngOnInit() {
     this.register = this.builder.group({
@@ -60,14 +66,7 @@ export class AppComponent {
       });
    } 
 
-    $('#btn-sign-up').click(function(){
-      var buttonId = $(this).attr('id');
-      var id = buttonId.split("-")[0];
-      console.log(id);
-      $('#modal-container').removeAttr('class').addClass(id);
-
-      $('body').addClass('modal-active');
-    });
+    
 
     // $('#sign-up').click(function() {
     //   $('#modal-container').addClass('out');
@@ -76,6 +75,7 @@ export class AppComponent {
     // });
 
     $('.modal-background').click(function(ev) {
+      console.log(ev.target);
       if(ev.target != this) return;
       else {
         $('#modal-container').addClass('out');
@@ -150,9 +150,23 @@ export class AppComponent {
   }
 
   checkLoginStatus(){
-    this.loginService.checkLoginStatus().subscribe((res :any[])=>{
+    this.loginService.checkLoginStatus()
+      .subscribe((res :any[]) => {
+        var data = JSON.parse(JSON.stringify(res));
+        this.logged_in = data.valid;
+        this.username_nav = data.username;
+      });
+  }
 
-    });
+  openModal(event: any) {
+    let signup = (event.target as HTMLElement);
+    let button = signup.id;
+    let id = button.split("-")[0];
+    console.log(id);
+    let body = document.getElementsByTagName('body');
+    $('#modal-container').addClass(id);
+    $('body').addClass('modal-active');
+   
   }
 }
   
