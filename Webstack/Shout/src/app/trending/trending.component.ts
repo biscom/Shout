@@ -126,17 +126,28 @@ export class TrendingComponent implements OnInit {
 
 }
 
-// addOne(event: any) {
-//   let upvote = (event.target as HTMLElement);
-//   console.log(upvote);
-//   let score = (upvote.nextElementSibling as HTMLElement);
-//   console.log(score);
-//   console.log(score.innerText);
-//   let s = parseInt(score.innerText) + 1
-//   upvote.nextElementSibling.innerText = s;
+upVote(event: any) {
+  let upvote = (event.target as HTMLElement);
+  console.log(upvote);
+  let score = (upvote.nextElementSibling as HTMLElement);
+  console.log(score);
+  console.log(score.innerText);
+  let s = parseInt(score.innerText) + 1
+  upvote.nextElementSibling.innerHTML = s;
 
 
-// }
+}
+downVote(event: any) {
+  let downvote = (event.target as HTMLElement);
+  console.log(downvote);
+  let score = (downvote.previousElementSibling as HTMLElement);
+  console.log(score);
+  console.log(score.innerText);
+  let s = parseInt(score.innerText) - 1
+  downvote.previousElementSibling.innerHTML = s;
+
+
+}
 
   getPosts(tag, sortMethod){
     this.postService.getTopPosts(tag, sortMethod)
@@ -179,28 +190,25 @@ export class TrendingComponent implements OnInit {
   parseTag(event: any) {
     let filter = (event.target as HTMLElement);
     let classes = filter.classList;
-    this.getTaggedPosts(classes[1]);
+    this.getTaggedPosts(classes[1].toLowerCase());
 
-  }
-
-   getTaggedPosts(tag){
-    return this.http.get(this.url+"/posts?tag="+tag);
   }
 
   /* SORTING POSTS */
-  // getTaggedPosts(tag: string) {
-  //   console.log(this.http.get(this.url + "/posts?tag=" + tag));
-  //   return this.http.get(this.url + "/posts?tag=" + tag);
-  // }
+  getTaggedPosts(tag: string) {
+    console.log(this.http.get(this.url + "/posts?tag=" + tag));
+    return this.http.get(this.url + "/posts?tag=" + tag);
+  }
 
   parseSort(event: any) {
     let filter = (event.target as HTMLElement);
     let classes = filter.classList;
     console.log(classes[0]);
     let sortMethod = classes[0];
-    let tag = "everything";
+    let tag = "all";
     console.log(filter.attributes["href"]);
-    window.location.href = this.url + "/top?tag="+tag+"&sortMethod="+sortMethod;
+    this.getTopPosts(tag, classes[0]);
+    
 
 
   }
@@ -234,15 +242,17 @@ export class TrendingComponent implements OnInit {
 
   }
 
-  // getTopPosts(tag: string, sortMethod:string){
-  //   return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
-  // }
+  getTopPosts(tag: string, sortMethod:string){
+    return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
+  }
+
  addPost(user_id, msg_body, univid){
     let postInfo={
       user_id : user_id,
       msg_body : msg_body,
       univid : univid
     };
+    console.log(postInfo);
     return this.http.post(this.url+"/addPost", postInfo);
   }
 

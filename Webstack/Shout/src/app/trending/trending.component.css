@@ -679,6 +679,21 @@ span.typcn.typcn-minus {
 
 }
 
+.submitComment {
+	font-size: 4vh;
+	display: inline-block;
+	color: rgb(6, 214, 160);
+	float: right;
+	margin-top: 0.6vh !important;
+}
+
+.submitComment:hover {
+	-webkit-animation: hover 1200ms linear 2 alternate;
+  	animation: hover 1200ms linear 2 alternate;
+  	cursor: pointer;
+
+}
+
 /* .newComment {
 	width: 100%;
 	overflow: auto;
@@ -712,15 +727,16 @@ span.typcn.typcn-minus {
 	border: 1px solid #EEE;
 	border-radius: 4px;
 	box-shadow: 0 0 8px -2px #DDD;
-	margin-top: 5px;
+	margin-top: 4vh !important;
 }
 
 .commentText {
 	font-family: navigo, sans-serif;
 	font-weight: 700;
+	margin: 0 auto;
 	letter-spacing: -0.1vh;
 	font-style: normal;
-	font-size: 2vh;
+	font-size: 3vh !important;
 	color: #444;
 	padding: 0;
 	margin: 5px;
@@ -795,13 +811,15 @@ span.typcn.typcn-minus {
 
 
 .newCommentText {
-	background-color: #FFFFFA;
+	background-color: #EEF2F5;
 	position: relative;
-	height: auto;
+	height: 5vh !Important;
 	width: 90%;
+	float: left;
 	margin-right: 1%;
-	margin-top: 1.7vh;
+	margin-top: 0.1vh;
 	border-radius: 5px;
+	margin-bottom: 1.8vh;
 	display: inline-block;
 	outline: none;
 	color: #485977;

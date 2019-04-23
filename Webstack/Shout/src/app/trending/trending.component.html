@@ -55,13 +55,13 @@
 				<div class="postbox" *ngFor="let post of Posts">
 					<div class="postInfo">
 						<span class="time">{{post.timestamp | date: 'MMM dd, yyyy'}}</span>
-						<span class="postLabel {{ post.tags[0]}}"></span>
+						<span class="postLabel funny"></span>
 					</div>
 					<div class="post">
 						<div class="votes">
-							<span class="typcn typcn-plus"></span>
+							<span class="typcn typcn-plus" (click)="upVote($event)"></span>
 							<span class="score">{{post.likes - post.dislikes}}</span>
-							<span class="typcn typcn-minus"></span>
+							<span class="typcn typcn-minus" (click)="downVote($event)"></span>
 						</div>
 
 						<p class="content">
@@ -79,22 +79,23 @@
 
 						<div class="comments">
 							<div class="newComment">
-								<div class="newCommentText" contenteditable="true">s</div>
-								<span class="submitComment fas fa-check-square"></span>
+								<input type="text" class="newCommentText" contenteditable="true" onfocus="this.placeholder=''" onblur="this.placeholder='Write a comment'"
+					placeholder="Write a comment">
+								<button type="submit "class="submitComment fas fa-check-square"></button><br/>
 							</div>
 							<div class="comment" *ngFor="let comments of post.comments">
-								<span class="time">yo waddup</span>
+								<span class="time">{{comments.timestamp | date: 'MMM dd, yyyy'}}</span>
 								<p class="commentText">
 									{{comments.msg_body}}
 								</p>
 								<div class="commentControls">
 						<!-- 			<div> -->
-										<span class="typcn typcn-plus"></span>
+										<span class="typcn typcn-plus" (click)="upVote($event)"></span>
 										<span class="commentScore"> &nbsp; {{ comments.likes - comments.dislikes}} &nbsp; </span>
-										<span class="typcn typcn-minus"></span>
+										<span class="typcn typcn-minus" (click)="downVote($event)"></span>
 								<!-- 	</div> -->
 									<span class="saveComment fas fa-save" style="font-size: 2vh;"></span>
-									<span class="reportComment fas fa-flag" style="font-size: 2vh;"></span>
+									<span class="reportComment fas fa-flag" style="font-size: 2vh; margin-top: 5vh;"></span>
 								</div>
 							</div>
 						</div>
