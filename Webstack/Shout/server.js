@@ -125,7 +125,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
         const collection = db.collection("User");
 
-        collection.find(username).toArray(function(err, result) {
+        collection.find({username:username}).toArray(function(err, result) {
             if (err){
                 throw err;
             } 
@@ -166,17 +166,14 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
     app.post('/login', function(req,res){
         username = req.body.username;
         password = req.body.password;
-
         const collection = db.collection("User");
         // get account info 
         //check if user exists
-        collection.find(username).toArray(function(err, result) {
+        collection.find({username : username}).toArray(function(err, result) {
             if (err){
                 throw err;
             } 
-
             if (result == [] ){
-
                 //Username or password are incorrect, return error to user
                 res.json({
                     success: false,
@@ -211,7 +208,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                             success: false,
                             reason: "Incorrect Password!"
                         };
-                        res.send(passworderr);
+                        res.json(passworderr);
                     }
                 });
             }

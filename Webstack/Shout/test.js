@@ -1,6 +1,6 @@
 var request = require('request');
 
-const url='http://localhost:3000/createAccount';
+const url='http://localhost:3000/login';
 
 
 var accountInfo={
@@ -19,6 +19,7 @@ request.post({
       console.error(error)
       return
     }
+    console.log(res);
     console.log(`statusCode: ${res.statusCode}`)
     console.log(body)
   };
