@@ -8,6 +8,11 @@ import { UserDataService } from './../user-data.service';
 // import { Observable } from 'rxjs';
 // import { HttpModule } from '@angular/http';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -16,7 +21,8 @@ import { UserDataService } from './../user-data.service';
 })
 export class ProfileComponent implements OnInit {
 
-  public show_edit : boolean = false;
+  public show_edit : boolean = false; // show or hide edit button
+  public at_edit : boolean = true; // at "About" section or not
 
   private username;
   private email;
@@ -46,5 +52,15 @@ export class ProfileComponent implements OnInit {
   save_profile() {
     this.show_edit = !this.show_edit;
   }
+  cancel_edit() {
+    this.show_edit = false;
+  }
 
+  onEdit() {
+    this.at_edit = true;
+  }
+  offEdit() {
+    this.at_edit = false;
+    this.show_edit = false;
+  }
 }
