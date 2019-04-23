@@ -12,7 +12,6 @@
 }*/
 
 #login {
-	display: inline-block;
 	background-color: #F96574;
 	height: 4.6vh;
 	width: 15vh;
@@ -33,6 +32,11 @@
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
+}
+
+.ls-btns {
+	display: inline-block;
+	margin-top: -50% !important;
 }
 
 #login:hover, #btn-sign-up:hover, #sign-up:hover {
@@ -70,11 +74,14 @@
 
 #sign-up {
 	background-color: #00BFFF;
+	margin: 0 auto;
+/*	display: block !important;*/
+	position: relative;
+	text-align: center;
 	height: auto;
 	width: 40vh;
 	border-radius: 5px;
-	margin-right: 0vh;
-	text-align: center;
+/*	margin-right: -3vh;*/
 	color: #fff;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 700;
@@ -85,7 +92,7 @@
 	border: none;
     outline:none;
     font-size: 2vh;
-    -moz-transition: all 0.5s ease-in-out 0.1s;
+    -moz-t5ansition: all 0.5s ease-in-out 0.1s;
     -o-transition: all 0.5s ease-in-out 0.1s;
     -webkit-transition: all 0.5s ease-in-out 0.1s;
     transition: all 0.5s ease-in-out 0.1s;
@@ -93,7 +100,22 @@
 }
 
 .inline-form {
-	display: inline-block;
+	display: block;
+	/*margin: 0 auto;
+	position: relative;*/
+}
+
+.signup-form {
+	width: 55%;
+	float: left;
+/*	border: 1px solid black;*/
+}
+
+.find-uni {
+	width: 40%;
+/*	border: 1px solid black;*/
+	float: right;
+	margin-right: 2vh;
 }
 
 .guidelines {
@@ -130,7 +152,7 @@
 	margin: 0 auto;
 }
 
-label {
+.switchLabel {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 75px;
@@ -141,7 +163,7 @@ label {
 	position: relative;
 }
 
-label:after {
+.switchLabel:after {
 	content: '';
 	position: absolute;
 	top: 3px;
@@ -315,6 +337,8 @@ label:active:after {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
 }
 
+
+
 .catLabel {
 	margin: 0;
 	margin-top: 2vh;
@@ -341,6 +365,7 @@ label:active:after {
 	position: relative;
 	display: block;
 	text-align: center;
+	width: 100%;
 }
 
 .selectedTag {
@@ -725,7 +750,7 @@ span.typcn.typcn-minus {
 	padding: 5px;
 	background-color: #FFF;
 	box-sizing: border-box;
-	width: 53.5vh;
+	width: 93%;
 
 	border: 1px solid #EEE;
 	border-radius: 4px;
@@ -750,4 +775,33 @@ span.typcn.typcn-minus {
 .postInfo {
 	display: block;
 	overflow: auto;
+}
+
+@media only screen and (max-height: 700px) {
+	#tags span.tag:after {
+		font-size: 5vh !important;
+/*		margin-left: 1vh !important;*/
+	}
+
+	#makePost {
+		margin-top: 6.5vh;
+		font-size: 3.2vh;
+		width: 35vh;
+		height: 6.2vh;
+
+		
+	}
+
+	#anon-label {
+		font-size: 4vh;
+	}
+
+	.tag-select {
+/*		margin: auto;*/
+		position: relative;
+		display: inline-block;
+		text-align: center;
+	}
+
+
 }

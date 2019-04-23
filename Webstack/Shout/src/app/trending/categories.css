@@ -130,3 +130,11 @@
     background-color: #DDD;
     background-image: none;
 }
+
+@media only screen and (max-height: 700px) {
+	.categoryLabel {
+		font-size: 2vh !important;
+
+	}
+
+}

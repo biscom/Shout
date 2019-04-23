@@ -1,8 +1,9 @@
 import {Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import {PostsService} from './../posts.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
-import 'jquery-ui-dist/jquery-ui';
+// import 'jquery-ui-dist/jquery-ui';
 
 @Component({
   selector: 'app-trending',
@@ -23,27 +24,31 @@ export class TrendingComponent implements OnInit {
    @ViewChild('alltags') 
    private alltags: ElementRef;
    private allfilters: ElementRef;
-   private register: FormGroup;
+
+   /* tag sort */
+   private funny: ElementRef;
+   private academics: ElementRef;
+   private events: ElementRef;
+   private sports: ElementRef;
+   private greek: ElementRef;
+   private random: ElementRef;
+   private discussion: ElementRef;
+   private alert: ElementRef;
+   private sortMethod: string;
 
   constructor(private postService: PostsService,
               private renderer: Renderer2,
-              private builder: FormBuilder) { }
+              private http: HttpClient) { }
 
   private Posts = []
+  private url = "http://localhost:3000"
 
   ngOnInit() {
     this.getPosts("all", "recent");
-    this.register = this.builder.group({
-          email:['', [Validators.required, Validators.email]],
-          username:['', Validators.required],
-          nickname:['', Validators.required],
-          password:['', [Validators.required, 
-                        Validators.minLength(8)]]
-    })
 
     // Toggle chevron icon for comment dropdown button
 
-    $("#showComments").click(function() {
+    $(".showComments").click(function() {
       console.log("here");
       $(this).parent().siblings(".postBottom").slideToggle();
       $(this).toggleClass("fa-chevron-down fa-chevron-up");
@@ -94,35 +99,29 @@ export class TrendingComponent implements OnInit {
        if( confirm("Really delete this tag?") ) $(this).remove(); 
     });
 
-    //var postText = $(this).closest('div').find('.msg-content').text();
-  // console.log(postText)
-    $('#btn-sign-up').click(function(){
-      var buttonId = $(this).attr('id');
-      var id = buttonId.split("-")[0];
-      console.log(id);
-      $('#modal-container').removeAttr('class').addClass(id);
-      $('body').addClass('modal-active');
+
+    var closeIcon =   $('svg.close');
+    var container = $('.filter-container');
+    var list = container.find('ul');
+    var links = container.find('a');
+    var text = container.find('span');
+
+
+    links.on('click', function() {
+      links.removeClass('active');
+      $(this).addClass('active');
+      text.text($(this).text()).addClass('fade');
+
+      setTimeout(function() {
+        text.removeClass('fade');
+      }, 50);
+
+      list.toggle();
+      // closeIcon.toggleClass('active');
     });
 
-    // $('#sign-up').click(function() {
-    //   $('#modal-container').addClass('out');
-    //   $('body').removeClass('modal-active');
 
-    // });
-
-    $('.modal-background').click(function(ev) {
-      if(ev.target != this) return;
-      else {
-        $('#modal-container').addClass('out');
-        $('body').removeClass('modal-active');
-      }
-
-
-
-  
-});
-
-  }
+}
 
   getPosts(tag, sortMethod){
     this.postService.getTopPosts(tag, sortMethod)
@@ -145,15 +144,6 @@ export class TrendingComponent implements OnInit {
     return newVal
   }
 
-  saveUser() {
-    let email = this.register.get('email').value;
-    let user = this.register.get('username').value;
-    let nickname = this.register.get('nickname').value;
-    let pass = this.register.get('password').value;
-    console.log(email, user, nickname, pass);
-
-  }
-
   toggleClass(event: any) {
     let filter = (event.target as HTMLElement);
     const hasClass = filter.classList.contains('active');
@@ -169,6 +159,35 @@ export class TrendingComponent implements OnInit {
       $('.filter-container').find('ul').toggle();
     }
   }
+
+  parseTag(event: any) {
+    let filter = (event.target as HTMLElement);
+    let classes = filter.classList;
+    this.getTaggedPosts(classes[1]);
+
+  }
+
+  /* SORTING POSTS */
+  getTaggedPosts(tag: string) {
+    console.log(this.http.get(this.url + "/posts?tag=" + tag));
+    return this.http.get(this.url + "/posts?tag=" + tag);
+  }
+
+  parseSort(event: any) {
+    let filter = (event.target as HTMLElement);
+    let classes = filter.classList;
+    console.log(classes[0]);
+    let sortMethod = classes[0];
+    let tag = "everything";
+    console.log(filter.attributes["href"]);
+    window.location.href = this.url + "/top?tag="+tag+"&sortMethod="+sortMethod;
+
+
+  }
+
+  // getTopPosts(tag: string, sortMethod:string){
+  //   return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
+  // }
 
 
 }

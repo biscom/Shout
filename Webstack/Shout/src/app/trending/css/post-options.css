@@ -120,14 +120,15 @@ html.modal-active, body.modal-active {
 }
 
 .modal {
-	height: auto;
-	width: 35%;
+	height: 80%;
+	width: 70%;
 	position: fixed;
 	background-color: #CDF2ED;
 	padding-right: 5%;
 	margin: 0 auto;
 	z-index: 9999 !important;
-	padding-bottom: 1%;
+  overflow: scroll;
+	padding-bottom: 1.5% !important;
 }
 
 #modal-container.btn {
@@ -287,4 +288,11 @@ html.modal-active, body.modal-active {
   100% {
     transform: scale(0);
   }
+}
+
+@media only screen and (max-height: 700px) {
+  .modal {
+    margin-top: -6vh;
+  }
+
 }
