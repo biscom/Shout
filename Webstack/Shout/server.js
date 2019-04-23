@@ -113,6 +113,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     app.post('/createAccount', function(req, res){
         //check database for existing user info 
+        console.log(req.body);
         username = req.body.username;
         nickname = req.body.nickname;
         univ_email=req.body.univ_email;
@@ -163,8 +164,8 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     //starts client session or returns false with info about incorrect info
     app.post('/login', function(req,res){
-        username = res.username;
-        password = res.password;
+        username = req.body.username;
+        password = req.body.password;
 
         const collection = db.collection("User");
         // get account info 

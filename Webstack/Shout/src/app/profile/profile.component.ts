@@ -85,11 +85,11 @@ export class ProfileComponent implements OnInit {
       else { // password match passed
         if (this.editForm.get('new_username').value != '') {
           // use new username
-          this.userDataService.changePassword(new_username, old_password, new_password1);
+          this.userDataService.changePassword(this.editForm.get('new_username').value, this.editForm.get('old_password').value, this.editForm.get('new_password1').value);
         }
         else {
           // no new username input, use old username
-          this.userDataService.changePassword(this.username, old_password, new_password1);
+          this.userDataService.changePassword(this.username, this.editForm.get('old_password').value, this.editForm.get('new_password1').value);
         }
       }
     }
