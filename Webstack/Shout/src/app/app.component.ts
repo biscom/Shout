@@ -4,6 +4,8 @@ import {LoginService} from './login.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
 import * as $ from 'jquery';
 
+import { ChangeDetectorRef } from '@angular/core'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -31,17 +33,18 @@ export class AppComponent {
   private mapType: string;
   private uid: number;
   private Unis = []
-  
+
   constructor(private loginService : LoginService,
               private builder: FormBuilder,
-              private renderer: Renderer2){}
+              private renderer: Renderer2,
+              private cdRef: ChangeDetectorRef){}
 
   ngOnInit() {
     this.register = this.builder.group({
           email:['', [Validators.required, Validators.email]],
           username:['', Validators.required],
           nickname:['', Validators.required],
-          password:['', [Validators.required, 
+          password:['', [Validators.required,
                         Validators.minLength(8)]]
 
 
@@ -61,11 +64,11 @@ export class AppComponent {
         this.longitude = location.longitude;
         this.mapType = 'roadmap';
         this.nearbyUnis(this.latitude, this.longitude);
-        
-      });
-   } 
 
-    
+      });
+   }
+
+
 
     // $('#sign-up').click(function() {
     //   $('#modal-container').addClass('out');
@@ -80,7 +83,7 @@ export class AppComponent {
         $('#modal-container').addClass('out');
         $('body').removeClass('modal-active');
       }
-    
+
   });
 
   }
@@ -88,12 +91,12 @@ export class AppComponent {
   // toggleClass(event: any) {
   //   let filter = (event.target as HTMLElement);
   //   const hasClass = filter.classList.contains('active');
-    
+
   //   if(hasClass) {
   //     this.renderer.removeClass(event.target, 'active');
   //     $('.school-container').find('ul').toggle();
   //     // this.renderer.addClass("close");
-  //   } 
+  //   }
   //   else {
   //     // this.renderer.removeClass(event.target, "close");
   //     this.renderer.addClass(event.target, 'active');
@@ -123,7 +126,6 @@ export class AppComponent {
     let pass = this.login.get('password').value;
     console.log(user, pass);
     this.logIn(user, pass);
-
   }
 
   // getting 5 nearest universities of location for account creation
@@ -148,8 +150,10 @@ export class AppComponent {
       if (check.success){
         this.logged_in = true;
         this.username_nav = username;
+        this.ChangeDetectorRef.detectChanges();
         console.log(this.logged_in);
         this.checkLoginStatus();
+
       }
 
     });
@@ -172,7 +176,6 @@ export class AppComponent {
     let body = document.getElementsByTagName('body');
     $('#modal-container').addClass(id);
     $('body').addClass('modal-active');
-   
+
   }
 }
-  
