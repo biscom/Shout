@@ -81,7 +81,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     app.post('/addPost', function(req, res){
         //check database for existing user info 
-        user_id = req.session.user_id;
+        userid = req.session.userid;
         msg_body = req.body.msg_body;
         univid = req.body.univid;
 
@@ -89,8 +89,10 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
         const collection = db.collection("Post");
         
+        console.log(req.body.user_id);
+        
         // a document instance
-        var new_post = new Post({ user_id: req.session.user_id, msg_body: msg_body, univid: univid });
+        var new_post = new Post({ user_id: userid, msg_body: msg_body, univid: univid });
 
         // save model to database
         try{
@@ -197,7 +199,6 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                         res.json({
                             success: true,
                             reason: "User "+ username + " has logged in!"
-        
                         });
                     }else{
                         passworderr={

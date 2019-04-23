@@ -5,7 +5,7 @@ var User = require('./userSchema');
 
 var postSchema = new mongoose.Schema({
    user_id: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
     ref: User
    },
     msg_body: {

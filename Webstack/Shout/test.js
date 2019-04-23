@@ -14,7 +14,7 @@ var request = require('request');
 const url='http://localhost:3000/addPost';
 
 var postInfo={
-      user_id : 1,
+      user_id : "5cbb86203b95d6d217ca6193",
       msg_body : "test",
       univid : 1
     };
