@@ -21,6 +21,8 @@ import * as $ from 'jquery';
 export class AppComponent {
   title = 'Shout';
 
+  private logged_in : boolean = false;
+  private username_nav;
 
   private register: FormGroup;
   private login: FormGroup;
@@ -33,9 +35,6 @@ export class AppComponent {
   constructor(private loginService : LoginService,
               private builder: FormBuilder,
               private renderer: Renderer2){}
-
-  private logged_in : boolean = false;
-  private username_nav;
 
   ngOnInit() {
     this.register = this.builder.group({

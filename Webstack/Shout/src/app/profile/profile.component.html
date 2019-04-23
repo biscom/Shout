@@ -79,6 +79,10 @@
           <div *ngIf="show_edit" class="tab-pane fade show active" id="home"
           role="tabpanel" aria-labelledby="home-tab">
 
+          <div [formGroup]="editForm" *ngIf="show_edit" class="tab-pane fade show active"
+          id="home" role="tabpanel" aria-labelledby="home-tab">
+
+
             <mat-form-field appearance="outline">
               <mat-label>New Username</mat-label>
               <input matInput placeholder="{{username}}"  type="text"
@@ -125,5 +129,6 @@
       </div>
 
     </div>
+  </div>
     </form>
 </div>

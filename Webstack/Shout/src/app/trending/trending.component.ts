@@ -4,6 +4,7 @@ import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } 
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
 
+
 @Component({
   selector: 'app-trending',
   templateUrl: './trending.component.html',

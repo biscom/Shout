@@ -3,7 +3,7 @@ import { NgModule }       from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 // import { RouterModule, Routes }  from '@angular/router';
 // import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { UserDataService } from './../user-data.service';
 // import { Observable } from 'rxjs';
 // import { HttpModule } from '@angular/http';
@@ -32,19 +32,26 @@ export class ProfileComponent implements OnInit {
   private savedPosts = [];
 
   // edit option
-  private editForm;
+  private editForm: FormGroup;
+
   // private new_username;
   // private old_password;
   // private new_password1;
   // private new_password2;
 
+  constructor(private userDataService: UserDataService,
+              private fb: FormBuilder) { }
 
-
-
-  constructor(private userDataService: UserDataService, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.getUserInfo();
+
+    this.editForm = this.fb.group({
+      new_username : [''],
+      old_password : ['', Validators.required],
+      new_password1 : [''],
+      new_password2 : ['']
+    });
   }
 
   getUserInfo() {
@@ -90,11 +97,13 @@ export class ProfileComponent implements OnInit {
         else {
           // no new username input, use old username
           this.userDataService.changePassword(this.username, this.editForm.get('old_password').value, this.editForm.get('new_password1').value);
-        }
+
       }
     }
-
+}
     this.show_edit = !this.show_edit;
+
+    window.location.reload();
   }
   cancel_edit() {
     this.show_edit = false;

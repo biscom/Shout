@@ -8,7 +8,6 @@
 		 	<span class="typcn typcn-location"></span>
 		 	<!-- <span class="typcn typcn-user"></span>
 		 	<i class="fas fa-bell"></i> -->
-
 		 	<form action="post" class="ls" [formGroup]="login" (submit)="logUser()" *ngIf="!logged_in">
 		 		<input type="text" id="username" name="username" placeholder="Username"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"
@@ -22,8 +21,8 @@
 		 		</div>
 		 	</form>
 
-		<!-- 	<button *ngIf="logged_in" id="profile" type="button">{{username_nav}}</button>
-			<button *ngIf="logged_in" id="logout" type="button">Log Out</button> -->
+			<button *ngIf="logged_in" id="profile" type="button">{{username_nav}}</button>
+			<button *ngIf="logged_in" id="logout" type="button">Log Out</button>
 
 		 </nav>
 
