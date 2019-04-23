@@ -49,7 +49,7 @@
       <div class="col-md-6">
         <div class="tab-content profile-tab" id="myTabContent">
 
-          <!-- Regular Display -->
+          <!-- Profile Info Display -->
           <div *ngIf="!show_edit" class="tab-pane fade show active" id="home"
           role="tabpanel" aria-labelledby="home-tab">
 
@@ -79,49 +79,33 @@
           <div *ngIf="show_edit" class="tab-pane fade show active" id="home"
           role="tabpanel" aria-labelledby="home-tab">
 
-            <!-- USERNAME -->
-            <!-- <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Username</span>
-              </div>
-              <input type="text" class="form-control" placeholder="{{username}}"
-              onfocus="this.placeholder=''"
-              aria-label="Username" aria-describedby="basic-addon1">
-
-            </div> -->
-
             <mat-form-field appearance="outline">
               <mat-label>New Username</mat-label>
-              <input matInput placeholder="{{username}}">
+              <input matInput placeholder="{{username}}"  type="text"
+              formControlName="new_username">
               <mat-hint>Skip if you aren't changing username</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="">
+              <input matInput placeholder="" type="text"
+              formControlName="old_password" required>
               <mat-hint>*</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>New Password</mat-label>
-              <input matInput placeholder="">
+              <input matInput placeholder="" type="text"
+              formControlName="new_password1">
               <mat-hint>Enter if changing password</mat-hint>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
               <mat-label>Re-enter New Password</mat-label>
-              <input matInput placeholder="">
+              <input matInput placeholder="" type="text"
+              formControlName="new_password2">
               <mat-hint></mat-hint>
             </mat-form-field>
-
-            <!-- PASSWORD -->
-            <!-- <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Password</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Password"
-              aria-label="Password" aria-describedby="basic-addon1">
-            </div> -->
 
           </div>
 
