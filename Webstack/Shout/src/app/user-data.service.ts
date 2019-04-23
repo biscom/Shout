@@ -10,7 +10,9 @@ export class UserDataService {
   constructor(private http: HttpClient) { }
 
   getProfileInfo() {
-    return this.http.get(this.url + "/profileInfo");
+    return this.http.get(this.url + "/profileInfo", {
+      withCredentials : true
+    });
   }
 
   changeUsername(new_username, password) {
@@ -18,7 +20,9 @@ export class UserDataService {
       new_username : new_username,
       password : password
     };
-    return this.http.post(this.url + "/updateUsername", new_info);
+    return this.http.post(this.url + "/updateUsername", new_info, {
+      withCredentials : true
+    });
   }
 
   changePassword(username, old_password, new_password){
@@ -28,7 +32,9 @@ export class UserDataService {
       new_password : new_password
     };
 
-    return this.http.post(this.url + "/updatePassword", new_info);
+    return this.http.post(this.url + "/updatePassword", new_info, {
+      withCredentials : true
+    });
   }
 
 }
