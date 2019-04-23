@@ -113,7 +113,6 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
 
     app.post('/createAccount', function(req, res){
         //check database for existing user info 
-        console.log(req.body);
         username = req.body.username;
         nickname = req.body.nickname;
         univ_email=req.body.univ_email;
@@ -129,9 +128,7 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
             if (err){
                 throw err;
             } 
-
-            if (result!= [] ){
-
+            if (result[0] != null ){
                 //Username already exists, return error to user
                 res.json({
                     success: false,
@@ -139,7 +136,6 @@ MongoClient.connect(uri,{ useNewUrlParser: true }, function(err, client) {
                 });
 
             } else {
-
                 // a document instance
                 var new_user = new User({ username: username, password: hash, nickname: nickname, email: univ_email, univid: univid });
 
