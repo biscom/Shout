@@ -1,0 +1,85 @@
+agm-map { 
+	height: 150px;
+	/*margin-top: 2vh !important;*/
+}
+
+#find-school {
+	background-color: #00BFFF;
+	margin: 0 auto;
+/*	display: block !important;*/
+	position: relative;
+	text-align: center;
+	height: auto;
+	width: 40vh;
+	border-radius: 5px;
+	margin-top: 1.5vh;
+	margin-bottom: 2vh;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.3vh;
+	text-decoration: none;
+	padding: 15px 3px;
+	border: none;
+    outline:none;
+    font-size: 2vh;
+    -moz-t5ansition: all 0.5s ease-in-out 0.1s;
+    -o-transition: all 0.5s ease-in-out 0.1s;
+    -webkit-transition: all 0.5s ease-in-out 0.1s;
+    transition: all 0.5s ease-in-out 0.1s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);	
+}
+
+#find-school:hover {
+	background-color: rgb(6, 214, 160);
+	cursor: pointer;
+	-webkit-animation: hover 1200ms linear 2 alternate;
+	animation: hover 1200ms linear 2 alternate;
+	text-decoration: none;
+}
+
+.navLabel {
+	margin: 0;
+	padding: 0;
+	color: #FFC74F;
+	font-family: vag-rundschrift-d, sans-serif;
+	font-weight: 700;
+	/*text-transform: uppercase;*/
+	font-size: 4vh;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.4vh;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+
+.nearby {
+	height: auto;
+	width: 95%;
+	border-radius: 5px;
+	margin: 0 auto;
+	margin-top: 2vh;
+	padding-bottom: 2vh;
+}
+
+#schoolLabel {
+	font-family: vag-rundschrift-d, sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.3vh;
+	text-transform: uppercase;
+	font-style: normal;
+	font-size: 4vh;
+	margin-top: 1vh;
+	color: #f04c50;
+	display: inline-block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+/*	margin-right: 1vh;
+	margin-left: 2vh;*/
+}
+
+#school {
+	margin-top: 1.5vh;
+	margin-right: 2vh;
+}
+

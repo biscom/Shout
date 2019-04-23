@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +22,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBIdqBvurPR4Jc_n9GNe4krQyzaCw5gj0I'
+    }),
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,

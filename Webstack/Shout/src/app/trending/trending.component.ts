@@ -1,8 +1,9 @@
 import {Component, OnInit, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import {PostsService} from './../posts.service';
 import { FormBuilder, Validators, FormGroup, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery';
-//import 'jquery-ui-dist/jquery-ui';
+
 
 @Component({
   selector: 'app-trending',
@@ -23,31 +24,38 @@ export class TrendingComponent implements OnInit {
    @ViewChild('alltags') 
    private alltags: ElementRef;
    private allfilters: ElementRef;
-   private register: FormGroup;
+
+   /* tag sort */
+   private funny: ElementRef;
+   private academics: ElementRef;
+   private events: ElementRef;
+   private sports: ElementRef;
+   private greek: ElementRef;
+   private random: ElementRef;
+   private discussion: ElementRef;
+   private alert: ElementRef;
+   private postText: ElementRef;
+   private anon: ElementRef;
+   private sortMethod: string;
 
   constructor(private postService: PostsService,
               private renderer: Renderer2,
-              private builder: FormBuilder) { }
+              private http: HttpClient) { }
 
   private Posts = []
+  private url = "http://localhost:3000"
+  private tags = [];
 
   ngOnInit() {
     this.getPosts("all", "recent");
-    this.register = this.builder.group({
-          email:['', [Validators.required, Validators.email]],
-          username:['', Validators.required],
-          nickname:['', Validators.required],
-          password:['', [Validators.required, 
-                        Validators.minLength(8)]]
-    })
 
     // Toggle chevron icon for comment dropdown button
 
-    $("#showComments").click(function() {
-      console.log("here");
-      $(this).parent().siblings(".postBottom").slideToggle();
-      $(this).toggleClass("fa-chevron-down fa-chevron-up");
-    });
+    // $(".showComments").click(function() {
+    //   console.log("here");
+    //   $(this).parent().siblings(".postBottom").slideToggle();
+    //   $(this).toggleClass("fa-chevron-down fa-chevron-up");
+    // });
 
     // Category interface in sidebar
 
@@ -94,35 +102,41 @@ export class TrendingComponent implements OnInit {
        if( confirm("Really delete this tag?") ) $(this).remove(); 
     });
 
-    //var postText = $(this).closest('div').find('.msg-content').text();
-  // console.log(postText)
-    $('#btn-sign-up').click(function(){
-      var buttonId = $(this).attr('id');
-      var id = buttonId.split("-")[0];
-      console.log(id);
-      $('#modal-container').removeAttr('class').addClass(id);
-      $('body').addClass('modal-active');
+
+    var closeIcon =   $('svg.close');
+    var container = $('.filter-container');
+    var list = container.find('ul');
+    var links = container.find('a');
+    var text = container.find('span');
+
+
+    links.on('click', function() {
+      links.removeClass('active');
+      $(this).addClass('active');
+      text.text($(this).text()).addClass('fade');
+
+      setTimeout(function() {
+        text.removeClass('fade');
+      }, 50);
+
+      list.toggle();
+      // closeIcon.toggleClass('active');
     });
 
-    // $('#sign-up').click(function() {
-    //   $('#modal-container').addClass('out');
-    //   $('body').removeClass('modal-active');
 
-    // });
+}
 
-    $('.modal-background').click(function(ev) {
-      if(ev.target != this) return;
-      else {
-        $('#modal-container').addClass('out');
-        $('body').removeClass('modal-active');
-      }
-
+// addOne(event: any) {
+//   let upvote = (event.target as HTMLElement);
+//   console.log(upvote);
+//   let score = (upvote.nextElementSibling as HTMLElement);
+//   console.log(score);
+//   console.log(score.innerText);
+//   let s = parseInt(score.innerText) + 1
+//   upvote.nextElementSibling.innerText = s;
 
 
-  
-});
-
-  }
+// }
 
   getPosts(tag, sortMethod){
     this.postService.getTopPosts(tag, sortMethod)
@@ -134,6 +148,7 @@ export class TrendingComponent implements OnInit {
   addTags(event: any){
     const span = this.renderer.createElement('span');
     console.log(event.target.value);
+    this.tags.push(event.target.value);
     const text = this.renderer.createText(this.transform(event.target.value));
     this.renderer.appendChild(span, text);
     this.renderer.setAttribute(span, 'class', 'tag');
@@ -143,15 +158,6 @@ export class TrendingComponent implements OnInit {
   transform(value: string): string {
     let newVal = value.replace(/[^\w\s]/gi, '').toLowerCase()
     return newVal
-  }
-
-  saveUser() {
-    let email = this.register.get('email').value;
-    let user = this.register.get('username').value;
-    let nickname = this.register.get('nickname').value;
-    let pass = this.register.get('password').value;
-    console.log(email, user, nickname, pass);
-
   }
 
   toggleClass(event: any) {
@@ -169,6 +175,90 @@ export class TrendingComponent implements OnInit {
       $('.filter-container').find('ul').toggle();
     }
   }
+
+  parseTag(event: any) {
+    let filter = (event.target as HTMLElement);
+    let classes = filter.classList;
+    this.getTaggedPosts(classes[1]);
+
+  }
+
+   getTaggedPosts(tag){
+    return this.http.get(this.url+"/posts?tag="+tag);
+  }
+
+  /* SORTING POSTS */
+  // getTaggedPosts(tag: string) {
+  //   console.log(this.http.get(this.url + "/posts?tag=" + tag));
+  //   return this.http.get(this.url + "/posts?tag=" + tag);
+  // }
+
+  parseSort(event: any) {
+    let filter = (event.target as HTMLElement);
+    let classes = filter.classList;
+    console.log(classes[0]);
+    let sortMethod = classes[0];
+    let tag = "everything";
+    console.log(filter.attributes["href"]);
+    window.location.href = this.url + "/top?tag="+tag+"&sortMethod="+sortMethod;
+
+
+  }
+
+  toggleComments(event: any) {
+    let comment = (event.target as HTMLElement);
+    console.log(comment);
+    let parent = (comment.parentNode as HTMLElement)
+    let postBottom = (parent.nextElementSibling as HTMLElement);
+    console.log(postBottom);
+    console.log(postBottom.classList);
+    if (postBottom.classList.length == 1) {
+      this.renderer.addClass(postBottom, "hide");
+    }
+
+    else {
+      this.renderer.removeClass(postBottom, "hide");
+    }
+    
+  }
+
+  createPost() {
+    let anon = $('#switch').prop('checked');
+    console.log(anon);
+    let post = $('#newPostText').val();
+    console.log(post);
+    console.log(this.tags);
+    var uid = 1;
+    let user_id = 1;
+    this.addPost(user_id, post, uid);
+
+  }
+
+  // getTopPosts(tag: string, sortMethod:string){
+  //   return this.http.get(this.url + "/top?tag="+tag+"&sortMethod="+sortMethod);
+  // }
+ addPost(user_id, msg_body, univid){
+    let postInfo={
+      user_id : user_id,
+      msg_body : msg_body,
+      univid : univid
+    };
+    return this.http.post(this.url+"/addPost", postInfo);
+  }
+
+
+
+
+addComment(user_id, msg_body, likes, dislikes){
+    let postInfo={
+      user_id : user_id,
+      msg_body : msg_body,
+      likes: likes,
+      dislikes: dislikes
+    };
+    return this.http.post(this.url+"/addComment", postInfo);
+  }
+
 
 
 }

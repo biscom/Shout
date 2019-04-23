@@ -164,3 +164,9 @@
 .close.active path {
   fill: #404040;
 }
+
+@media only screen and (max-height: 700px) {
+  .filter-container {
+    margin-top: -1vh !important;
+  }
+}

@@ -62,7 +62,7 @@ nav {
 }
 
 
-a {
+/*a {
 	color: #fd6884 !important;
 	text-decoration: none;
 }
@@ -72,7 +72,7 @@ a:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
-
+*/
 
 
 ul {
@@ -95,8 +95,8 @@ li > a:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  color: #fd6579;
-  background-color: #23daab;
+/*  color: #fd6579;
+  background-color: #23daab;*/
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -106,7 +106,7 @@ li > a:before {
 }
 
 li > a:hover:before {
-  color: #fd6579;
+/*  color: #fd6579;*/
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);

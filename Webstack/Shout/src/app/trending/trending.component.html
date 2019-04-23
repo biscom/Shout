@@ -10,7 +10,7 @@
 					onfocus="this.placeholder=''" onblur="this.placeholder='Enter a Shout'"
 					placeholder="Enter a Shout"></textarea>
 
-					<div id="newPostBottom" rows="5">
+					<div id="newPostBottom" rows="5" #postText>
 						<div class="newPostBottomSection" id="selectCategory">
 							<p class="catLabel">Add a tag</p>
 							<div id="categoryOptions">
@@ -24,7 +24,7 @@
 								<span class="categoryLabel discussion"></span>
 								<span class="categoryLabel alert"></span> -->
 
-								<span class="categoryLabel funny notSelected"></span>
+								<span class="categoryLabel funny notSelected" ></span>
 								<span class="categoryLabel academics notSelected"></span>
 								<span class="categoryLabel sports notSelected"></span>
 								<span class="categoryLabel events notSelected"></span>
@@ -45,23 +45,12 @@
 
 						<div class="newPostBottomSection" id="postAs">
 							<p id="anon-label">Stay Anonymous?</p>
-							<div class="switch"><input id="switch" type="checkbox"/>
-								<label for="switch">Toggle</label>
-							</div>
+							<div class="switch"><input id="switch" type="checkbox"/><label for="switch" class="switchLabel">Toggle</label></div>
 
-							<button id="makePost">Post</button>
+							<button id="makePost" (click)="createPost()">Post</button>
 						</div>
 					</div>
 				</div>
-				<!-- <li class="media rounded shadow bg-light mb-3" *ngFor="let article of articles">
-  <img class="align-self-center mr-3 img-thumbnail w-25 height-auto" src="{{article.urlToImage}}" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0"><a href="{{article.url}}">{{article.title}}</a></h5>
-    <h6>By:<i> {{article.author || article.source.name}}</i> </h6>
-    <b>{{article.publishedAt | date:'medium'}}:</b>
-    <p>{{article.content}}</p>
-  </div>
-  </li> -->
 
 				<div class="postbox" *ngFor="let post of Posts">
 					<div class="postInfo">
@@ -80,30 +69,30 @@
 						</p>
 					</div>
 
-					<div class="postControls">
-						<span id="showComments" class="fas fa-chevron-down"></span>
+					<div class="postControls" >
+						<span class="showComments" class="fas fa-chevron-down" (click)="toggleComments($event)"></span>
 						<span class="savePost fas fa-save"></span>
 						<span class="reportPost fas fa-flag"></span>
 					</div>
 
-					<div class="postBottom">
+					<div class="postBottom hide">
 
 						<div class="comments">
 							<div class="newComment">
 								<div class="newCommentText" contenteditable="true">s</div>
 								<span class="submitComment fas fa-check-square"></span>
 							</div>
-							<div class="comment">
+							<div class="comment" *ngFor="let comments of post.comments">
 								<span class="time">yo waddup</span>
 								<p class="commentText">
-									Hello I like your dog can I have your dog plsss I really want your dog because I like it.
+									{{comments.msg_body}}
 								</p>
 								<div class="commentControls">
-									<div>
+						<!-- 			<div> -->
 										<span class="typcn typcn-plus"></span>
-										<span class="commentScore"> &nbsp; 20 &nbsp; </span>
+										<span class="commentScore"> &nbsp; {{ comments.likes - comments.dislikes}} &nbsp; </span>
 										<span class="typcn typcn-minus"></span>
-									</div>
+								<!-- 	</div> -->
 									<span class="saveComment fas fa-save" style="font-size: 2vh;"></span>
 									<span class="reportComment fas fa-flag" style="font-size: 2vh;"></span>
 								</div>
@@ -135,9 +124,9 @@
 						</svg>
 						<span>Filter posts by</span>
 						<ul class="list">
-							<li><a href="#">Popularity</a></li>
-							<li><a href="#">Score</a></li>
-							<li><a href="#">Recent</a></li>
+							<li><a href="#" (click)="parseSort($event)" class="popularity">Popularity</a></li>
+							<li><a href="#" (click)="parseSort($event)" class="score">Score</a></li>
+							<li><a href="#"(click)="parseSort($event)" class="recent">Recent</a></li>
 						</ul>
 					</div><br/>
 					<div id="categoryView">
@@ -149,63 +138,29 @@
 							<span class="categoryLabel everything"></span>
 						</div>
 						<div id="categoryViewSelect">
-							<span class="categoryLabel funny"></span>
-							<span class="categoryLabel academics"></span>
-							<span class="categoryLabel sports"></span>
-							<span class="categoryLabel events"></span>
-							<span class="categoryLabel random"></span>
-							<span class="categoryLabel greek"></span>
-							<span class="categoryLabel discussion"></span>
-							<span class="categoryLabel alert"></span>
+							<span class="categoryLabel funny" (click)="parseTag($event)"></span>
+							<span class="categoryLabel academics" (click)="parseTag($event)"></span>
+							<span class="categoryLabel sports" (click)="parseTag($event)"></span>
+							<span class="categoryLabel events" (click)="parseTag($event)"></span>
+							<span class="categoryLabel random" (click)="parseTag($event)"></span>
+							<span class="categoryLabel greek" (click)="parseTag($event)"></span>
+							<span class="categoryLabel discussion" (click)="parseTag($event)"></span>
+							<span class="categoryLabel alert" (click)="parseTag($event)"></span>
 							<span class="categoryLabel everything"></span>
 						</div>
 					</div>
 				</div>
-				<button class="guidelines" type="button">
+
+			<!-- 	<button class="guidelines" type="button">
+					<i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>
+					Community Guidelines
+				</button> -->
+			</div>
+		</div>
+
+		<!-- 		<button class="guidelines" type="button">
 					<i class="fas fa-users" style="font-size: 2.4vh; margin-right: 1.4vh;"></i>
 					Community Guidelines
 				</button>
 			</div>
-		</div>
-		<div id="modal-container">
-  <div class="modal-background">
-    <div class="modal">
-    	<img src="http://u.cubeupload.com/ozinem/communication1.png" alt="chatting"
-			width="200" height="185"/>
-
-    	<h3 class="joinLabel">Join Our Community!</h3>
-        <section>
-          <form [formGroup]="register" (submit)="saveUser()" class="inline-form">
-          	<input type="text" id="email" name="password" placeholder="Email"
-						max-length="100" formControlName="email">
-
-          	<input type="text" id="username-sign-up" name="username"
-						placeholder="Username" max-length="100" formControlName="username">
-
-          	<input type="text" id="nickname" name="nickname" placeholder="Nickname"
-						max-length="100" formControlName="nickname">
-
-					 	<input type="password" id="password-sign-up" name="password"
-						placeholder="Password" max-length="100" formControlName="password">
-
-					 	<button id="sign-up" type="submit" [disabled]="register.invalid">
-							Create your account
-						</button>
-					 </form>
-
-        </section>
-        <section class="share">
-          <button id="copy-post" type="button">
-						<i class="fas fa-clipboard"></i>
-					</button>
-          <button id="share-fb" type="button">
-						<i class="fab fa-facebook-f"></i>
-					</button>
-          <button id="share-tw" type="button">
-						<i class="fab fa-twitter"></i>
-					</button><br/>
-          <textarea id="copy-text"></textarea>
-        </section>
-    </div>
-  </div>
-</div>
+		</div> -->

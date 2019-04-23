@@ -8,16 +8,17 @@
 		 	<span class="typcn typcn-location"></span>
 		 	<!-- <span class="typcn typcn-user"></span>
 		 	<i class="fas fa-bell"></i> -->
-			
-			<form *ngIf="!logged_in" action="post" class="ls">
+		 	<form action="post" class="ls" [formGroup]="login" (submit)="logUser()" *ngIf="!logged_in">
 		 		<input type="text" id="username" name="username" placeholder="Username"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"
-				max-length="100">
+				max-length="100" formControlName="username">
 		 		<input type="password" id="password" name="password" placeholder="Password"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Password'"
-				max-length="100">
-		 		<button id="login" type="button">Login</button>
-		 		<button id="btn-sign-up" type="button">Sign Up</button>
+				max-length="100" formControlName="password">
+		 		<div class="ls-btns">
+		 			<button id="login" type="button" type="submit">Login</button>
+		 			<button id="btn-sign-up" type="button" (click)="openModal($event)">Sign Up</button>
+		 		</div>
 		 	</form>
 
 			<button *ngIf="logged_in" id="profile" type="button">{{username_nav}}</button>
@@ -26,3 +27,35 @@
 		 </nav>
 
 <router-outlet></router-outlet>
+<div id="modal-container">
+  <div class="modal-background">
+    <div class="modal">
+      <div class="signup-form"><img src="http://u.cubeupload.com/ozinem/communication1.png" alt="chatting" width="200" height="185"/>
+      <h3 class="joinLabel">Join Our Community!</h3>
+        <section>
+          <form [formGroup]="register" (submit)="saveUser()" class="inline-form">
+            <input type="text" id="email" name="password" placeholder="Email" max-length="100" formControlName="email">
+            <input type="text" id="username-sign-up" name="username" placeholder="Username" max-length="100" formControlName="username">
+            <input type="text" id="nickname" name="nickname" placeholder="Nickname" max-length="100" formControlName="nickname">
+      <input type="password" id="password-sign-up" name="password" placeholder="Password" max-length="100" formControlName="password">
+      <button id="sign-up" type="submit" [disabled]="register.invalid">Create your account</button>
+     </form>
+
+        </section>
+    </div>
+    <div class="find-uni">
+    	<img src="http://u.cubeupload.com/ozinem/guidepost.png" alt="chatting" width="100" height="85"/>
+    	<h3 class="navLabel">Find Your Niche</h3>
+    	 <button id="find-school" type="submit">Find My School</button>
+    	<agm-map [latitude]='latitude' [longitude]='longitude' [mapTypeId]='mapType'></agm-map>
+    	<div class="nearby">
+    		<img src="http://u.cubeupload.com/ozinem/school1.png" id="school" alt="chatting" width="110" height="105"/>
+    		<h3 id="schoolLabel">Schools in your area</h3>
+    		<form class="school-container">
+    			<label *ngFor="let uni of Unis"><input type="radio" class="option-input radio" value="{{uni.univid}}" (click)="set_uid($event)"/>{{uni.uni_name}}</label>
+    		</form>
+    	</div>
+    </div>
+</div>
+</div>
+</div>
