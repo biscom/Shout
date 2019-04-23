@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
   private savedPosts = [];
 
   // edit option
-  private editForm;
+  private editForm: FormGroup;
   // private new_username;
   // private old_password;
   // private new_password1;
@@ -41,10 +41,18 @@ export class ProfileComponent implements OnInit {
 
 
 
-  constructor(private userDataService: UserDataService, private fb: FormBuilder) { }
+  constructor(private userDataService: UserDataService,
+              private fb: FormBuilder) { }
 
   ngOnInit() {
     this.getUserInfo();
+
+    this.editForm = this.fb.group({
+      new_username : [''],
+      old_password : ['', Validators.required],
+      new_password1 : [''],
+      new_password2 : ['']
+    });
   }
 
   getUserInfo() {
@@ -59,13 +67,6 @@ export class ProfileComponent implements OnInit {
 
   edit_profile() {
     this.show_edit = !this.show_edit;
-
-    this.editForm = this.fb.group({
-      new_username : [''],
-      old_password : ['', Validators.required],
-      new_password1 : [''],
-      new_password2 : ['']
-    });
   }
   save_profile() {
     if (this.editForm.get('new_username').value != '') {
@@ -95,6 +96,8 @@ export class ProfileComponent implements OnInit {
     }
 
     this.show_edit = !this.show_edit;
+
+    window.location.reload();
   }
   cancel_edit() {
     this.show_edit = false;
