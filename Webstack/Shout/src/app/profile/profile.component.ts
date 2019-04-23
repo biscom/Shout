@@ -99,6 +99,7 @@ export class ProfileComponent implements OnInit {
           this.userDataService.changePassword(this.username, this.editForm.get('old_password').value, this.editForm.get('new_password1').value);
     }
 }
+}
     this.show_edit = !this.show_edit;
 
     window.location.reload();
