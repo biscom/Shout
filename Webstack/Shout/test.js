@@ -1,10 +1,10 @@
 var request = require('request');
 
-const url='http://localhost:3000/login';
+const url='http://localhost:3000/createAccount';
 
 
 var accountInfo={
-    username : "deahln",
+    username : "deahln2",
     password : "password",
     nickname : "ndeahl1999",
     univ_email: "deahln@rpi.edu",
